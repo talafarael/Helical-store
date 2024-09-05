@@ -19,9 +19,9 @@ function App() {
     await getDocs(collection(db, "id")).then((querySnapshot) => {
       const newData = querySnapshot.docs.map((doc) => ({
         ...doc.data(),
-        id:doc.id 
+        id: doc.id,
       }));
-       console.log(newData)
+      console.log(newData);
     });
   };
   useEffect(() => {
