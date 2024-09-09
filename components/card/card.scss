@@ -9,8 +9,8 @@
   flex-flow: row wrap;
   text-decoration: none; /* Убираем подчеркивание */
   color: inherit;  
-  align-items: end;
-  justify-content: end;
+ 
+  align-content: space-around;
   flex-wrap: wrap;
 }
 .cardImg {
@@ -30,8 +30,11 @@
 }
 .containerText {
   width: 95%;
-  text-align: start;
-  padding-left: 11px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  height: 66px;
+  padding-left: 5px;
 }
 .title {
   white-space: nowrap;

@@ -30,19 +30,21 @@ export default function CardImg({ img }: { img: string[] }) {
   console.log(img);
 
   return (
-    <>
-      <Slider
-        {...settings}
-        ref={(slider) => setSlider1(slider)}
-      >
+    <div className="containerSlider">
+      <Slider {...settings} ref={(slider) => setSlider1(slider)}>
         {img.map((item, idx) => (
           <div key={idx}>
             {/* Use Next.js Image component for better image optimization */}
-            <Image src={`/${item}`} alt={`Slide ${idx}`} width={600} height={400} />
+            <Image
+              src={`/${item}`}
+              alt={`Slide ${idx}`}
+              width={400}
+              height={300}
+            />
           </div>
         ))}
       </Slider>
-      
+
       <div className="thumb-wrapper">
         {img.map((item, idx) => (
           <div
@@ -50,10 +52,10 @@ export default function CardImg({ img }: { img: string[] }) {
             className={currentSlide === idx ? "active" : ""}
             onClick={() => slider1?.slickGoTo(idx)}
           >
-            <Image src={`/${item}`} alt={`Thumbnail ${idx}`} width={100} height={70} />
+            <Image src={`/${item}`} alt="" width={70} height={70} />
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
