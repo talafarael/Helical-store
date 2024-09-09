@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { doc, getDoc } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { db } from "../../utils/firebase";
+import CardImg from "@/components/cardImg/cardImg";
 interface INewData {
   id: string;
   imgMain: string;
@@ -31,7 +32,6 @@ export default function Main() {
             price: data.price,
             img: data.img,
           });
-   
         } else {
           console.log("Документ не найден!");
         }
@@ -41,5 +41,5 @@ export default function Main() {
     }
   }, [id]); // Выполняется при изменении id
   console.log(newData);
-  return <div>{id}</div>;
+  return <div>{newData ? <CardImg img={newData.img} /> : null}</div>;
 }

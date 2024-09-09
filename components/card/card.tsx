@@ -17,7 +17,7 @@ export default function Card({ data }: { data: IData }) {
     <Link className="cardContainer" href={`/product/${data.id}`}>
       <div className="containerImg">
         <Image
-          src={`/${data.imgMain}.jpg`}
+          src={`/${data.imgMain}`}
           className="cardImg"
           alt=""
           width="262" height="280" 
