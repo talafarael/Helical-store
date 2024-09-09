@@ -1,0 +1,44 @@
+.cardContainer {
+  width: 262px;
+  height: 346px;
+  border: solid #24203a 1.5px;
+  display: flex;
+  
+  text-align: left;
+  flex-direction: column;
+  flex-flow: row wrap;
+  text-decoration: none; /* Убираем подчеркивание */
+  color: inherit;  
+  align-items: end;
+  justify-content: end;
+  flex-wrap: wrap;
+}
+.cardImg {
+ 
+
+  overflow: hidden;  
+}
+.containerImg {
+  display: flex;
+  display: inline-flex;
+  align-items: flex-end;
+  height: 260px;
+  width: 262px;
+
+  overflow: hidden; 
+  flex-wrap: wrap;
+}
+.containerText {
+  width: 95%;
+  text-align: start;
+  padding-left: 11px;
+}
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 17px;
+}
+.price {
+  margin-top: 2px;
+  font-size: 18px;
+}

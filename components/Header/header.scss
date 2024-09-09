@@ -1,38 +1,12 @@
 .containerHead {
-  background: #454545;
-  height: 151px;
+  background: #24203A;
+  height: 101px;
   display: flex;
   flex-direction: row;
-//   justify-content: center;
-//   align-items: center;
+  //   justify-content: center;
+  //   align-items: center;
 }
-.whiteLine {
-  height: 15px;
-  width: 100%;
-  position: absolute;
-  background: white;
-  z-index: 1;
-  top: 105px;
-}
-.logo {
-  height: 120px;
-  width: 145px;
-}
-.containerLine {
-  display: flex;
-  width: 1000px;
-
-  height: 120px;
-  flex-direction: column;
-}
-.longLine {
-  background: #0a84ff;
-  height: 3px;
-  width: 100%;
-}
-.middleLine {
-   
-  background: #0a84ff;
-  height: 3px;
-  width: 30%;
+.img{
+  width: 300px;
+  height: 80px;
 }
