@@ -8,6 +8,7 @@ interface INewData {
   name: string;
   description: string;
   price: string;
+  img:string[];
 }
 export default function main({ newData }: { newData: INewData[] }) {
   console.log(newData);

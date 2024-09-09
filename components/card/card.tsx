@@ -10,6 +10,7 @@ interface IData {
   name: string;
   description: string;
   price: string;
+  img:string[];
 }
 export default function Card({ data }: { data: IData }) {
   return (
@@ -19,7 +20,7 @@ export default function Card({ data }: { data: IData }) {
           src={`/${data.imgMain}.jpg`}
           className="cardImg"
           alt=""
-          width="262" height="260" 
+          width="262" height="280" 
           // fill
         />
       </div>
