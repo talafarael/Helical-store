@@ -38,8 +38,8 @@ export default function CardImg({ img }: { img: string[] }) {
             <Image
               src={`/${item}`}
               alt={`Slide ${idx}`}
-              width={400}
-              height={300}
+              width={550}
+              height={400}
             />
           </div>
         ))}
@@ -52,7 +52,7 @@ export default function CardImg({ img }: { img: string[] }) {
             className={currentSlide === idx ? "active" : ""}
             onClick={() => sliderRef.current?.slickGoTo(idx)}
           >
-            <Image src={`/${item}`} alt="" width={70} height={70} />
+            <Image src={`/${item}`} alt="" width={80} height={80} />
           </div>
         ))}
       </div>
