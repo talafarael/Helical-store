@@ -38,8 +38,8 @@ export default function CardImg({ img }: { img: string[] }) {
             <Image
               src={`/${item}`}
               alt={`Slide ${idx}`}
-              width={550}
-              height={400}
+              width={700}
+              height={600}
             />
           </div>
         ))}

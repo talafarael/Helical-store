@@ -3,13 +3,13 @@
   height: 346px;
   border: solid #24203a 1.5px;
   display: flex;
-  
+  color: black;
   text-align: left;
   flex-direction: column;
   flex-flow: row wrap;
   text-decoration: none; 
   // color: inherit;  
- 
+  
   align-content: space-around;
   flex-wrap: wrap;
 }
@@ -33,16 +33,21 @@
   width: 95%;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-content: flex-start;
+  justify-items: start;
+ 
+  text-align: start;
   height: 66px;
   padding-left: 3px;
 }
 .title {
-  white-space: nowrap;
+  display: flex;
+
   overflow: hidden;
   font-size: 17px;
 }
 .price {
+  display: flex;
   margin-top: 2px;
   font-size: 18px;
 }

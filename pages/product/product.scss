@@ -1,10 +1,11 @@
-.containerProductInfo{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
+.containerProductInfo {
+  display: flex;
+
+  align-items: start;
+  justify-items: start;
+  height: 80vh;
+  flex-wrap: nowrap;
 }
-.informationContainer{
-    width: 60vw;
+.informationContainer {
+  width: 60vw;
 }

@@ -11,11 +11,11 @@ interface INewData {
 export default function TextCard({newData}:{newData:INewData|null}) {
   return (
     <div>
-{newData?(<div>
+{newData?(<div className='textContainer'>
 
     <h1 className='nameCard'>{newData.name}</h1>
     <p className='textCard'>{newData.description}</p>
-    <h1>{newData.price}</h1>
+    <h1 className='priceCard'>{newData.price}</h1>
 
 
 </div>):null}
