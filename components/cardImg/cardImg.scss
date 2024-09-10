@@ -1,5 +1,3 @@
-
-
 .img-body {
   width: 400px;
   aspect-ratio: 1/1;
@@ -10,24 +8,23 @@
 .container {
   margin: 0 auto;
   width: 50%;
-  
+
   border-color: white;
 }
 
-
 .thumb-wrapper {
   display: flex;
-  width: 500px;
+  width:400px;
   margin-top: 30px;
 }
-.containerSlider{
-   
-   width: 50vw;
- 
+.containerSlider {
+  width: 50vw;
 }
 .thumb-wrapper > div {
-  width: 200px;
-  max-height: 200px;
+
+
+  width: 100px;
+  // max-height: 200px;
   aspect-ratio: 1/1;
   overflow: hidden;
   transition: all 0.1s;
@@ -40,6 +37,6 @@
 .thumb-wrapper > div img {
   width: 100%;
   height: 100%;
-  object-position: center 0;
+  // object-position: center 0;
   object-fit: cover;
 }

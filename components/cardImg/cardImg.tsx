@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
+import React, { useEffect, useRef, useState } from "react";
+import Slider, { Settings } from "react-slick";
 import Image from "next/image";
 import "./cardImg.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function CardImg({ img }: { img: string[] }) {
-  const [nav1, setNav1] = useState<any>(null);
+  const [nav1, setNav1] = useState<Slider | undefined>(undefined);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [slider1, setSlider1] = useState<any>(null);
-
+  // const [slider1, setSlider1] = useState<any>(undefined);
+  const sliderRef = useRef<Slider>(null);
   useEffect(() => {
-    setNav1(slider1);
-  }, [slider1]);
+    setNav1(sliderRef.current ?? undefined)
+  }, [sliderRef]);
 
-  const settings = {
+  const settings: Settings = {
     beforeChange: (oldIndex: number, newIndex: number) => {
       setCurrentSlide(newIndex);
     },
@@ -31,7 +31,7 @@ export default function CardImg({ img }: { img: string[] }) {
 
   return (
     <div className="containerSlider">
-      <Slider {...settings} ref={(slider) => setSlider1(slider)}>
+      <Slider {...settings} ref={sliderRef}>
         {img.map((item, idx) => (
           <div key={idx}>
             {/* Use Next.js Image component for better image optimization */}
@@ -50,7 +50,7 @@ export default function CardImg({ img }: { img: string[] }) {
           <div
             key={item}
             className={currentSlide === idx ? "active" : ""}
-            onClick={() => slider1?.slickGoTo(idx)}
+            onClick={() => sliderRef.current?.slickGoTo(idx)}
           >
             <Image src={`/${item}`} alt="" width={70} height={70} />
           </div>

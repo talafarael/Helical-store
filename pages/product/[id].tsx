@@ -3,6 +3,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { db } from "../../utils/firebase";
 import CardImg from "@/components/cardImg/cardImg";
+import './product.scss'
 interface INewData {
   id: string;
   imgMain: string;
@@ -41,5 +42,10 @@ export default function Main() {
     }
   }, [id]); // Выполняется при изменении id
   console.log(newData);
-  return <div>{newData ? <CardImg img={newData.img} /> : null}</div>;
+  return (
+    <div className="containerProductInfo">
+      <div>{newData ? <CardImg img={newData.img} /> : null}</div>
+      <div className="informationContainer"></div>
+    </div>
+  );
 }
