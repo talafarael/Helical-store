@@ -1,7 +1,7 @@
 .img-body {
   width: 400px;
   aspect-ratio: 1/1;
-  outline-color: red;
+  outline-color: #24203a ;
   display: inline-block;
 }
 
@@ -31,7 +31,7 @@
 }
 .thumb-wrapper > div:hover,
 .thumb-wrapper > div.active {
-  border: 3px solid rgba(216, 35, 35, 0.732);
+  border: 3px solid #24203a ;
   max-height: calc(200px - 6px);
 }
 .thumb-wrapper > div img {
