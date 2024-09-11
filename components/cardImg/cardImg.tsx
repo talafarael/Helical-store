@@ -37,6 +37,7 @@ export default function CardImg({ img }: { img: string[] }) {
             {/* Use Next.js Image component for better image optimization */}
             <Image
               src={`/${item}`}
+              className="imgCard"
               alt={`Slide ${idx}`}
               width={700}
               height={600}

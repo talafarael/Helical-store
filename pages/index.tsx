@@ -14,6 +14,7 @@ export default function main({ newData }: { newData: INewData[] }) {
   console.log(newData);
   return (
     <div>
+      {newData.map((element)=>(<Card key={element.id} data={element} />))}
       <Card data={newData[0]}/>
     </div>
   );
