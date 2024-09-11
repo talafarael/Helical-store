@@ -1,25 +1,19 @@
 .textContainer {
   display: flex;
-  
- 
+
   flex-direction: column;
   justify-content: start;
-  
-  
-
 }
 .nameCard {
-
+  // font-weight: bold;
   height: auto;
- 
+  //  font-family: "SemiBold";
+  font-family: var(--font-semi-bold);
 }
 .textCard {
- 
-  
+  font-family: var(--font-semi-bold);
 }
 .priceCard {
- 
- 
   display: flex;
   align-content: start;
   flex-wrap: wrap;
