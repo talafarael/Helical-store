@@ -3,7 +3,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { db } from "../../utils/firebase";
 import CardImg from "@/components/cardImg/cardImg";
-import './product.scss'
+import "./product.scss";
 import TextCard from "@/components/TextCard/textCard";
 interface INewData {
   id: string;
@@ -41,13 +41,15 @@ export default function Main() {
 
       fetchData();
     }
-  }, [id]); 
+  }, [id]);
   console.log(newData);
   return (
-    <div className="containerProductInfo">
-      <div>{newData ? <CardImg img={newData.img} /> : null}</div>
+    <div className="containerProduct">
+      <div className="imgContainer">
+        {newData ? <CardImg img={newData.img} /> : null}
+      </div>
       <div className="informationContainer">
-        <TextCard newData={newData}/>
+        <TextCard newData={newData} />
       </div>
     </div>
   );

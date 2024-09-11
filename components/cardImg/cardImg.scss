@@ -1,32 +1,36 @@
 .img-body {
   width: 400px;
   aspect-ratio: 1/1;
-  outline-color: #24203a ;
+  outline-color: #24203a;
   display: inline-block;
 }
 
-.container {
-  margin: 0 auto;
-  width: 50%;
-
-  border-color: white;
+.containerImgSlider {
+  // width: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.imgCard{
-  width: 60%;
-  height: 70%;
+.containerSlider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40vw;
+}
+
+.imgCard {
+  width: 800px;
+  height: 550px;
 }
 .thumb-wrapper {
   display: flex;
-  width:400px;
+
+  width: 400px;
   margin-top: 30px;
 }
-.containerSlider {
-  width: 55vw;
-  height: auto;
-}
+
 .thumb-wrapper > div {
-
-
   width: 100px;
   // max-height: 200px;
   aspect-ratio: 1/1;
@@ -35,12 +39,27 @@
 }
 .thumb-wrapper > div:hover,
 .thumb-wrapper > div.active {
-  border: 3px solid #24203a ;
+  border: 3px solid #24203a;
   max-height: calc(200px - 6px);
 }
 .thumb-wrapper > div img {
-  width: 100%;
-  height: 100%;
+  display: flex;
+
   // object-position: center 0;
   object-fit: cover;
+}
+.productSlider {
+  width: 100%;
+  margin: 0 auto;
+
+  .slick-slide {
+    padding: 0px 75px;
+  }
+
+  .slick-next {
+    right: 25px;
+  }
+  .slick-prev {
+    left: 25px;
+  }
 }

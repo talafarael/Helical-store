@@ -1,7 +1,7 @@
 // import localFont from "next/font/local";
-import "../app/globals.css";
+import "../app/globals.scss";
 
-import Header from "./Header/Header";
+import Header from "./Header/header";
 
 // const metadata: Metadata = {
 //   title: "Create Next App",
@@ -20,7 +20,7 @@ import Header from "./Header/Header";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div>
+    <div className="conatiner">
       <Header />
       {children}
     </div>

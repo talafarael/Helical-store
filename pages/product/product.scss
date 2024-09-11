@@ -1,11 +1,14 @@
-.containerProductInfo {
-  display: flex;
 
-  align-items: start;
-  justify-items: start;
-  height: 80vh;
-  flex-wrap: nowrap;
+.containerProduct {
+  padding-top: 100px;
+
+  display: flex;
+  height: 100%;
+  width: 85vw;
 }
-.informationContainer {
-  width: 60vw;
+.imgContainer {
+  width: 50vw;
+}
+.informationContainer{
+  width: 35vw;
 }

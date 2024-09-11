@@ -11,7 +11,7 @@ export default function CardImg({ img }: { img: string[] }) {
   // const [slider1, setSlider1] = useState<any>(undefined);
   const sliderRef = useRef<Slider>(null);
   useEffect(() => {
-    setNav1(sliderRef.current ?? undefined)
+    setNav1(sliderRef.current ?? undefined);
   }, [sliderRef]);
 
   const settings: Settings = {
@@ -24,28 +24,30 @@ export default function CardImg({ img }: { img: string[] }) {
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
-    dots: true,
+    dots: false,
+    arrows: false,
   };
 
   console.log(img);
 
   return (
-    <div className="containerSlider">
-      <Slider {...settings} ref={sliderRef}>
-        {img.map((item, idx) => (
-          <div key={idx}>
-            {/* Use Next.js Image component for better image optimization */}
-            <Image
-              src={`/${item}`}
-              className="imgCard"
-              alt={`Slide ${idx}`}
-              width={700}
-              height={600}
-            />
-          </div>
-        ))}
-      </Slider>
-
+    <div className="containerImgSlider">
+      <div className="containerSlider">
+        <Slider {...settings} ref={sliderRef}>
+          {img.map((item, idx) => (
+            <div key={idx}>
+              {/* Use Next.js Image component for better image optimization */}
+              <Image
+                src={`/${item}`}
+                className="imgCard"
+                alt={`Slide ${idx}`}
+                width={500}
+                height={500}
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
       <div className="thumb-wrapper">
         {img.map((item, idx) => (
           <div
