@@ -1,0 +1,29 @@
+.countContainer {
+  display: flex;
+  width: 159px;
+  height: 40px;
+}
+.buttonRight {
+  width: 40px;
+  background: #00a367;
+  border: 0px;
+  color: white;
+  font-size: 30px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.buttonLeft {
+  width: 40px;
+  background: #00a367;
+  border: 0px;
+  color: white;
+  font-size: 30px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.countText {
+  display: flex;
+  justify-content: center;
+  border: solid #00a367 1px;
+  width: 60px;
+}

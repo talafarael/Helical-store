@@ -1,6 +1,7 @@
 // import fetchGet from "@/src/api/getApiProduct";
 
-import Card from "@/components/Card/card";
+
+import Card from "@/components/card/card";
 import { db } from "../utils/firebase";
 interface INewData {
   id: string;
@@ -15,7 +16,7 @@ export default function main({ newData }: { newData: INewData[] }) {
   return (
     <div>
       {newData.map((element)=>(<Card key={element.id} data={element} />))}
-      <Card data={newData[0]}/>
+      
     </div>
   );
 }

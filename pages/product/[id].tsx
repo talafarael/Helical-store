@@ -2,10 +2,11 @@ import { useRouter } from "next/router";
 import { doc, getDoc } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { db } from "../../utils/firebase";
-import CardImg from "@/components/CardImg/cardImg";
+
 import "./product.scss";
 import TextCard from "@/components/TextCard/textCard";
 import { INewData } from "@/type/newData";
+import CardImg from "@/components/cardImg/cardImg";
 
 export default function Main() {
   const [newData, setNewData] = useState<INewData | null>(null);

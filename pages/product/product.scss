@@ -1,8 +1,8 @@
 
 .containerProduct {
-  padding-top: 50px;
 
   display: flex;
+  align-items: center;
   height: 100%;
   width: 85vw;
 }
@@ -10,5 +10,6 @@
   width: 50vw;
 }
 .informationContainer{
+  
   width: 35vw;
 }

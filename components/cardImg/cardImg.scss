@@ -6,7 +6,7 @@
 }
 
 .containerImgSlider {
-  // width: 40px;
+  
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@
 
 .imgCard {
   width: 800px;
-  height: 60vh;
+  height:55vh;
 }
 .thumb-wrapper {
   display: flex;
@@ -62,9 +62,4 @@
   .slick-prev {
     left: 25px;
   }
-}
-.line{
-  width: 400px;
-  height: 2px;
-  background:black;
 }

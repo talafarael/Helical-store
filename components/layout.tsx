@@ -24,7 +24,7 @@ const geistSemiBold= localFont({
 });
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable}`}>
+    <div className={` conatiner ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable}`}>
       <Header />
       {children}
     </div>

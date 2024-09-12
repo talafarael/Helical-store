@@ -1,21 +1,35 @@
 .textContainer {
   display: flex;
-
+  height: 65vh;
   flex-direction: column;
   justify-content: start;
 }
 .nameCard {
-  // font-weight: bold;
+  // font-weight: bold;s
+
   height: auto;
   //  font-family: "SemiBold";
   font-family: var(--font-semi-bold);
-  font-size: 28px;
+  font-size: 32x;
 }
 .textCard {
-
+  margin-top: 23px;
 }
 .priceCard {
   display: flex;
   align-content: start;
   flex-wrap: wrap;
+  margin-top: 10px;
+}
+.line {
+  margin-top: 15px;
+  width: 400px;
+  height: 2px;
+  background: #00a367;
+}
+.buttonContainer {
+  margin-top: 15px;
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
 }
