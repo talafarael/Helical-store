@@ -2,17 +2,11 @@ import { useRouter } from "next/router";
 import { doc, getDoc } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { db } from "../../utils/firebase";
-import CardImg from "@/components/cardImg/cardImg";
+import CardImg from "@/components/CardImg/cardImg";
 import "./product.scss";
 import TextCard from "@/components/TextCard/textCard";
-interface INewData {
-  id: string;
-  imgMain: string;
-  name: string;
-  description: string;
-  price: string;
-  img: string[];
-}
+import { INewData } from "@/type/newData";
+
 export default function Main() {
   const [newData, setNewData] = useState<INewData | null>(null);
   const router = useRouter();
@@ -33,6 +27,7 @@ export default function Main() {
             description: data.description,
             price: data.price,
             img: data.img,
+            rating:data.rating,
           });
         } else {
           console.log("Документ не найден!");

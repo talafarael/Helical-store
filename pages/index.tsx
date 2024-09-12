@@ -1,6 +1,6 @@
 // import fetchGet from "@/src/api/getApiProduct";
 
-import Card from "@/components/card/card";
+import Card from "@/components/Card/card";
 import { db } from "../utils/firebase";
 interface INewData {
   id: string;

@@ -21,7 +21,7 @@
 
 .imgCard {
   width: 800px;
-  height: 550px;
+  height: 60vh;
 }
 .thumb-wrapper {
   display: flex;
@@ -62,4 +62,9 @@
   .slick-prev {
     left: 25px;
   }
+}
+.line{
+  width: 400px;
+  height: 2px;
+  background:black;
 }
