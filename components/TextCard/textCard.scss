@@ -7,7 +7,9 @@
 .nameCard {
   // font-weight: bold;s
   font-size: 36px;
+  height: auto;
 
+  word-wrap: break-word;
   //  font-family: "SemiBold";
   font-family: var(--font-semi-bold);
 }
@@ -34,4 +36,58 @@
   display: flex;
   width: 60%;
   justify-content: space-between;
+}
+@media (max-width: 1300px) {
+  .nameCard {
+    font-size: 33px;
+  }
+  .textContainer {
+    display: flex;
+    height: 55vh;
+  }
+}
+@media (max-width: 1000px) {
+  .nameCard {
+    font-size: 28px;
+  }
+  .textCard {
+    height: auto;
+    font-size: 15px;
+  }
+  .priceCard {
+    margin-top: 10px;
+    font-size: 23px;
+  }
+  .buttonContainer {
+    margin-top: 11px;
+  }
+  .line {
+    margin-top: 10px;
+    width: 300px;
+  }
+}
+@media (max-width: 900px) {
+  .nameCard {
+    font-size: 21px;
+  }
+  .textCard {
+    height: auto;
+    font-size: 13px;
+  }
+  .priceCard {
+    margin-top: 7px;
+    font-size: 21px;
+  }
+  .buttonContainer {
+    margin-top: 11px;
+  }
+  .line {
+    width: 250px;
+  }
+}
+@media (max-width: 650px) {
+  .textContainer {
+    display: flex;
+    height: auto;
+  }
 }

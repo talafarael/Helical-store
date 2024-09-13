@@ -13,6 +13,26 @@
   height: 2px;
   background: #00a367;
 }
-.ulTextDeliver{
-    margin-top: 6px;
+.ulTextDeliver {
+  margin-top: 6px;
+}
+@media (max-width: 1000px) {
+  .imgDeliver {
+    height: 35px;
+    width: 35px;
+  }
+  .deliverTitle {
+    font-size: 13px;
+  }
+  .lineDeliver {
+    width: 300px;
+  }
+}
+@media (max-width: 900px) {
+    .lineDeliver {
+        width: 250px;
+      }
+    .deliverTitle {
+        font-size: 11px;
+      }
 }
