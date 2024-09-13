@@ -28,7 +28,8 @@ export default function Main() {
             description: data.description,
             price: data.price,
             img: data.img,
-            rating:data.rating,
+            rating: data.rating,
+            deliver: data.deliver,
           });
         } else {
           console.log("Документ не найден!");
