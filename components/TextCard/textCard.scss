@@ -14,12 +14,15 @@
 }
 .textCard {
   margin-top: 23px;
+  font-weight:500;
+  font-family: var(--font-montserrat);
+  font-size: 17.5px;
 }
 .priceCard {
   display: flex;
   align-content: start;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 13px;
 }
 .line {
   margin-top: 15px;

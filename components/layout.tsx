@@ -22,9 +22,14 @@ const geistSemiBold= localFont({
   variable: "--font-semi-bold",
   weight: "100 900",
 });
+const geistMontserrat = localFont({
+  src: "../app/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf",
+  variable: "--font-montserrat",
+  weight: "100 900",
+});
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={` conatiner ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable}`}>
+    <div className={` conatiner ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable}`}>
       <Header />
       {children}
     </div>
