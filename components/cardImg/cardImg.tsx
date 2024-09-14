@@ -13,7 +13,7 @@ export default function CardImg({ img }: { img: string[] }) {
   useEffect(() => {
     setNav1(sliderRef.current ?? undefined);
   }, [sliderRef]);
-
+  console.log("aaaaaa")
   const settings: Settings = {
     beforeChange: (oldIndex: number, newIndex: number) => {
       setCurrentSlide(newIndex);
@@ -26,7 +26,7 @@ export default function CardImg({ img }: { img: string[] }) {
     infinite: true,
     dots: false,
     arrows: false,
-    adaptiveHeight: true, 
+    adaptiveHeight: true,
   };
 
   console.log(img);

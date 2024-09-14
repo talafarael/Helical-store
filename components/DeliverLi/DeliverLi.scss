@@ -1,8 +1,18 @@
-.liTextDeliver{
-    font-size: 18px;
+.liTextDeliver {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-top: -3px;
+}
+.deliverLiContainer {
+  margin-top: 5px;
+  display: flex;
 }
 @media (max-width: 1000px) {
-    .liTextDeliver{
-        font-size: 14px;
-    }
+  .liTextDeliver {
+    margin-top: 0px;
+    font-size: 14px;
+  }
+  .deliverLiContainer {
+    margin-top: 3px;
+  }
 }
