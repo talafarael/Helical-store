@@ -37,7 +37,15 @@
   width: 60%;
   justify-content: space-between;
 }
+@media (max-width: 1700px) {
+  .buttonContainer {
+    width: 70%;
+  }
+}
 @media (max-width: 1300px) {
+  .buttonContainer {
+    width: 80%;
+  }
   .nameCard {
     font-size: 33px;
   }
@@ -67,6 +75,9 @@
   }
 }
 @media (max-width: 900px) {
+  .buttonContainer {
+    width: 90%;
+  }
   .nameCard {
     font-size: 21px;
   }
@@ -85,6 +96,14 @@
     width: 250px;
   }
 }
+@media (max-width: 800px) {
+  .buttonContainer {
+    width: 95%;
+  }}
+  @media (max-width: 700px) {
+    .buttonContainer {
+      width: 100%;
+    }}
 @media (max-width: 650px) {
   .textContainer {
     display: flex;
@@ -95,10 +114,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  } .line {
-    width: 90%;
   }
-}
-@media (max-width: 450px) {
- 
+  .line {
+    width: 100%;
+  }
 }
