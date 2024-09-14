@@ -1,5 +1,5 @@
 // import fetchGet from "@/src/api/getApiProduct";
-
+import "./index.scss"
 
 import Card from "@/components/card/card";
 import { db } from "../utils/firebase";
@@ -14,7 +14,7 @@ interface INewData {
 export default function main({ newData }: { newData: INewData[] }) {
   console.log(newData);
   return (
-    <div>
+    <div className="containerMain">
       {newData.map((element)=>(<Card key={element.id} data={element} />))}
       
     </div>

@@ -99,11 +99,13 @@
 @media (max-width: 800px) {
   .buttonContainer {
     width: 95%;
-  }}
-  @media (max-width: 700px) {
-    .buttonContainer {
-      width: 100%;
-    }}
+  }
+}
+@media (max-width: 700px) {
+  .buttonContainer {
+    width: 100%;
+  }
+}
 @media (max-width: 650px) {
   .textContainer {
     display: flex;
