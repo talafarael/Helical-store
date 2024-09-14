@@ -12,23 +12,23 @@ export default function TextCard({ newData }: { newData: INewData | null }) {
   const [count, setCount] = useState<number>(0);
 
   return (
-    <CountContext.Provider value={{ count, setCount }}>
-      <div>
-        {newData ? (
-          <div className="textContainer">
-            <h1 className="nameCard">{newData.name}</h1>
-            <StarRating rating={newData.rating} />
-            <h1 className="priceCard">{newData.price}-грн/шт</h1>
-            <p className="textCard">{newData.description}</p>
-            <Deliver deliver={newData.deliver} />
-            <div className="line"></div>
-            <div className="buttonContainer">
+    <div>
+      {newData ? (
+        <div className="textContainer">
+          <h1 className="nameCard">{newData.name}</h1>
+          <StarRating rating={newData.rating} />
+          <h1 className="priceCard">{newData.price}-грн/шт</h1>
+          <p className="textCard">{newData.description}</p>
+          <Deliver deliver={newData.deliver} />
+          <div className="line"></div>
+          <div className="buttonContainer">
+            <CountContext.Provider value={{ count, setCount }}>
               <CountProduct />
-              <Button text="купить" func={() => {}} />
-            </div>
+              <Button text="купить" func={() => {}} />{" "}
+            </CountContext.Provider>
           </div>
-        ) : null}
-      </div>
-    </CountContext.Provider>
+        </div>
+      ) : null}
+    </div>
   );
 }

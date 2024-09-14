@@ -26,6 +26,7 @@ export default function CardImg({ img }: { img: string[] }) {
     infinite: true,
     dots: false,
     arrows: false,
+    adaptiveHeight: true, 
   };
 
   console.log(img);

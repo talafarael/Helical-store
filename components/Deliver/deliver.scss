@@ -29,10 +29,15 @@
   }
 }
 @media (max-width: 900px) {
-    .lineDeliver {
-        width: 250px;
-      }
-    .deliverTitle {
-        font-size: 11px;
-      }
+  .lineDeliver {
+    width: 250px;
+  }
+  .deliverTitle {
+    font-size: 11px;
+  }
+}
+@media (max-width: 450px) {
+  .lineDeliver {
+    width: 90%;
+  }
 }

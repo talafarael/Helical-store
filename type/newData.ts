@@ -5,6 +5,10 @@ export interface INewData {
   description: string;
   price: string;
   img: string[];
-  deliver: string[];
+  deliver: IDeliver[];
   rating: number;
+}
+export interface IDeliver {
+  deliver: string;
+  deliverImg: string;
 }

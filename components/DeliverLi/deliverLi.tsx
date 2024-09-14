@@ -1,5 +1,6 @@
 import React from "react";
-import "./DeliverLi.scss"
-export default function Deliver({ text }: { text: string }) {
-  return <li className="liTextDeliver">{text}</li>;
+import "./DeliverLi.scss";
+import { IDeliver } from "@/type/newData";
+export default function Deliver({ deliver, deliverImg }: IDeliver) {
+  return <div className="liTextDeliver">{deliver}</div>;
 }

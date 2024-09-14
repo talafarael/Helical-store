@@ -3,19 +3,27 @@ import DeliverImg from "../../public/delivery-truck.png";
 import DeliverLi from "../DeliverLi/deliverLi";
 import Image from "next/image";
 import "./deliver.scss";
-export default function Deliver({ deliver }: { deliver: string[] }) {
+import { IDeliver } from "@/type/newData";
+export default function Deliver({ deliver }: { deliver: IDeliver[] }) {
+  console.log(deliver);
   return (
-    <div>
+    <div className="deliverContainer">
       <div className="deliverTitle">
         <Image alt="" src={DeliverImg} className="imgDeliver"></Image>
         <h1>способи доставки</h1>
       </div>
       <div className="lineDeliver"></div>
-      <ul className="ulTextDeliver">
-        {deliver.map((element, index) => (
-          <DeliverLi key={index} text={element} />
-        ))}
-      </ul>
+      {deliver ? (
+        <div className="ulTextDeliver">
+          {deliver.map((element, index) => (
+            <DeliverLi
+              key={index}
+              deliver={element.deliver}
+              deliverImg={element.deliverImg}
+            />
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }
