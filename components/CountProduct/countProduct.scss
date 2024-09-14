@@ -1,6 +1,6 @@
 .countContainer {
   display: flex;
-  width: 159px;
+  width: auto;
   height: 40px;
 }
 .buttonRight {
@@ -26,4 +26,12 @@
   justify-content: center;
   border: solid #00a367 1px;
   width: 60px;
+}
+@media (max-width: 650px) {
+  .buttonRight {
+    width: 60px;
+  }
+  .buttonLeft {
+    width: 60px;
+  }
 }

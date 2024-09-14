@@ -1,9 +1,16 @@
-.button{
-    width: 159px;
+.button {
+  width: 159px;
+  height: 40px;
+  background: #00a367;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 23px;
+}
+@media (max-width: 650px) {
+  .button {
+    margin-top: 10px;
     height: 40px;
-    background: #00a367;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 23px;
+    width: 300px;
+  }
 }

@@ -20,13 +20,13 @@ export default function TextCard({ newData }: { newData: INewData | null }) {
           <h1 className="priceCard">{newData.price}-грн/шт</h1>
           <p className="textCard">{newData.description}</p>
           <Deliver deliver={newData.deliver} />
-          <div className="line"></div>
-          <div className="buttonContainer">
-            <CountContext.Provider value={{ count, setCount }}>
+          <div className="line"></div>{" "}
+          <CountContext.Provider value={{ count, setCount }}>
+            <div className="buttonContainer">
               <CountProduct />
               <Button text="купить" func={() => {}} />{" "}
-            </CountContext.Provider>
-          </div>
+            </div>
+          </CountContext.Provider>
         </div>
       ) : null}
     </div>
