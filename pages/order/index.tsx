@@ -1,4 +1,7 @@
+import { useEffect } from "react";
+
 const Order = () => {
-  return <div>fff</div>;
+
+  return <div></div>;
 };
 export default Order;
