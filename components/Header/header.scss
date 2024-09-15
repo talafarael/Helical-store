@@ -1,13 +1,38 @@
 .containerHead {
-  background: #24203A;
-  height: 72px;
+  background: #24203a;
+  height: 82px;
   display: flex;
   flex-direction: row;
   width: 100vw;
+  justify-content: space-between;
+  align-items: center;
   //   justify-content: center;
   //   align-items: center;
 }
-.img{
-  width: 300px;
-  height: 80px;
+.img {
+  // width: 300px;
+  width: auto;
+  height: 82px;
+  margin-left: 50px;
+}
+.shopBin {
+  margin-right: 100px;
+  height: 40px;
+  width: auto;
+}
+@media (max-width: 650px) {
+  .img {
+    // width: 300px;
+    width: auto;
+    height: 62px;
+  }
+  .containerHead {
+    height: 72px;
+  }
+  .img {
+    margin-left: 20px;
+  }
+  .shopBin {
+    
+    height: 35px;}
 }
