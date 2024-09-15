@@ -38,8 +38,7 @@
 }
 .thumb-wrapper > div:hover,
 .thumb-wrapper > div.active {
-  border: 3px solid #24203a;
-  max-height: calc(200px - 6px);
+  border: 1px solid #24203a;
 }
 .thumb-wrapper > div img {
   display: flex;
@@ -80,7 +79,9 @@
   }
 }
 @media (max-width: 900px) {
-  .containerSlider {margin-top: -100px;}
+  .containerSlider {
+    margin-top: -100px;
+  }
   .thumb-wrapper {
     margin-top: 10px;
     width: auto;

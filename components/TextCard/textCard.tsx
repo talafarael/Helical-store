@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./textCard.scss";
-// import { Rating } from 'react-simple-star-rating'
+
 import StarRating from "../StarRating/starRating";
 import { INewData } from "@/type/newData";
-import CountProduct from "../CountProduct/countProduct";
-import { CountContext } from "@/utils/hooks/context";
-import Button from "../Button/button";
+
 import Deliver from "../Deliver/deliver";
+import ButtonContainer from "../ButtonContainer/buttonContainer";
 
 export default function TextCard({ newData }: { newData: INewData | null }) {
-  const [count, setCount] = useState<number>(0);
-
   return (
     <div>
       {newData ? (
@@ -21,12 +18,9 @@ export default function TextCard({ newData }: { newData: INewData | null }) {
           <p className="textCard">{newData.description}</p>
           <Deliver deliver={newData.deliver} />
           <div className="line"></div>{" "}
-          <CountContext.Provider value={{ count, setCount }}>
-            <div className="buttonContainer">
-              <CountProduct />
-              <Button text="купить" func={() => {}} />{" "}
-            </div>
-          </CountContext.Provider>
+          <div className="buttonContainer">
+            <ButtonContainer />
+          </div>
         </div>
       ) : null}
     </div>
