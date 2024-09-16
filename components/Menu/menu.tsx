@@ -4,6 +4,7 @@ import "./menu.scss";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/utils/firebase";
 import { useResize } from "@/utils/screenSize";
+import Link from "next/link";
 
 export default function Menu({ activeMenu }: { activeMenu: boolean }) {
   const [categories, setCategories] = useState<ICategory[]>([]);
@@ -30,13 +31,17 @@ export default function Menu({ activeMenu }: { activeMenu: boolean }) {
   console.log(categories);
   return (
     <>
-      {width && width > 1000 || activeMenu ? (
+      {(width && width > 1000) || activeMenu ? (
         <div className="menuContainer">
           <div className="categoryContainer">
             {categories?.map((elem: ICategory) => (
-              <div className="categoryDiv" key={elem.id}>
+              <Link
+                href={`/category/${elem.category}`}
+                className="categoryDiv"
+                key={elem.id}
+              >
                 {elem.category}
-              </div>
+              </Link>
             ))}
           </div>{" "}
         </div>
