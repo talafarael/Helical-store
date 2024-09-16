@@ -1,9 +1,38 @@
-import React from 'react'
-import "./category.scss"
+import React, { useEffect, useState } from "react";
+import "./category.scss";
+// import { INewData } from "@/type/newData";
+import { useRouter } from "next/router";
+import fetchCategoryData from "@/api/getApiProductCategory";
+import Card from "@/components/Card/card";
 export default function Category() {
+  interface INewData {
+    id: string;
+    imgMain: string;
+    name: string;
+    description: string;
+    price: string;
+    img: string[];
+  }
+  const [newData, setNewData] = useState<INewData[] | null>(null);
+  const [isMounted, setIsMounted] = useState<boolean>(true);
+
+  const router = useRouter();
+  const { id } = router.query;
+  useEffect(() => {
+    setIsMounted(true);
+
+    fetchCategoryData(id, isMounted, setNewData);
+
+    return () => {
+      setIsMounted(false);
+    };
+  }, [id]);
+  console.log(newData);
   return (
-    <div className='categoryContainerCard'>
-      
+    <div className="categoryContainerCard">
+      {newData?.map((elem) => (
+        <Card key={elem.id} data={elem} />
+      ))}
     </div>
-  )
+  );
 }
