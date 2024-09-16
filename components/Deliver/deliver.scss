@@ -1,12 +1,16 @@
 .imgDeliver {
-  height: 45px;
-  width: 45px;
+  height: 35px;
+  width: 35px;
 }
 .deliverTitle {
-  font-size: 16px;
-  margin-top: 13px;
+  
+  font-size: 17px;
+  margin-top: 12px;
   display: flex;
   font-family: var(--font-semi-bold);
+}
+.deliverText{
+  margin-left: 5px;
 }
 .lineDeliver {
   width: 400px;

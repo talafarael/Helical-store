@@ -41,17 +41,18 @@
   .buttonContainer {
     width: 70%;
   }
+  .nameCard {
+    font-size: 33px;
+  }
 }
 @media (max-width: 1300px) {
   .buttonContainer {
     width: 80%;
   }
-  .nameCard {
-    font-size: 33px;
-  }
+
   .textContainer {
     display: flex;
-    height: 55vh;
+    height: auto;
   }
 }
 @media (max-width: 1000px) {
@@ -74,7 +75,13 @@
     width: 300px;
   }
 }
+
 @media (max-width: 900px) {
+  .textContainer {
+  
+    height: 65vh;
+
+  }
   .buttonContainer {
     width: 90%;
   }

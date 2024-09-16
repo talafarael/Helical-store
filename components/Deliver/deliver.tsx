@@ -10,7 +10,7 @@ export default function Deliver({ deliver }: { deliver: IDeliver[] }) {
     <div className="deliverContainer">
       <div className="deliverTitle">
         <Image alt="" src={DeliverImg} className="imgDeliver"></Image>
-        <h1>способи доставки</h1>
+        <h2 className="deliverText">способи доставки</h2>
       </div>
       <div className="lineDeliver"></div>
       {deliver ? (

@@ -4,15 +4,10 @@ import "./card.scss";
 import Image from "next/image";
 import Link from "next/link";
 
-interface IData {
-  id: string;
-  imgMain: string;
-  name: string;
-  description: string;
-  price: string;
-  img:string[];
-}
-export default function Card({ data }: { data: IData }) {
+import { INewData } from "@/type/newData";
+import { Rating } from "react-simple-star-rating";
+
+export default function Card({ data }: { data: INewData }) {
   return (
     <Link className="cardContainer" href={`/product/${data.id}`}>
       <div className="containerImg">
@@ -20,13 +15,16 @@ export default function Card({ data }: { data: IData }) {
           src={`/${data.imgMain}`}
           className="cardImg"
           alt=""
-          width="262" height="280" 
+          width="262"
+          height="280"
           // fill
         />
       </div>
       <div className="containerText">
         <h1 className="title">{data.name}</h1>
-
+        <div className="cardStart">
+          <Rating size={15} initialValue={data.rating} readonly={true} />
+        </div>
         <p className="price">{data.price}-грн/шт</p>
       </div>
     </Link>
