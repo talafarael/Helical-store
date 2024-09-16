@@ -1,0 +1,23 @@
+.categoryDiv {
+  margin-top: 10px;
+  box-sizing: border-box;
+  border-bottom: solid transparent 2px;
+  display: flex;
+  justify-content: center;
+  font-size: 21px;
+}
+.categoryDiv:hover {
+  border-bottom: solid #00a367 2px;
+  color: #00a367;
+}
+.body {
+  display: flex;
+}
+.categoryContainer {
+  border-right: solid #00a367 2px;
+  margin-right: 20px;
+  margin-top: 30px;
+  width: 65%;
+  box-sizing: border-box;
+  font-family: var(--font-semi-bold);
+}

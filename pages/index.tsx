@@ -1,6 +1,5 @@
-// import fetchGet from "@/src/api/getApiProduct";
-import "./index.scss"
 
+import "./index.scss";
 import Card from "@/components/Card/card";
 import { db } from "../utils/firebase";
 interface INewData {
@@ -9,28 +8,30 @@ interface INewData {
   name: string;
   description: string;
   price: string;
-  img:string[];
+  img: string[];
 }
 export default function main({ newData }: { newData: INewData[] }) {
-  console.log(newData);
   return (
     <div className="containerMain">
-      {newData.map((element)=>(<Card key={element.id} data={element} />))}
-      
+      <div className="containerCard">
+        {newData.map((element) => (
+          <Card key={element.id} data={element} />
+        ))}
+      </div>
     </div>
   );
 }
 
 import { collection, getDocs } from "firebase/firestore";
+
 export const getStaticProps = async () => {
   const newData = await getDocs(collection(db, "id")).then((querySnapshot) => {
-    const newData = querySnapshot.docs.map((doc) => ({
+    return querySnapshot.docs.map((doc) => ({
       ...doc.data(),
       id: doc.id,
     }));
-    console.log(newData);
-    return newData;
   });
+
   return {
     props: { newData },
   };

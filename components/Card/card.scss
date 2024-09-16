@@ -1,6 +1,6 @@
 .cardContainer {
   width: 262px;
-  height: 346px;
+  height: 350px;
   border: solid #24203a 1.5px;
   display: flex;
   color: black;
@@ -30,7 +30,7 @@
   display: flex;
   display: inline-flex;
   align-items: flex-end;
-  height: 270px;
+  height: 260px;
   width: 262px;
 
   overflow: hidden;
@@ -45,7 +45,7 @@
   justify-items: start;
 
   text-align: start;
-  height: 86px;
+  height: 90px;
   padding-left: 3px;
 }
 .title {
@@ -53,12 +53,13 @@
   font-family: var(--font-semi-bold);
   overflow: hidden;
   font-size: 14px;
+  margin-top: 3px;
 }
 .price {
   font-family: var(--font-semi-bold);
   display: flex;
   margin-top: -2px;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
   font-size: 18px;
 }
 @media (max-width: 1150px) {
@@ -86,7 +87,7 @@
 @media (max-width: 650px) {
   .cardContainer {
     width: 162px;
-    height: 236px;
+    height: 240px;
   }
   .containerImg {
     display: flex;
@@ -96,10 +97,10 @@
     width: 182x;
   }
   .containerText {
-    height: 60px;
+    height: 64px;
   }
   .title {
-    font-size: 13px;
+    font-size: 12px;
   }
   .price {
     font-size: 13px;

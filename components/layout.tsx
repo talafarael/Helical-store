@@ -1,7 +1,10 @@
 import localFont from "next/font/local";
 import "../app/globals.scss";
-
+import "./layout.scss";
 import Header from "./Header/header";
+
+import Menu from "./Menu/menu";
+import { useState } from "react";
 
 // const metadata: Metadata = {
 //   title: "Create Next App",
@@ -17,7 +20,7 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-const geistSemiBold= localFont({
+const geistSemiBold = localFont({
   src: "../app/fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf",
   variable: "--font-semi-bold",
   weight: "100 900",
@@ -27,11 +30,25 @@ const geistMontserrat = localFont({
   variable: "--font-montserrat",
   weight: "100 900",
 });
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({
+  children,
+  boolMenu,
+}: {
+  children: React.ReactNode;
+  boolMenu: boolean;
+}) {
+  const [activeMenu, setActiveMenu] = useState<boolean>(false);
+
+  
   return (
-    <div className={` conatiner ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable}`}>
-      <Header />
-      {children}
+    <div
+      className={` conatiner ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable}`}
+    >
+      <Header activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
+      <div className="body">
+        {boolMenu ? <Menu activeMenu={activeMenu} /> : null}
+        {children}
+      </div>
     </div>
   );
 }

@@ -1,30 +1,36 @@
-.containerMain {
-  width: 90%;
+.containerCard {
+  height: auto; /* Динамическая высота в зависимости от содержимого */
+  width: 100%;
   display: flex;
-  flex-wrap: wrap; /* Позволяет карточкам переноситься на следующую строку */
-  justify-content: center; /* Центрирование карточек по горизонтали */
-  align-items: start; /* Выравнивание карточек по вертикали (если нужно, можно использовать center) */
-  gap: 16px; /* Расстояние между карточками */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start; /* Изменено на flex-start для выравнивания элементов по верху */
+  gap: 16px; 
   margin-top: 20px;
+}
+.containerMain {
+  display: flex;
 }
 
 .card {
+ 
   flex: 1 1 calc(20% - 16px); /* Пример для 5 карточек по горизонтали с учетом gap */
+ 
   /* Дополнительные стили для карточек */
 }
 
 @media (max-width: 1600px) {
-  .containerMain {
-    width: 90%;
+  .containerCard {
+    width: 100%;
   }
 }
 @media (max-width: 1600px) {
-  .containerMain {
+  .containerCard {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 @media (max-width: 1200px) {
-  .containerMain {
+  .containerCard {
     width: 95%;
   }
 }
@@ -32,7 +38,7 @@
 }
 
 @media (max-width: 650px) {
-    .containerMain {
-        width: 100%;
-      }
+  .containerCard {
+    width: 100%;
+  }
 }

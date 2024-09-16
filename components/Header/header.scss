@@ -1,6 +1,6 @@
 .containerHead {
   background: #24203a;
-  height: 82px;
+  height: 10vh;
   display: flex;
   flex-direction: row;
   width: 100vw;
@@ -20,6 +20,19 @@
   height: 40px;
   width: auto;
 }
+@media (max-width: 1000px) {
+  .logo {
+    display: flex;
+    width: auto;
+    // justify-content: center;
+    align-items: center;
+  }
+  .menuPicture {
+    margin-left: 50px;
+    width: 40px;
+    height: 40px;
+  }
+}
 @media (max-width: 650px) {
   .img {
     // width: 300px;
@@ -34,5 +47,6 @@
   }
   .shopBin {
     margin-right: 10px;
-    height: 30px;}
+    height: 30px;
+  }
 }

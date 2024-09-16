@@ -4,7 +4,11 @@ import DeliverLi from "../DeliverLi/deliverLi";
 import Image from "next/image";
 import "./deliver.scss";
 import { IDeliver } from "@/type/newData";
-export default function Deliver({ deliver }: { deliver: IDeliver[] }) {
+export default function Deliver({
+  deliver,
+}: {
+  deliver: IDeliver[] | undefined;
+}) {
   console.log(deliver);
   return (
     <div className="deliverContainer">

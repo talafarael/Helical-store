@@ -5,8 +5,8 @@ export interface INewData {
   description: string;
   price: string;
   img: string[];
-  deliver: IDeliver[];
-  rating: number;
+  deliver?: IDeliver[];
+  rating?: number;
 }
 export interface IDeliver {
   deliver: string;
