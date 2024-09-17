@@ -1,11 +1,17 @@
 .button {
   width: 159px;
   height: 40px;
-  background: #00a367;
+  background: #202020;
   border: none;
   border-radius: 5px;
   color: white;
+  transition-duration: 2s;
+  transition-property: margin-right, color;
   font-size: 23px;
+}
+.button:hover {
+  background: #929191;
+  color: #202020;
 }
 @media (max-width: 650px) {
   .button {

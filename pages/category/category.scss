@@ -3,8 +3,8 @@
   width: 90%;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: auto;
 
+  grid-auto-rows: min-content;
   gap: 16px;
   margin-top: 20px;
 }
@@ -13,8 +13,10 @@
 
   /* Дополнительные стили для карточек */
 }
-.categoryContainerCardMain{
-    display: flex;
-   justify-content: center;
-    width: 100%;
+.categoryContainerCardMain {
+  display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }

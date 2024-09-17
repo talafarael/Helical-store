@@ -1,3 +1,4 @@
+"use client";
 import { ICategory } from "@/type/ICategory";
 import React, { useEffect, useState } from "react";
 import "./menu.scss";
@@ -5,10 +6,12 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/utils/firebase";
 import { useResize } from "@/utils/screenSize";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Menu({ activeMenu }: { activeMenu: boolean }) {
   const [categories, setCategories] = useState<ICategory[]>([]);
-  // const [l\, setLoading] = useState<boolean>(true);
+  const router = useRouter();
+  const { id } = router.query;
   const { width } = useResize();
   useEffect(() => {
     const fetchCategories = async () => {
@@ -37,13 +40,13 @@ export default function Menu({ activeMenu }: { activeMenu: boolean }) {
             {categories?.map((elem: ICategory) => (
               <Link
                 href={`/category/${elem.category}`}
-                className="categoryDiv"
+                className={id==elem.category?`activeCategoryDiv categoryDiv`:`categoryDiv`}
                 key={elem.id}
               >
                 {elem.category}
               </Link>
             ))}
-          </div>{" "}
+          </div>
         </div>
       ) : null}
     </>

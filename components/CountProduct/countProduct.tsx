@@ -1,3 +1,4 @@
+"use client";
 import React, { useContext } from "react";
 import "./countProduct.scss";
 import { CountContext } from "@/utils/hooks/context";

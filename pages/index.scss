@@ -1,24 +1,27 @@
 .containerCard {
-  height: auto; /* Динамическая высота в зависимости от содержимого */
+  height: auto;
   width: 80%;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: auto; /* Изменено на flex-start для выравнивания элементов по верху */
-  gap: 16px;
-  margin-top: 20px;
+
+  grid-auto-rows: min-content;
+  margin-top: 30px;
+  grid-gap: 15px;
 }
 .containerMain {
   display: flex;
   width: 100%;
+
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
-
-.card {
-  /* Пример для 5 карточек по горизонтали с учетом gap */
-
-  /* Дополнительные стили для карточек */
+.titlePage {
+  width: 90%;
+  text-align: start;
+  font-family: var(--font-semi-bold);
+  margin-top: 30px;
 }
-
 @media (max-width: 1600px) {
   .containerCard {
     width: 90%;
@@ -34,7 +37,7 @@
 }
 @media (max-width: 1300px) {
   .containerCard {
-    width: 95%;
+    width: auto;
   }
 }
 @media (max-width: 1150px) {
@@ -42,19 +45,19 @@
 
 @media (max-width: 900px) {
   .containerCard {
-    width: 80%;
+    width: auto;
     grid-template-columns: 50% 50%;
   }
 }
 @media (max-width: 650px) {
   .containerCard {
     grid-template-columns: 30% 30% 30%;
-    width: 95%;
+    width: auto;
   }
 }
 @media (max-width: 550px) {
   .containerCard {
     grid-template-columns: 50% 50%;
-    width: 80%;
+    width: auto;
   }
 }

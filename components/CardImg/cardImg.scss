@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40vw;
+  width: 45vw;
 }
 
 .imgCard {
@@ -119,7 +119,17 @@
     height: 35vh;
   }
   .containerSlider {
+    height: auto;
     margin-top: 20px;
+  }
+  .containerImgSlider{
+    height: auto;
+  }
+  .imgContainer{
+    height: auto;
+  }
+  .containerProduct{
+    height: auto;
   }
 }
 @media (max-width: 450px) {

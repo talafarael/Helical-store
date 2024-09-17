@@ -27,9 +27,10 @@ export default function Category() {
       setIsMounted(false);
     };
   }, [id]);
-  console.log(newData);
+
   return (
     <div className="categoryContainerCardMain">
+      <h1 className="titlePage">{id}</h1>
       <div className="categoryContainerCard">
         {newData?.map((elem) => (
           <Card key={elem.id} data={elem} />

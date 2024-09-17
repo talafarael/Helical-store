@@ -11,17 +11,21 @@
   overflow: hidden;
 }
 .categoryDiv:hover {
-  border-bottom: solid #00a367 2px;
-  color: #00a367;
+  border-bottom: solid #a7a7a7 2px;
+  color: #a7a7a7;
 }
 .body {
   display: flex;
 }
 .categoryContainer {
-  border-right: solid #00a367 2px;
+  border-right: solid #a7a7a7 2px;
   // margin-right: 30px;
   margin-top: 30px;
-  width: 65%;
+  width: 70%;
   box-sizing: border-box;
   font-family: var(--font-semi-bold);
+}
+.activeCategoryDiv{
+  border-bottom: solid #a7a7a7 2px;
+  color: #a7a7a7;
 }

@@ -1,19 +1,41 @@
 .containerHead {
-  background: #24203a;
+  
+  // background: linear-gradient(to right, #868f96 0%, #596164 100%);
   height: 10vh;
+  background: linear-gradient(
+    177.9deg,
+    rgb(58, 62, 88) 3.6%,
+    rgb(119, 127, 148) 105.8%
+  );
   display: flex;
-  flex-direction: row;
+
+  background: linear-gradient(to top, #86888a 0%, #929191 72%, #a3a3a3 100%); 
+  // backdrop-filter: blur(20px) saturate(120%) contrast(200%);
   width: 100vw;
   justify-content: space-between;
   align-items: center;
   //   justify-content: center;
   //   align-items: center;
 }
+.HelicalTitle {
+  color: white;
+  margin: 40px;
+  font-family: var(--font-montserrat);
+}
+.logo {
+  display: flex;
+  width: auto;
+  // justify-content: center;
+  align-items: center;
+}
+.gifHeader {
+  height: 40px;
+  width: 40px;
+}
 .img {
   // width: 300px;
   width: auto;
   height: 82px;
-  margin-left: 50px;
 }
 .shopBin {
   margin-right: 100px;
@@ -21,12 +43,6 @@
   width: auto;
 }
 @media (max-width: 1000px) {
-  .logo {
-    display: flex;
-    width: auto;
-    // justify-content: center;
-    align-items: center;
-  }
   .menuPicture {
     margin-left: 50px;
     width: 40px;
@@ -34,6 +50,9 @@
   }
 }
 @media (max-width: 650px) {
+  .HelicalTitle {
+   font-size: 18px;
+  }
   .img {
     // width: 300px;
     width: auto;

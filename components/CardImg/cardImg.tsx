@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef, useState } from "react";
 import Slider, { Settings } from "react-slick";
 import Image from "next/image";

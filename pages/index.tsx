@@ -13,6 +13,7 @@ interface INewData {
 export default function main({ newData }: { newData: INewData[] }) {
   return (
     <div className="containerMain">
+      <h1 className="titlePage">Home</h1>
       <div className="containerCard">
         {newData.map((element) => (
           <Card key={element.id} data={element} />

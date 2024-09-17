@@ -5,16 +5,28 @@
 }
 .buttonRight {
   width: 40px;
-  background: #00a367;
+  background: #202020;
   border: 0px;
   color: white;
   font-size: 30px;
   border-top-right-radius: 5px;
+  transition-duration: 2s;
+  transition-property: margin-right, color;
   border-bottom-right-radius: 5px;
 }
+.buttonRight:hover {
+  background: #929191;
+  color: #202020;
+}
+.buttonLeft:hover {
+  background: #929191;
+  color: #202020;
+}
 .buttonLeft {
+  transition-duration: 2s;
+  transition-property: margin-right, color;
   width: 40px;
-  background: #00a367;
+  background: #202020;
   border: 0px;
   color: white;
   font-size: 30px;
@@ -23,8 +35,12 @@
 }
 .countText {
   display: flex;
+  text-align: center;
+  height: auto;
   justify-content: center;
-  border: solid #00a367 1px;
+  align-items: center;
+  border: solid #a7a7a7 1px;
+  font-size: 20px;
   width: 60px;
 }
 @media (max-width: 650px) {

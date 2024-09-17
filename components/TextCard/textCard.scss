@@ -1,6 +1,6 @@
 .textContainer {
   display: flex;
-  height: 65vh;
+  height: 70vh;
   flex-direction: column;
   justify-content: start;
 }
@@ -8,13 +8,13 @@
   // font-weight: bold;s
   font-size: 36px;
   height: auto;
-
+  margin-bottom: 15px;
   word-wrap: break-word;
   //  font-family: "SemiBold";
   font-family: var(--font-semi-bold);
 }
 .textCard {
-  margin-top: 13px;
+  margin-top: 11px;
   font-weight: 500;
   font-family: var(--font-montserrat);
   font-size: 17.5px;
@@ -23,13 +23,13 @@
   display: flex;
   align-content: start;
   flex-wrap: wrap;
-  margin-top: 13px;
+  margin-top: 11px;
 }
 .line {
-  margin-top: 10px;
+  margin-top: 7px;
   width: 400px;
   height: 2px;
-  background: #00a367;
+  background: #a7a7a7;
 }
 .buttonContainer {
   margin-top: 15px;
@@ -78,9 +78,7 @@
 
 @media (max-width: 900px) {
   .textContainer {
-  
     height: 65vh;
-
   }
   .buttonContainer {
     width: 90%;

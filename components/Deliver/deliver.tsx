@@ -9,7 +9,7 @@ export default function Deliver({
 }: {
   deliver: IDeliver[] | undefined;
 }) {
-  console.log(deliver);
+  
   return (
     <div className="deliverContainer">
       <div className="deliverTitle">

@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import logo from "../../public/5400135709693698152-removebg-preview.png";
+// import logo from "../../public/giphy.webp"
 import shop from "../../public/shopping-cart.png";
 import "./header.scss";
 import Image from "next/image";
@@ -22,15 +23,18 @@ export default function Header({
   return (
     <div className="containerHead">
       <div className="logo">
-        {width && width < 1000 && boolMenu ? (
+        {width && width < 1000 && boolMenu && (
           <Image
             onClick={handlerStateMenu}
             className="menuPicture"
             src={menuLog}
             alt=""
           />
-        ) : null}
-        <Image className="img" src={logo} alt="" />
+        ) }
+
+        {/* <Image src={logo} */}
+        {/* alt="" className="gifHeader"></Image> */}
+        <h1 className="HelicalTitle">Helical-store</h1>
       </div>
       <Link href="/order">
         <Image className="shopBin" src={shop} alt="" />
