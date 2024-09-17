@@ -1,7 +1,7 @@
 .menuContainer {
   display: flex;
   justify-content: flex-end;
-
+height: 80vh;
   width: 20%;
 }
 .body{
@@ -14,10 +14,13 @@
 }
 @media (max-width: 1300px) {
   .menuContainer {
-    width: 35%;
+    width: 30%;
   }
 }
 @media (max-width: 1100px) {
+  .menuContainer {
+    width: 25%;
+  }
 }
 @media (max-width: 1000px) {
   .menuContainer {

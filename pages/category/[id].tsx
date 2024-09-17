@@ -29,10 +29,12 @@ export default function Category() {
   }, [id]);
   console.log(newData);
   return (
-    <div className="categoryContainerCard">
-      {newData?.map((elem) => (
-        <Card key={elem.id} data={elem} />
-      ))}
+    <div className="categoryContainerCardMain">
+      <div className="categoryContainerCard">
+        {newData?.map((elem) => (
+          <Card key={elem.id} data={elem} />
+        ))}
+      </div>
     </div>
   );
 }
