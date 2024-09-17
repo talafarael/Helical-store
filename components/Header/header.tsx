@@ -9,19 +9,20 @@ import menuLog from "../../public/menu.png";
 export default function Header({
   setActiveMenu,
   activeMenu,
+  boolMenu,
 }: {
   setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
   activeMenu: boolean;
+  boolMenu: boolean;
 }) {
   const { width } = useResize();
   const handlerStateMenu = () => {
-   
     setActiveMenu(!activeMenu);
   };
   return (
     <div className="containerHead">
       <div className="logo">
-        {width && width < 1000 ? (
+        {width && width < 1000 && boolMenu ? (
           <Image
             onClick={handlerStateMenu}
             className="menuPicture"

@@ -44,7 +44,7 @@ export default function Layout({
     <div
       className={` conatiner ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable}`}
     >
-      <Header activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
+      <Header  boolMenu={boolMenu} activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       <div className="body">
         {boolMenu ? <Menu activeMenu={activeMenu} /> : null}
         {children}
