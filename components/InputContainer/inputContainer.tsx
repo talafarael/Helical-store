@@ -1,27 +1,28 @@
 "use client";
-import React from "react";
-// import { SubmitHandler, useForm } from "react-hook-form";
-// type Inputs = {
-//   example: string;
-//   Number: number;
-// };
+import React, { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+type Inputs = {
+  Name: string;
+  Number: number;
+  Deliver:string;
+};
 export default function InputContainer() {
-  //   const {
-  //     register,
-  //     handleSubmit,
+    const {
+      register,
+      handleSubmit,
 
-  //     formState: { errors },
-  //   } = useForm<Inputs>();
-  //   const [Number, setNumber] = useState<IUseState>("");
-  //   const onSubmit
-  //   : SubmitHandler<Inputs>
-  //    = (
-  //     // data
-  // ) =>
-  //  console.log(data);
+      formState: { errors },
+    } = useForm<Inputs>();
+    const [Number, setNumber] = useState<number>(0);
+    const [Deliver, setDeliver] = useState<string>('');
+    const [Name, setName] = useState<string>('');
+    const onSubmit: SubmitHandler<Inputs>= (data) =>{
+console.log(data)
+    }
+  
   return (
     <div>
-      {/* <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         
         <input defaultValue="test" {...register("example")} />
         <input {...register("exampleRequired", { required: true })} />
@@ -35,12 +36,12 @@ export default function InputContainer() {
           })}
           type="tel"
             value={Number}
-             placeholder={props.number_placeholder}
-             onChange={input_number}
+            //  placeholder={props.number_placeholder}
+            //  onChange={input_number}
           className="input_number"
         />
         <button type="submit" />
-      </form> */}
+      </form>
     </div>
   );
 }
