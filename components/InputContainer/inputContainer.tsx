@@ -1,32 +1,50 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import "./inputContainer.scss";
+import Button from "../Button/button";
+
 type Inputs = {
   Name: string;
   Number: number;
-  Deliver:string;
+  Deliver: string;
 };
 export default function InputContainer() {
-    const {
-      register,
-      handleSubmit,
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<Inputs>();
 
-      formState: { errors },
-    } = useForm<Inputs>();
-    const [Number, setNumber] = useState<number>(0);
-    const [Deliver, setDeliver] = useState<string>('');
-    const [Name, setName] = useState<string>('');
-    const onSubmit: SubmitHandler<Inputs>= (data) =>{
-console.log(data)
-    }
-  
+  // const [Name, setName] = useState<string>("");
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data);
+    reset();
+  };
+
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        
-        <input defaultValue="test" {...register("example")} />
-        <input {...register("exampleRequired", { required: true })} />
+    <div className="inputContainerForm">
+      <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <input
+          {...register("Name", {
+            required: "заповніть поле",
+            minLength: {
+              value: 5,
+              message: "Будь ласка, введіть імя",
+            },
+          })}
+          type="text"
+          className="input"
+          placeholder={"name"}
+        />
+        <div className="error">
+          {errors?.Name && typeof errors.Name.message === "string" && (
+            <p className="textError">{errors.Name.message}</p>
+          )}
+        </div>
+        <input
+          className="input "
           {...register("Number", {
             required: "заповніть поле",
             pattern: {
@@ -35,12 +53,20 @@ console.log(data)
             },
           })}
           type="tel"
-            value={Number}
-            //  placeholder={props.number_placeholder}
-            //  onChange={input_number}
-          className="input_number"
-        />
-        <button type="submit" />
+          placeholder={"number"}
+        />{" "}
+        <div className="error">
+          {errors?.Number &&
+            !errors?.Name &&
+            typeof errors.Number.message === "string" && (
+              <p className="textError">{errors.Number.message}</p>
+            )}
+        </div>
+        <select className="input radioInput" {...register("Deliver", { required: true })}>
+          <option value="нова почта">нова почта</option>
+          <option value="укр почка">укр почка</option>
+        </select>
+        <Button func={() => {}} text="купить"></Button>
       </form>
     </div>
   );
