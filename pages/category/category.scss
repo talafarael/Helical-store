@@ -20,3 +20,16 @@
   align-items: center;
   width: 100%;
 }
+.titlePageCategory{
+ margin-top: 30px;
+  width: 90%;
+  text-align: start;
+  font-family: var(--font-semi-bold);
+}
+@media (max-width: 1300px) {
+  
+  .titlePageCategory {
+    margin-top: 20px;
+  }
+  
+}

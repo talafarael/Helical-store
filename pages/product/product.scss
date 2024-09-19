@@ -6,10 +6,12 @@
   justify-content: center;
 }
 .imgContainer {
-  width: 55vw;
+  width: 45vw;
+  
 }
 .informationContainer {
-  width: 35vw;
+  height: auto;
+  width: 40vw;
 }
 @media (max-width: 1200px) {
   .informationContainer {
@@ -26,6 +28,9 @@
   .informationContainer {
     width: 50vw;
   }
+  .containerProduct {
+
+    height: 90vh;}
 }
 @media (max-width: 900px) {
   .imgContainer {

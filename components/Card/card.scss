@@ -57,7 +57,8 @@
   overflow: hidden;
   font-size: 14px;
   margin-top: 5px;
-  height: 45px;}
+  height: 45px;
+}
 .price {
   font-family: var(--font-semi-bold);
   display: flex;
@@ -81,8 +82,9 @@
     height: 70px;
   }
   .title {
+    white-space: nowrap; 
     height: 20px;
-    font-size: 12px;
+    font-size: 14px;
   }
   .price {
     font-size: 15px;
@@ -101,10 +103,14 @@
     width: 182x;
   }
   .containerText {
+    padding-left: 8px;
     height: 64px;
   }
   .title {
-    font-size: 11px;
+    width: 95%;
+     overflow: hidden;
+  height: 20px;
+    font-size: 10px;
   }
   .price {
     font-size: 13px;

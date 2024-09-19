@@ -85,6 +85,7 @@
     width: 100%;
     height: 40vh;
   }
+  
 }
 @media (max-width: 900px) {
   .containerSlider {
@@ -105,6 +106,14 @@
 @media (max-width: 650px) {
   .thumb-wrapper {
     width: auto;
+  }
+  .containerSlider{
+    height: auto;
+    width: 70%;
+  }
+  .imgCard {
+    width: 100%;
+    height: auto;
   }
   .thumb-wrapper > div {
     width: 55px;
@@ -129,6 +138,16 @@
     height: auto;
   }
   .containerProduct{
+    height: auto;
+  }
+  .thumb-wrapper {
+    width: auto;
+  }
+  .thumb-wrapper {
+    width: auto;
+  }
+  .imgCard {
+    width: 100%;
     height: auto;
   }
 }
