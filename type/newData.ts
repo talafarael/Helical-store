@@ -21,4 +21,5 @@ export interface IDefaultData {
   img: string[];
   deliver?: string;
   rating?: number;
+  count:number
 }

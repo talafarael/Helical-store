@@ -1,4 +1,3 @@
-
 import { useRouter } from "next/router";
 
 import { useState, useEffect } from "react";
@@ -26,11 +25,13 @@ export default function Main() {
   console.log(newData);
   return (
     <div className="containerProduct">
-      <div className="imgContainer">
-        {newData ? <CardImg img={newData.img} /> : null}
-      </div>
-      <div className="informationContainer">
-        <TextCard newData={newData} />
+      <div className="conainerForProduct">
+        <div className="imgContainer">
+          {newData ? <CardImg img={newData.img} /> : null}
+        </div>
+        <div className="informationContainer">
+          <TextCard newData={newData} />
+        </div>
       </div>
     </div>
   );

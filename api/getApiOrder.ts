@@ -2,23 +2,37 @@ import { IDefaultData } from "@/type/newData";
 import { db } from "@/utils/firebase";
 import { doc, getDoc } from "firebase/firestore";
 
-export const getOrder=async()=>{ try {
-    const localOrder:string|null=localStorage.getItem("order")
+export const getOrder = async () => {
+  try {
+    const localOrder: string | null = localStorage.getItem("order");
     const order = localOrder ? JSON.parse(localOrder) : [];
-    if (!order)
-       return [];
-    console.log(order)  
+    if (!order.length) return [];
+
+    console.log(order);
+
     const results = await Promise.all(
-      order.map(async (element: { id: string,count:number }) => {
+      order.map(async (element: { id: string; count: number }) => {
         const docRef = doc(db, "id", element.id);
         const docSnap = await getDoc(docRef);
-       const arr={ ...docSnap.data(),c} as IDefaultData;
-       console.log(arr)
+
+        if (docSnap.exists()) {
+          const arr = {
+            ...docSnap.data(),
+            count: element.count,
+            id: element.id,
+          } as IDefaultData;
+          console.log(arr);
+          return arr;
+        } else {
+          console.error(`Document with ID ${element.id} not found.`);
+          return null;
+        }
       })
     );
-   return results;
+
+    return results.filter((result) => result !== null); // Filter out any null results
   } catch (error) {
     console.error("Error fetching documents: ", error);
     return [];
-  } 
-}
+  }
+};

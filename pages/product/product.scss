@@ -7,11 +7,15 @@
 }
 .imgContainer {
   width: 45vw;
-  
+  height: auto;
 }
 .informationContainer {
   height: auto;
   width: 40vw;
+}
+.conainerForProduct{
+  height: auto;
+  display: flex;
 }
 @media (max-width: 1200px) {
   .informationContainer {

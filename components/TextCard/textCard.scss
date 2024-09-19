@@ -64,7 +64,7 @@
 @media (max-width: 1000px) {
   
   .textCard {
-    height: auto;
+
     font-size: 15px;
   }
   .priceCard {
@@ -84,13 +84,13 @@
   .nameCard {
     font-size: 20px;
   }
-  .textContainer {
-    height: 75vh;
-  }
+  
   .buttonContainer {
     width: 90%;
   }
-
+.informationContainer{
+  height: auto;
+}
   .textCard {
     height: auto;
     font-size: 12px;

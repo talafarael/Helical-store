@@ -15,7 +15,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 45vw;
+  
+  width: 90%;
 }
 
 .imgCard {
@@ -85,11 +86,10 @@
     width: 100%;
     height: 40vh;
   }
-  
 }
 @media (max-width: 900px) {
   .containerSlider {
-    margin-top: -100px;
+
   }
   .thumb-wrapper {
     margin-top: 10px;
@@ -107,10 +107,11 @@
   .thumb-wrapper {
     width: auto;
   }
-  .containerSlider{
+  .containerSlider {
     height: auto;
     width: 70%;
   }
+ 
   .imgCard {
     width: 100%;
     height: auto;
@@ -131,23 +132,13 @@
     height: auto;
     margin-top: 20px;
   }
-  .containerImgSlider{
+  .containerImgSlider {
     height: auto;
   }
-  .imgContainer{
+  .imgContainer {
     height: auto;
   }
-  .containerProduct{
-    height: auto;
-  }
-  .thumb-wrapper {
-    width: auto;
-  }
-  .thumb-wrapper {
-    width: auto;
-  }
-  .imgCard {
-    width: 100%;
+  .containerProduct {
     height: auto;
   }
 }

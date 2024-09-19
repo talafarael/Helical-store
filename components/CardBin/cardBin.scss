@@ -1,0 +1,40 @@
+.cardBinBody {
+  width: 95%;
+  height: 110px;
+  display: flex;
+
+ 
+}
+.conatinerCardBin{
+    background: rgba( 	167, 167, 167,0.2);
+    margin-top: 20px;
+    height: 160px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+   flex-direction: column;
+}
+.imgCardBin {
+  height: auto;
+}
+.cardBinTitle{
+    width: 80%;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 15px;
+    overflow: hidden;
+}
+.containerBinImg{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.cutCardBin{
+    height: 40px;
+    width: 40px;
+}
+.containerButtonBin{
+    width: 95%;
+    display: flex;
+    justify-content:end ;
+}
