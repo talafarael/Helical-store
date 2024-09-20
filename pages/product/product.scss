@@ -45,7 +45,8 @@
   }
 }
 @media (max-width: 650px) {
-  .containerProduct {
+  .conainerForProduct {
+    align-items: center;
     display: flex;
     flex-direction: column;
   }

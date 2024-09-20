@@ -17,13 +17,14 @@ export default function CardBin({ data }: { data: IDefaultData }) {
         if (data == element.id) {
           return {
             ...element,
-            count: element.count ++,
+            count: ++element.count ,
           };
         }
         return element;
       });
-
+ 
       order.setOrder(updatedOrder); 
+      
       localStorage.setItem("order", JSON.stringify(updatedOrder));
     }
   };

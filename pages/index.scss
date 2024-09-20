@@ -8,13 +8,13 @@
   grid-gap: 15px;
 }
 .containerMain {
-  
+ height: auto; 
   margin: 0px;
   display: flex;
   width: 100%;
   height: auto;
   flex-direction: column;
-  justify-content: center;
+  
   align-items: center;
 }
 .titlePage {
@@ -38,7 +38,7 @@
   }
 }
 @media (max-width: 1300px) {
-  
+
   .titlePage {
     margin-top: 20px;
   }
