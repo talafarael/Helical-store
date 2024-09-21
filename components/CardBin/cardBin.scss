@@ -1,50 +1,89 @@
 .cardBinBody {
-
   width: 95%;
   height: 110px;
   display: flex;
-
- 
 }
-.conatinerCardBin{
-    background: rgba( 	167, 167, 167,0.2);
-    margin-top: 20px;
-    height: 160px;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   flex-direction: column;
+.conatinerCardBin {
+  background: rgba(167, 167, 167, 0.2);
+  margin-top: 20px;
+  height: 160px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .imgCardBin {
   height: auto;
 }
-.cardBinTitle{
-    width: 80%;
-    font-size: 20px;
-    margin-top: 20px;
-    margin-left: 15px;
-    overflow: hidden;
+.cardBinTitle {
+  width: 80%;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 15px;
+  overflow: hidden;
 }
-.containerBinImg{
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    height: 100%;
+.containerBinImg {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
-.cutCardBin{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 40px;
+.cutCardBin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
 }
-.containerButtonBin{
-    width: 90%;
-    display: flex;
-    justify-content:end ;
+.containerButtonBin {
+  width: 90%;
+  display: flex;
+  justify-content: end;
 }
-.closeImg{
-    height: 40px;
-    width: 40px;
+.closeImg {
+  height: 40px;
+  width: 40px;
+}
+@media (max-width: 1400px) {
+  .cardBinTitle {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1200px) {
+  .cardBinTitle {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1000px) {
+  .closeImg {
+    height: 30px;
+    width: 30px;
+  }
+  .cardBinTitle {
+    font-size: 13px;
+  }
+}
+@media (max-width: 650px) {
+  .cardBinTitle {
+    font-size: 11px;
+  }
+  .closeImg {
+    height: 30px;
+    width: 30px;
+  }
+  .cutCardBin {
+    height: 30px;
+    width: 30px;
+  }
+  .cardBinTitle {
+    width: 60%;
+  }
+  .cardBinBody {
+    width: 95%;
+    height: 90px;
+  }
+  .conatinerCardBin {
+    height: 130px;
+  }
 }

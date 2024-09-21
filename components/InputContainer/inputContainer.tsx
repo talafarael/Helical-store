@@ -23,13 +23,17 @@ export default function InputContainer() {
   } = useForm<Inputs>();
   const [deliver, setDeliver] = useState<string | undefined>();
   const [adress, setAdress] = useState<IAdress[] | undefined>();
+  const [stateAdress, setStateAdress] = useState<boolean>(true);
+  const [constAdress, setConstAdress] = useState<IAdress | undefined>();
+  const [typeDeliver, setTypeDeliver] = useState<string>("нова почта");
   useEffect(() => {
     const handler = setTimeout(async () => {
       console.log(typeof deliver);
-      if (typeof deliver === "string") {
+      if (typeof deliver === "string" && typeDeliver === "нова почта") {
         const wordPart = deliver.match(/[а-яА-ЯіїєґІЇЄҐ]+/g)?.join("") || "";
         const numberPart = parseInt(deliver.match(/\d+/g)?.join("") || "0", 10);
-
+        setStateAdress(true);
+        setConstAdress(undefined);
         await fetch("https://api.novaposhta.ua/v2.0/json/", {
           method: "POST",
           headers: {
@@ -65,8 +69,18 @@ export default function InputContainer() {
       clearTimeout(handler);
     };
   }, [deliver]);
-  const handlerSetAdress = (data: string) => {
+  const handlerSetAdress = (data: string, newAdress: IAdress) => {
     setDeliver(data);
+    setConstAdress(newAdress);
+    setStateAdress(false);
+  };
+  const handlerClear = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setTypeDeliver(event.target.value);
+    console.log(event.target.value);
+    setDeliver("");
+    setStateAdress(true);
+    setAdress(undefined);
+    setConstAdress(undefined);
   };
   // const [Name, setName] = useState<string>("");
   const onSubmit: SubmitHandler<Inputs> = (data) => {
@@ -87,7 +101,7 @@ export default function InputContainer() {
           })}
           type="text"
           className="input"
-          placeholder={"name"}
+          placeholder={"ПІБ"}
         />
         <div className="error">
           {errors?.Name && typeof errors.Name.message === "string" && (
@@ -104,8 +118,8 @@ export default function InputContainer() {
             },
           })}
           type="tel"
-          placeholder={"number"}
-        />{" "}
+          placeholder={"номер телефону"}
+        />
         <div className="error">
           {errors?.Number &&
             !errors?.Name &&
@@ -115,24 +129,39 @@ export default function InputContainer() {
         </div>
         <select
           className="input radioInput"
-          {...register("Deliver", { required: true })}
+          {...register("Deliver", {
+            required: true,
+            onChange: (event) => handlerClear(event),
+          })}
         >
           <option value="нова почта">нова почта</option>
           <option value="укр почка">укр почка</option>
         </select>
-        <div>
+        <div className="inputDiv">
           <input
-            className="input "
+            className="input"
             type="text"
+            placeholder="місто номер "
+            value={deliver}
+            onKeyPress={(event) => {
+              if (event.key === "Enter" && adress?.length == 1) {
+                handlerSetAdress(
+                  `${adress[0].SettlementDescription} ${adress[0].Number}`,
+                  adress[0]
+                );
+              }
+            }}
             onChange={(e) => setDeliver(e.target.value)}
           />
           <div className="adressContainer">
             {adress &&
+              stateAdress &&
               adress.map((elem, index) => (
                 <p
                   onClick={() =>
                     handlerSetAdress(
-                      `${elem.SettlementDescription} ${elem.Number}`
+                      `${elem.SettlementDescription} ${elem.Number}`,
+                      elem
                     )
                   }
                   className="liAdress"
@@ -141,6 +170,7 @@ export default function InputContainer() {
                   {elem.Description}
                 </p>
               ))}
+            {constAdress?.Description}
           </div>
         </div>
         <Button func={() => {}} text="купить"></Button>

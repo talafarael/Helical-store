@@ -44,10 +44,20 @@
   width: 60px;
 }
 @media (max-width: 650px) {
+  .countContainer {
+    height: 30px;
+  }
+  .countText {
+    
+    width: 30px;
+    font-size: 16px;
+  }
   .buttonRight {
-    width: 60px;
+    width: 35px;
+    font-size: 18px;
   }
   .buttonLeft {
-    width: 60px;
+    width: 35px;
+    font-size: 18px;
   }
 }
