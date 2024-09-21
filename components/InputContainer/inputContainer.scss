@@ -21,21 +21,32 @@
   border-radius: 5px;
   border: none;
   height: 45px;
- 
+
   -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.4);
 }
-.error{
+.error {
   height: 30px;
 }
-.radioInput{
+.radioInput {
   margin-bottom: 40px;
 }
-.adressContainer{
-
-  height: 60px;
+.adressContainer {
+  height: 80px;
   width: 350px;
-  overflow:hidden ;
-
+  overflow: hidden;
+  display: block;
+  flex-direction: column;
+}
+.liAdress {
+  white-space: nowrap;
+  height: 20px;
+  width: 100%;
+  background: white;
+  display: inline-block;
+  height: 20px;
+  height: auto;
+  font-size: 15px;
+  cursor: pointer;
 }

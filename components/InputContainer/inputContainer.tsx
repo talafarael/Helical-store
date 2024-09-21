@@ -10,7 +10,9 @@ type Inputs = {
   Deliver: string;
 };
 interface IAdress {
+  Number: string;
   Description: string;
+  SettlementDescription: string;
 }
 export default function InputContainer() {
   const {
@@ -19,38 +21,53 @@ export default function InputContainer() {
     reset,
     formState: { errors },
   } = useForm<Inputs>();
-  const [deliver, setDeliver] = useState<number | undefined>();
-  const [adress, setAdress] = useState<string[] | undefined>();
+  const [deliver, setDeliver] = useState<string | undefined>();
+  const [adress, setAdress] = useState<IAdress[] | undefined>();
   useEffect(() => {
     const handler = setTimeout(async () => {
-      await fetch("https://api.novaposhta.ua/v2.0/json/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify({
-          apiKey: "0aab254867b1b4b8aea5abf2ebce14d9",
-          modelName: "AddressGeneral",
-          calledMethod: "getWarehouses",
-          methodProperties: {
-            WarehouseId: `${deliver}`,
-            Limit: "3",
+      console.log(typeof deliver);
+      if (typeof deliver === "string") {
+        const wordPart = deliver.match(/[а-яА-ЯіїєґІЇЄҐ]+/g)?.join("") || "";
+        const numberPart = parseInt(deliver.match(/\d+/g)?.join("") || "0", 10);
+
+        await fetch("https://api.novaposhta.ua/v2.0/json/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
           },
-        }),
-      })
-        .then((data) => data.json())
-        .then((res) => {
-          console.log(res.data);
-          const arr = res.data.map((elem: IAdress) => elem.Description);
-          setAdress(arr);
-        });
+          body: JSON.stringify({
+            apiKey: "0aab254867b1b4b8aea5abf2ebce14d9",
+            modelName: "AddressGeneral",
+            calledMethod: "getWarehouses",
+            methodProperties: {
+              CityName: `${wordPart}`,
+              WarehouseId: `${numberPart}`,
+              Limit: "3",
+            },
+          }),
+        })
+          .then((data) => data.json())
+          .then((res) => {
+            console.log(res.data);
+            const arr = res.data.map((elem: IAdress) => {
+              return {
+                Number: elem.Number,
+                Description: elem.Description,
+                SettlementDescription: elem.SettlementDescription,
+              };
+            });
+            setAdress(arr);
+          });
+      }
     }, 500);
 
     return () => {
       clearTimeout(handler);
     };
   }, [deliver]);
-
+  const handlerSetAdress = (data: string) => {
+    setDeliver(data);
+  };
   // const [Name, setName] = useState<string>("");
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
@@ -103,14 +120,27 @@ export default function InputContainer() {
           <option value="нова почта">нова почта</option>
           <option value="укр почка">укр почка</option>
         </select>
-        <div> 
+        <div>
           <input
             className="input "
             type="text"
-            onChange={(e) => setDeliver(+e.target.value)}
+            onChange={(e) => setDeliver(e.target.value)}
           />
           <div className="adressContainer">
-            {adress && adress.map((elem, index) => <p key={index}>{elem}</p>)}
+            {adress &&
+              adress.map((elem, index) => (
+                <p
+                  onClick={() =>
+                    handlerSetAdress(
+                      `${elem.SettlementDescription} ${elem.Number}`
+                    )
+                  }
+                  className="liAdress"
+                  key={index}
+                >
+                  {elem.Description}
+                </p>
+              ))}
           </div>
         </div>
         <Button func={() => {}} text="купить"></Button>
