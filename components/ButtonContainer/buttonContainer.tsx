@@ -3,7 +3,7 @@ import CountProduct from "../CountProduct/countProduct";
 import Button from "../Button/button";
 import { useRouter } from "next/router";
 export default function ButtonContainer() {
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState<number>(1);
 
   const router = useRouter();
   const { id } = router.query;
@@ -27,7 +27,7 @@ export default function ButtonContainer() {
     setCount(count + 1);
   };
   const handlerMinus = () => {
-    if ( count > 0) setCount((prevCount) => prevCount - 1);
+    if ( count > 1) setCount((prevCount) => prevCount - 1);
   };
 
   return (

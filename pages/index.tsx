@@ -11,7 +11,7 @@ interface INewData {
   img: string[];
 }
 export default function main({ newData }: { newData: INewData[] }) {
-
+console.log(process.env.customKey)
   return (
     <div className="containerMain">
       <h1 className="titlePage">Home</h1>
