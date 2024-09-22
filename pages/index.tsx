@@ -11,6 +11,7 @@ interface INewData {
   img: string[];
 }
 export default function main({ newData }: { newData: INewData[] }) {
+
   return (
     <div className="containerMain">
       <h1 className="titlePage">Home</h1>
