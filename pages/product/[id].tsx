@@ -27,7 +27,7 @@ export default function Main() {
     <div className="containerProduct">
       <div className="conainerForProduct">
         <div className="imgContainer">
-          {newData ? <CardImg img={newData.img} /> : null}
+          {newData ? <CardImg img={newData.img} /> : <h1>load</h1>}
         </div>
         <div className="informationContainer">
           <TextCard newData={newData} />

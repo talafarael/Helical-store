@@ -154,9 +154,8 @@ export default function InputContainer() {
             onChange={(e) => setDeliver(e.target.value)}
           />
           <div className="adressContainer">
-            {adress &&
-              stateAdress &&
-              adress.map((elem, index) => (
+            {stateAdress &&
+              adress?.map((elem, index) => (
                 <p
                   onClick={() =>
                     handlerSetAdress(

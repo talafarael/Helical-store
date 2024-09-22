@@ -5,7 +5,7 @@ import "./cardBin.scss";
 import Image from "next/image";
 import CountProduct from "../CountProduct/countProduct";
 import { OderContext } from "@/utils/hooks/context";
-import closeImg from "../../public/close-window.png"
+import closeImg from "../../public/close-window.png";
 export default function CardBin({ data }: { data: IDefaultData }) {
   const order = useContext(OderContext);
   const handlerAdd = (data: string | undefined) => {
@@ -64,7 +64,7 @@ export default function CardBin({ data }: { data: IDefaultData }) {
           <Image
             src={`/${data.imgMain}`}
             className="imgCardBin"
-            alt={``}
+            alt={`load`}
             width={100}
             height={100}
           />
