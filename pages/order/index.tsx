@@ -7,8 +7,11 @@ import { IDefaultData } from "@/type/newData";
 import { OderContext } from "@/utils/hooks/context";
 import CardBin from "@/components/CardBin/cardBin";
 import { useOrderHandlers } from "@/utils/contextOrder";
-
-const Order = () => {console.log(process.env.REACT_APP_FIREBASE_STORAGE_BUCKET)
+import Image from "next/image";
+import leftArrow from "@/public/left-arrow.png";
+import Link from "next/link";
+const Order = () => {
+  console.log(process.env.REACT_APP_FIREBASE_STORAGE_BUCKET);
   const [order, setOrder] = useState<IDefaultData[] | undefined>();
   useEffect(() => {
     getOrder().then((result) => {
@@ -24,6 +27,10 @@ const Order = () => {console.log(process.env.REACT_APP_FIREBASE_STORAGE_BUCKET)
       value={{ handlerDelete, order, setOrder, handlerAdd, handlerMinus }}
     >
       <div className="orderContainer">
+        <Link href={"/"} className="buttonBack">
+        
+          <Image src={leftArrow} alt={`load`} width={40} height={40}></Image>
+        </Link>
         <div className="inputContainerOrder">
           <InputContainer />
         </div>

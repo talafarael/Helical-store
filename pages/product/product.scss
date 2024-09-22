@@ -13,9 +13,17 @@
   height: auto;
   width: 40vw;
 }
-.conainerForProduct{
+.conainerForProduct {
   height: auto;
   display: flex;
+}
+.buttonBack {
+  height: 40px;
+  width: 40px;
+  // background: black;
+  position: absolute;
+  top: 13%;
+  left: 5%;
 }
 @media (max-width: 1200px) {
   .informationContainer {
@@ -26,6 +34,10 @@
   }
 }
 @media (max-width: 1000px) {
+  .buttonBack {
+    height: 30px;
+    width: 30px;
+  }
   .containerProduct {
     width: 100vw;
   }
@@ -33,10 +45,15 @@
     width: 50vw;
   }
   .containerProduct {
-
-    height: 90vh;}
+    height: 90vh;
+  }
 }
 @media (max-width: 900px) {
+  .buttonBack {
+   
+    height: 25px;
+    width: 25px;
+  }
   .imgContainer {
     width: 55vw;
   }
@@ -45,7 +62,13 @@
   }
 }
 @media (max-width: 650px) {
+  .buttonBack {
+    top: 9%;
+    height: 25px;
+    width: 25px;
+  }
   .conainerForProduct {
+    margin-top: 45px;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -53,9 +76,10 @@
   .imgContainer {
     width: 100vw;
   }
- 
+
   .informationContainer {
-   margin-top: 15px;
+
+    margin-top: 15px;
     width: 85vw;
   }
 }
