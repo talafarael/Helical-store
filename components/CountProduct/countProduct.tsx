@@ -1,28 +1,37 @@
 "use client";
-import React, { useContext } from "react";
+import React from "react";
 import "./countProduct.scss";
-import { CountContext } from "@/utils/hooks/context";
-export default function CountProduct() {
-  const count = useContext(CountContext);
-  const handlerAdd = () => {
-    if (count) count.setCount(++count.count);
-  };
-  const handlerMinus = () => {
-    if (count && count.count > 0) count.setCount((prevCount) => prevCount - 1);
-  };
+
+interface ICountProduct {
+  count: number;
+  handlerMinus: (data?: string) => void;
+  handlerAdd: (data?: string) => void;
+  id?: string;
+}
+export default function CountProduct({
+  count,
+  id,
+  handlerMinus,
+  handlerAdd,
+}: ICountProduct) {
+  
   return (
     <div className="countContainer">
-      {count ? (
-        <>
-          <button className="buttonLeft" onClick={handlerMinus}>
-            -
-          </button>
-          <h1 className="countText">{count.count}</h1>
-          <button className="buttonRight" onClick={handlerAdd}>
-            +
-          </button>
-        </>
-      ) : null}
+      <>
+        <button
+          className="buttonLeft"
+          onClick={() => (id ? handlerMinus(id) : handlerMinus())}
+        >
+          -
+        </button>
+        <h1 className="countText">{count}</h1>
+        <button
+          className="buttonRight"
+          onClick={() => (id ? handlerAdd(id) : handlerAdd())}
+        >
+          +
+        </button>
+      </>
     </div>
   );
 }

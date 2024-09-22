@@ -3,10 +3,25 @@
   width: 45%;
 }
 .cardContainerOrder {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   width: 55%;
 }
 .orderContainer {
   display: flex;
   height: 100%;
   width: 100%;
+}
+@media (max-width: 850px) {
+  .orderContainer {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  .inputContainerOrder {
+    width: 90%;
+  }
+  .cardContainerOrder {
+   
+    width: 95%;}
 }

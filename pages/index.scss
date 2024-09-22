@@ -3,24 +3,26 @@
   width: 80%;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-
   grid-auto-rows: min-content;
-  margin-top: 30px;
+  margin-top: 20px;
   grid-gap: 15px;
 }
 .containerMain {
+ height: auto; 
+  margin: 0px;
   display: flex;
   width: 100%;
-
+  height: auto;
   flex-direction: column;
-  justify-content: center;
+  
   align-items: center;
 }
 .titlePage {
+  margin-top: 40px;
   width: 90%;
   text-align: start;
   font-family: var(--font-semi-bold);
-  margin-top: 30px;
+ 
 }
 @media (max-width: 1600px) {
   .containerCard {
@@ -36,6 +38,10 @@
   }
 }
 @media (max-width: 1300px) {
+
+  .titlePage {
+    margin-top: 20px;
+  }
   .containerCard {
     width: auto;
   }

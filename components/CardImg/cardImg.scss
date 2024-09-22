@@ -15,7 +15,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 45vw;
+  
+  width: 90%;
 }
 
 .imgCard {
@@ -88,7 +89,7 @@
 }
 @media (max-width: 900px) {
   .containerSlider {
-    margin-top: -100px;
+
   }
   .thumb-wrapper {
     margin-top: 10px;
@@ -106,6 +107,15 @@
   .thumb-wrapper {
     width: auto;
   }
+  .containerSlider {
+    height: auto;
+    width: 70%;
+  }
+ 
+  .imgCard {
+    width: 100%;
+    height: auto;
+  }
   .thumb-wrapper > div {
     width: 55px;
     height: 55px;
@@ -122,13 +132,13 @@
     height: auto;
     margin-top: 20px;
   }
-  .containerImgSlider{
+  .containerImgSlider {
     height: auto;
   }
-  .imgContainer{
+  .imgContainer {
     height: auto;
   }
-  .containerProduct{
+  .containerProduct {
     height: auto;
   }
 }

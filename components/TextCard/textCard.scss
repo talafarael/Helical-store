@@ -1,12 +1,13 @@
 .textContainer {
   display: flex;
-  height: 70vh;
+  height: auto;
   flex-direction: column;
   justify-content: start;
 }
 .nameCard {
+  
   // font-weight: bold;s
-  font-size: 36px;
+  font-size: 32px;
   height: auto;
   margin-bottom: 15px;
   word-wrap: break-word;
@@ -28,7 +29,7 @@
 .line {
   margin-top: 7px;
   width: 400px;
-  height: 2px;
+  height: 1.5px;
   background: #a7a7a7;
 }
 .buttonContainer {
@@ -49,18 +50,21 @@
   .buttonContainer {
     width: 80%;
   }
-
+ .nameCard {
+  
+  margin-bottom: 10px;
+    font-size: 27px;
+   
+  }
   .textContainer {
     display: flex;
     height: auto;
   }
 }
 @media (max-width: 1000px) {
-  .nameCard {
-    font-size: 28px;
-  }
+  
   .textCard {
-    height: auto;
+
     font-size: 15px;
   }
   .priceCard {
@@ -76,19 +80,20 @@
   }
 }
 
-@media (max-width: 900px) {
-  .textContainer {
-    height: 65vh;
+@media (max-width: 1000px) {
+  .nameCard {
+    font-size: 20px;
   }
+  
   .buttonContainer {
     width: 90%;
   }
-  .nameCard {
-    font-size: 21px;
-  }
+.informationContainer{
+  height: auto;
+}
   .textCard {
     height: auto;
-    font-size: 13px;
+    font-size: 12px;
   }
   .priceCard {
     margin-top: 7px;

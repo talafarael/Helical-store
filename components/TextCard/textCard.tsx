@@ -8,6 +8,7 @@ import Deliver from "../Deliver/deliver";
 import ButtonContainer from "../ButtonContainer/buttonContainer";
 
 export default function TextCard({ newData }: { newData: INewData | null }) {
+  
   return (
     <div>
       {newData ? (

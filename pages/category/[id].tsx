@@ -30,7 +30,7 @@ export default function Category() {
 
   return (
     <div className="categoryContainerCardMain">
-      <h1 className="titlePage">{id}</h1>
+      <h1 className="titlePageCategory">{id}</h1>
       <div className="categoryContainerCard">
         {newData?.map((elem) => (
           <Card key={elem.id} data={elem} />

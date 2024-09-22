@@ -1,0 +1,75 @@
+.inputContainerForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.4);
+}
+.form {
+  height: 70%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input {
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+  height: 35px;
+
+  -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.4);
+}
+.inputDiv {
+  width: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+}
+.error {
+  height: 30px;
+}
+.radioInput {
+  margin-bottom: 40px;
+}
+.adressContainer {
+  height: 80px;
+  width: 350px;
+  overflow: hidden;
+  display: block;
+  flex-direction: column;
+}
+.liAdress {
+  white-space: nowrap;
+  height: 20px;
+  width: 100%;
+  background: white;
+  display: inline-block;
+  height: 20px;
+  height: auto;
+  font-size: 15px;
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .form {
+    height: 70%;
+  }
+}
+@media (max-width: 850px) {
+  .inputContainerForm {
+    margin-top: 35px;
+  }
+  .inputContainerForm {
+    width: 100%;
+    height: auto;
+    padding-top: 0px;
+    padding-bottom: 50px;
+  }
+}
