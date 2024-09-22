@@ -28,7 +28,7 @@ const Order = () => {
     >
       <div className="orderContainer">
         <Link href={"/"} className="buttonBack">
-        
+
           <Image src={leftArrow} alt={`load`} width={40} height={40}></Image>
         </Link>
         <div className="inputContainerOrder">
