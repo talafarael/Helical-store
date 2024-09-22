@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import "./inputContainer.scss";
 import Button from "../Button/button";
+import { NovaPoshtaSearch } from "@/utils/hooks/novaPoshtaSearch";
 
 type Inputs = {
   Name: string;
@@ -26,53 +27,22 @@ export default function InputContainer() {
   const [stateAdress, setStateAdress] = useState<boolean>(true);
   const [constAdress, setConstAdress] = useState<IAdress | undefined>();
   const [typeDeliver, setTypeDeliver] = useState<string>("нова почта");
-  useEffect(() => {
-    const handler = setTimeout(async () => {
-      console.log(typeof deliver);
-      if (typeof deliver === "string" && typeDeliver === "нова почта") {
-        const wordPart = deliver.match(/[а-яА-ЯіїєґІЇЄҐ]+/g)?.join("") || "";
-        const numberPart = parseInt(deliver.match(/\d+/g)?.join("") || "0", 10);
-        setStateAdress(true);
-        setConstAdress(undefined);
-        await fetch("https://api.novaposhta.ua/v2.0/json/", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json;charset=utf-8",
-          },
-          body: JSON.stringify({
-            apiKey: "0aab254867b1b4b8aea5abf2ebce14d9",
-            modelName: "AddressGeneral",
-            calledMethod: "getWarehouses",
-            methodProperties: {
-              CityName: `${wordPart}`,
-              WarehouseId: `${numberPart}`,
-              Limit: "3",
-            },
-          }),
-        })
-          .then((data) => data.json())
-          .then((res) => {
-            console.log(res.data);
-            const arr = res.data.map((elem: IAdress) => {
-              return {
-                Number: elem.Number,
-                Description: elem.Description,
-                SettlementDescription: elem.SettlementDescription,
-              };
-            });
-            setAdress(arr);
-          });
-      }
-    }, 500);
-
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [deliver]);
+  const [isEnter, setIsEnter] = useState(false);
+  NovaPoshtaSearch({
+    deliver,
+    setStateAdress,
+    setConstAdress,
+    typeDeliver,
+    setAdress,
+    setDeliver,
+    isEnter,
+  });
   const handlerSetAdress = (data: string, newAdress: IAdress) => {
+    setIsEnter(true);
     setDeliver(data);
     setConstAdress(newAdress);
     setStateAdress(false);
+    setTimeout(() => setIsEnter(false), 0);
   };
   const handlerClear = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setTypeDeliver(event.target.value);
@@ -82,12 +52,11 @@ export default function InputContainer() {
     setAdress(undefined);
     setConstAdress(undefined);
   };
-  // const [Name, setName] = useState<string>("");
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
     reset();
   };
-  console.log(adress);
   return (
     <div className="inputContainerForm">
       <form className="form" onSubmit={handleSubmit(onSubmit)}>

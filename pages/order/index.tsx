@@ -6,17 +6,23 @@ import { getOrder } from "@/api/getApiOrder";
 import { IDefaultData } from "@/type/newData";
 import { OderContext } from "@/utils/hooks/context";
 import CardBin from "@/components/CardBin/cardBin";
+import { useOrderHandlers } from "@/utils/contextOrder";
 
 const Order = () => {
   const [order, setOrder] = useState<IDefaultData[] | undefined>();
   useEffect(() => {
     getOrder().then((result) => {
-      console.log(result + "aaaaa");
       setOrder(result);
     });
   }, []);
+  const { handlerAdd, handlerMinus, handlerDelete } = useOrderHandlers(
+    order,
+    setOrder
+  );
   return (
-    <OderContext.Provider value={{ order, setOrder }}>
+    <OderContext.Provider
+      value={{ handlerDelete, order, setOrder, handlerAdd, handlerMinus }}
+    >
       <div className="orderContainer">
         <div className="inputContainerOrder">
           <InputContainer />
