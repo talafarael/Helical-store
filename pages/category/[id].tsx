@@ -33,7 +33,8 @@ export default function Category() {
 
   return (
     <div className="categoryContainerCardMain">
-      <Link href={"/"} className="titlePageCategory">
+      <div  className="titlePageCategory">
+        <Link href={"/"} className="LinkCategoryTitle">
        <Image
           src={leftArrow}
           className="backArrow"
@@ -42,7 +43,8 @@ export default function Category() {
           height={25}
         ></Image>
         <h1 className="textBack">{id}</h1>
-      </Link>
+        </Link>
+      </div>
       <div className="categoryContainerCard">
         {newData?.map((elem) => (
           <Card key={elem.id} data={elem} />

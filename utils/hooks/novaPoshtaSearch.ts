@@ -1,25 +1,25 @@
 import { useEffect } from "react";
-interface IAdress {
+interface IAddress {
   Number: string;
   Description: string;
   SettlementDescription: string;
 }
 interface INovaPoshtaSearch {
   deliver: string | undefined;
-  setStateAdress: React.Dispatch<React.SetStateAction<boolean>>;
-  setConstAdress: React.Dispatch<React.SetStateAction<IAdress | undefined>>;
+  setStateAddress: React.Dispatch<React.SetStateAction<boolean>>;
+  setConstAddress: React.Dispatch<React.SetStateAction<IAddress | undefined>>;
   typeDeliver: string;
   setDeliver: React.Dispatch<React.SetStateAction<string | undefined>>;
-  setAdress: React.Dispatch<React.SetStateAction<IAdress[] | undefined>>;
+  setAddress: React.Dispatch<React.SetStateAction<IAddress[] | undefined>>;
   isEnter: boolean;
 }
 
 export function NovaPoshtaSearch({
   deliver,
-  setStateAdress,
-  setConstAdress,
+  setStateAddress,
+  setConstAddress,
   typeDeliver,
-  setAdress,
+  setAddress,
   isEnter,
 }: INovaPoshtaSearch) {
   useEffect(() => {
@@ -30,8 +30,8 @@ export function NovaPoshtaSearch({
       if (typeof deliver === "string" && typeDeliver === "нова почта") {
         const wordPart = deliver.match(/[а-яА-ЯіїєґІЇЄҐ]+/g)?.join("") || "";
         const numberPart = parseInt(deliver.match(/\d+/g)?.join("") || "0", 10);
-        setStateAdress(true);
-        setConstAdress(undefined);
+        setStateAddress(true);
+        setConstAddress(undefined);
         await fetch("https://api.novaposhta.ua/v2.0/json/", {
           method: "POST",
           headers: {
@@ -50,14 +50,14 @@ export function NovaPoshtaSearch({
         })
           .then((data) => data.json())
           .then((res) => {
-            const arr = res.data.map((elem: IAdress) => {
+            const arr = res.data.map((elem: IAddress) => {
               return {
                 Number: elem.Number,
                 Description: elem.Description,
                 SettlementDescription: elem.SettlementDescription,
               };
             });
-            setAdress(arr);
+            setAddress(arr);
           });
       }
     }, 500);
