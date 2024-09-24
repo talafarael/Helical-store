@@ -16,7 +16,7 @@ interface INewData {
 const Main = ({ data }: { data: INewData[] }) => {
   return (
     <div className="containerMain">
-      <h1 className="titlePage">Home</h1>
+      <h1 className="titlePage">Усі товари</h1>
       <div className="containerCard">
         {data.map((element) => (
           <Card key={element.id} data={element} />

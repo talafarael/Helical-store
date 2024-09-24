@@ -1,7 +1,7 @@
 import { db } from "@/utils/firebase";
 import React from "react";
 import { doc, getDoc } from "firebase/firestore";
-import { IDeliver, INewData } from "@/type/newData";
+import {  INewData } from "@/type/newData";
 const fetchData = async (
   id: string | undefined | string[],
   isMounted: boolean,
@@ -14,22 +14,24 @@ const fetchData = async (
 
       if (docSnap.exists() && isMounted) {
         const data = docSnap.data();
-        const deliverPromises = data.deliver.map(async (elem: string) => {
-          const deliverDocRef = doc(db, "deliver", elem);
-          const deliverSnap = await getDoc(deliverDocRef);
-          const deliverData = deliverSnap.data();
-          return deliverData
-            ? {
-                deliver: deliverData.deliver,
-                deliverImg: deliverData.deliverImg,
-              }
-            : null;
-        });
+        let deliver = [];
+        if (data.deliver) {
+          const deliverPromises = data.deliver?.map(async (elem: string) => {
+            const deliverDocRef = doc(db, "deliver", elem);
+            const deliverSnap = await getDoc(deliverDocRef);
+            const deliverData = deliverSnap.data();
+            return deliverData
+              ? {
+                  deliver: deliverData.deliver,
+                  deliverImg: deliverData.deliverImg,
+                }
+              : null;
+          });
 
-        const deliverResults = await Promise.all(deliverPromises);
-        const deliver = deliverResults.filter(
-          (item) => item !== null
-        ) as IDeliver[];
+          const deliverResults = await Promise.all(deliverPromises);
+
+          deliver = deliverResults?.filter((item) => item !== null);
+        }
 
         if (isMounted) {
           setNewData({

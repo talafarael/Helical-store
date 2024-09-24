@@ -1,8 +1,8 @@
 import React from "react";
-import "./DeliverLi.scss";
+import "./DeliverItem.scss";
 import { IDeliver } from "@/type/newData";
 import Image from "next/image";
-export default function Deliver({ deliver, deliverImg }: IDeliver) {
+export default function DeliverItem({ deliver, deliverImg }: IDeliver) {
   return (
     <div className="deliverLiContainer">
       <Image

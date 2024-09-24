@@ -28,16 +28,15 @@ export default function Main() {
   return (
     <div className="containerProduct">
       <Link href={"/"} className="buttonBack">
-        <Image
-          src={leftArrow}
-          alt={`load`}
-          width={40}
-          height={40}
-        ></Image>
+        <Image src={leftArrow} alt={`load`} width={40} height={40}></Image>
       </Link>
       <div className="conainerForProduct">
         <div className="imgContainer">
-          {newData ? <CardImg img={newData.img} /> : <h1>load</h1>}
+          {newData ? (
+            <CardImg img={newData.img ? newData.img : ["stud.jpg"]} />
+          ) : (
+            <h1>load</h1>
+          )}
         </div>
         <div className="informationContainer">
           <TextCard newData={newData} />

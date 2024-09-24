@@ -8,9 +8,16 @@ import { useResize } from "@/utils/screenSize";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function Menu({ activeMenu }: { activeMenu: boolean }) {
+export default function Menu({
+  activeMenu,
+}: // setActiveMenu,
+{
+  // setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  activeMenu: boolean;
+}) {
   const [categories, setCategories] = useState<ICategory[]>([]);
   const router = useRouter();
+  console.log(router);
   const { id } = router.query;
   const { width } = useResize();
   useEffect(() => {
@@ -31,16 +38,30 @@ export default function Menu({ activeMenu }: { activeMenu: boolean }) {
     };
     fetchCategories();
   }, []);
-  console.log(categories);
+
   return (
     <>
       {(width && width > 1000) || activeMenu ? (
         <div className="menuContainer">
           <div className="categoryContainer">
+            <Link
+              href={`/`}
+              className={
+                router.pathname == "/"
+                  ? `activeCategoryDiv categoryDiv`
+                  : `categoryDiv`
+              }
+            >
+              Усі товари
+            </Link>
             {categories?.map((elem: ICategory) => (
               <Link
                 href={`/category/${elem.category}`}
-                className={id==elem.category?`activeCategoryDiv categoryDiv`:`categoryDiv`}
+                className={
+                  id == elem.category
+                    ? `activeCategoryDiv categoryDiv`
+                    : `categoryDiv`
+                }
                 key={elem.id}
               >
                 {elem.category}

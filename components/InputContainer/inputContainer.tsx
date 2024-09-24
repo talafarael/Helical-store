@@ -19,6 +19,7 @@ export default function InputContainer() {
   const {
     register,
     handleSubmit,
+    resetField,
     reset,
     formState: { errors },
   } = useForm<Inputs>();
@@ -52,14 +53,15 @@ export default function InputContainer() {
     setAdress(undefined);
     setConstAdress(undefined);
   };
-
+console.log("Aaaa")
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
-    reset();
+  
   };
   return (
     <div className="inputContainerForm">
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
+        <h1 className="titleForm"> Форма заказа</h1>
         <input
           {...register("Name", {
             required: "заповніть поле",

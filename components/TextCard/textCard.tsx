@@ -8,10 +8,9 @@ import Deliver from "../Deliver/deliver";
 import ButtonContainer from "../ButtonContainer/buttonContainer";
 
 export default function TextCard({ newData }: { newData: INewData | null }) {
-  
   return (
     <div>
-      {newData ? (
+      {newData && (
         <div className="textContainer">
           <h1 className="nameCard">{newData.name}</h1>
           <StarRating rating={newData.rating} />
@@ -23,7 +22,7 @@ export default function TextCard({ newData }: { newData: INewData | null }) {
             <ButtonContainer />
           </div>
         </div>
-      ) : null}
+      )}
     </div>
   );
 }

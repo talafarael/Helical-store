@@ -3,7 +3,7 @@ import React from "react";
 import "./card.scss";
 import Image from "next/image";
 import Link from "next/link";
-
+import stub from "@/public/stud.jpg";
 import { INewData } from "@/type/newData";
 import { Rating } from "react-simple-star-rating";
 
@@ -12,7 +12,7 @@ export default function Card({ data }: { data: INewData }) {
     <Link className="cardContainer" href={`/product/${data.id}`}>
       <div className="containerImg">
         <Image
-          src={`/${data.imgMain}`}
+          src={data.imgMain ? `/${data.imgMain}` : stub}
           className="cardImg"
           alt=""
           width="262"

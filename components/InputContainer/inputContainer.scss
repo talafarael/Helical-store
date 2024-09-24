@@ -1,4 +1,5 @@
 .inputContainerForm {
+  text-align: start;
   width: 100%;
   height: 100%;
   display: flex;
@@ -37,14 +38,19 @@
   height: 30px;
 }
 .radioInput {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .adressContainer {
   height: 80px;
-  width: 350px;
+  width: 300px;
   overflow: hidden;
   display: block;
   flex-direction: column;
+}
+.titleForm {
+  white-space: nowrap;
+  font-family: var(--font-semi-bold);
+  margin-bottom: 30px;
 }
 .liAdress {
   white-space: nowrap;
@@ -57,6 +63,10 @@
   font-size: 15px;
   cursor: pointer;
 }
+@media (max-width: 1500px) {
+}
+@media (max-width: 1300px) {
+}
 @media (max-width: 1000px) {
   .form {
     height: 70%;
@@ -66,6 +76,7 @@
   .inputContainerForm {
     margin-top: 35px;
   }
+
   .inputContainerForm {
     width: 100%;
     height: auto;

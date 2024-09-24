@@ -20,14 +20,14 @@ export default function CountProduct({
       <>
         <button
           className="buttonLeft"
-          onClick={() => (id ? handlerMinus(id) : handlerMinus())}
+          onClick={() => (handlerMinus(id))}
         >
           -
         </button>
         <h1 className="countText">{count}</h1>
         <button
           className="buttonRight"
-          onClick={() => (id ? handlerAdd(id) : handlerAdd())}
+          onClick={() =>  handlerAdd(id)}
         >
           +
         </button>

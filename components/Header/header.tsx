@@ -36,7 +36,7 @@ export default function Header({
         {/* alt="" className="gifHeader"></Image> */}
         <h1 className="HelicalTitle">Helical-store</h1>
       </div>
-      <Link href="/order">
+      <Link href="/order"className="linkToOrder">
         <Image className="shopBin" src={shop} alt="" />
       </Link>
     </div>

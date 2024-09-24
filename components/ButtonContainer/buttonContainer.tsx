@@ -21,7 +21,7 @@ export default function ButtonContainer() {
     }
 
     localStorage.setItem("order", JSON.stringify(order));
-    setCount(0)
+    setCount(1)
   };
   const handlerAdd = () => {
     setCount(count + 1);

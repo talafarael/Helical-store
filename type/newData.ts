@@ -9,8 +9,8 @@ export interface INewData {
   rating?: number;
 }
 export interface IDeliver {
-  deliver: string;
-  deliverImg: string;
+  deliver?: string;
+  deliverImg?: string;
 }
 export interface IDefaultData {
   id: string;
