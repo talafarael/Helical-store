@@ -40,19 +40,21 @@
 .radioInput {
   margin-bottom: 30px;
 }
-.adressContainer {
+.addressContainer {
   height: 80px;
   width: 300px;
   overflow: hidden;
   display: block;
   flex-direction: column;
 }
+
 .titleForm {
   white-space: nowrap;
   font-family: var(--font-semi-bold);
   margin-bottom: 30px;
 }
 .liAdress {
+
   white-space: nowrap;
   height: 20px;
   width: 100%;

@@ -11,6 +11,16 @@
 .backArrow {
   margin-right: 15px;
 }
+.LinkCategoryTitle{
+  text-decoration: none;
+  display: flex;
+ 
+ 
+  align-items: center;
+  text-align: start;
+  font-family: var(--font-semi-bold);
+  display: flex;
+}
 .card {
   flex: 1 1 calc(20% - 16px); /* Пример для 5 карточек по горизонтали с учетом gap */
 
@@ -37,6 +47,7 @@
   text-decoration: none;
 }
 @media (max-width: 1300px) {
+  
   .titlePageCategory {
     margin-top: 20px;
   }

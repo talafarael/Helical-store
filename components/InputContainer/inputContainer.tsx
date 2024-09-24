@@ -4,13 +4,14 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import "./inputContainer.scss";
 import Button from "../Button/button";
 import { NovaPoshtaSearch } from "@/utils/hooks/novaPoshtaSearch";
+import { sendMessageToTelegram } from "@/utils/telegram";
 
 type Inputs = {
   Name: string;
   Number: number;
   Deliver: string;
 };
-interface IAdress {
+interface IAddress {
   Number: string;
   Description: string;
   SettlementDescription: string;
@@ -24,39 +25,42 @@ export default function InputContainer() {
     formState: { errors },
   } = useForm<Inputs>();
   const [deliver, setDeliver] = useState<string | undefined>();
-  const [adress, setAdress] = useState<IAdress[] | undefined>();
-  const [stateAdress, setStateAdress] = useState<boolean>(true);
-  const [constAdress, setConstAdress] = useState<IAdress | undefined>();
+  const [address, setAddress] = useState<IAddress[] | undefined>();
+  const [stateAddress, setStateAddress] = useState<boolean>(true);
+  const [constAddress, setConstAddress] = useState<IAddress | undefined>();
   const [typeDeliver, setTypeDeliver] = useState<string>("нова почта");
   const [isEnter, setIsEnter] = useState(false);
   NovaPoshtaSearch({
     deliver,
-    setStateAdress,
-    setConstAdress,
+    setStateAddress,
+    setConstAddress,
     typeDeliver,
-    setAdress,
+    setAddress,
     setDeliver,
     isEnter,
   });
-  const handlerSetAdress = (data: string, newAdress: IAdress) => {
+  const handlerSetAddress = (data: string, newAddress: IAddress) => {
     setIsEnter(true);
     setDeliver(data);
-    setConstAdress(newAdress);
-    setStateAdress(false);
+    setConstAddress(newAddress);
+    setStateAddress(false);
     setTimeout(() => setIsEnter(false), 0);
   };
   const handlerClear = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setTypeDeliver(event.target.value);
     console.log(event.target.value);
     setDeliver("");
-    setStateAdress(true);
-    setAdress(undefined);
-    setConstAdress(undefined);
+    setStateAddress(true);
+    setAddress(undefined);
+    setConstAddress(undefined);
   };
 console.log("Aaaa")
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
-  
+
+
+    constAddress && sendMessageToTelegram({data,constAddress})
+
+
   };
   return (
     <div className="inputContainerForm">
@@ -115,32 +119,32 @@ console.log("Aaaa")
             placeholder="місто номер "
             value={deliver}
             onKeyPress={(event) => {
-              if (event.key === "Enter" && adress?.length == 1) {
-                handlerSetAdress(
-                  `${adress[0].SettlementDescription} ${adress[0].Number}`,
-                  adress[0]
+              if (event.key === "Enter" && address?.length == 1) {
+                handlerSetAddress(
+                  `${address[0].SettlementDescription} ${address[0].Number}`,
+                  address[0]
                 );
               }
             }}
             onChange={(e) => setDeliver(e.target.value)}
           />
-          <div className="adressContainer">
-            {stateAdress &&
-              adress?.map((elem, index) => (
+          <div className="addressContainer">
+            {stateAddress &&
+              address?.map((elem, index) => (
                 <p
                   onClick={() =>
-                    handlerSetAdress(
+                    handlerSetAddress(
                       `${elem.SettlementDescription} ${elem.Number}`,
                       elem
                     )
                   }
-                  className="liAdress"
+                  className="liAddress"
                   key={index}
                 >
                   {elem.Description}
                 </p>
               ))}
-            {constAdress?.Description}
+            {constAddress?.Description}
           </div>
         </div>
         <Button func={() => {}} text="купить"></Button>
