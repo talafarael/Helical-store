@@ -27,7 +27,7 @@ const Order = () => {
       value={{ handlerDelete, order, setOrder, handlerAdd, handlerMinus }}
     >
       <div className="orderContainer">
-        <Link href={"/"} className="buttonBack">
+        <Link href={"/"} className="buttonBackOrder ">
 
           <Image src={leftArrow} alt={`load`} width={40} height={40}></Image>
         </Link>

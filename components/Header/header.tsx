@@ -1,12 +1,15 @@
 "use client";
 import React from "react";
 // import logo from "../../public/giphy.webp"
-import shop from "../../public/shopping-cart.png";
+import shop from "@/public/cart.png";
 import "./header.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { useResize } from "@/utils/screenSize";
-import menuLog from "../../public/menu.png";
+import menuLog from "@/public/menu.png";
+import imgTg from "@/public/telegram.png";
+import imgSignal from "@/public/signal.png";
+import SignalTower from "@/public/signal-tower.png";
 export default function Header({
   setActiveMenu,
   activeMenu,
@@ -30,15 +33,36 @@ export default function Header({
             src={menuLog}
             alt=""
           />
-        ) }
+        )}
 
         {/* <Image src={logo} */}
         {/* alt="" className="gifHeader"></Image> */}
+        <Image
+          className="signalTower"
+          width={55}
+          height={55}
+          src={SignalTower}
+          alt=""
+        />
         <h1 className="HelicalTitle">Helical-store</h1>
       </div>
-      <Link href="/order"className="linkToOrder">
-        <Image className="shopBin" src={shop} alt="" />
-      </Link>
+      <div className="logoContainer">
+        <Link href="/order">
+          <Image
+            src={imgSignal}
+            className="imgTg"
+            width={45}
+            height={45}
+            alt=""
+          />
+        </Link>
+        <Link href="/order">
+          <Image src={imgTg} className="imgTg" width={45} height={45} alt="" />
+        </Link>
+        <Link href="/order" className="linkToOrder">
+          <Image className="shopBin" src={shop} alt="" />
+        </Link>
+      </div>
     </div>
   );
 }
