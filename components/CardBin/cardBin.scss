@@ -109,10 +109,16 @@
     font-size: 11px;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 8500px) {
   .cardBinTitle {
-    font-size: 11px;
+    font-size: 20px;
   }
+  .cardBinDescription {
+    font-size: 14px;
+  }
+}
+@media (max-width: 650px) {
+ 
   .closeImg {
     height: 30px;
     width: 30px;

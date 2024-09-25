@@ -59,11 +59,22 @@ export default function InputContainer() {
   };
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    reset();
-    constAddress &&
-      sendMessageToTelegram({ data, constAddress }).then(() => {
-        setPanelResponse(true);
-      });
+    const localOrder = localStorage.getItem("order");
+    const order = localOrder ? JSON.parse(localOrder) : [];
+    if (order.length >= 1) {
+      constAddress ||
+        (address?.length == 1 &&
+          sendMessageToTelegram({
+            data: data,
+            constAddress: constAddress ? constAddress : address[0],
+          }).then(() => {
+            setDeliver("");
+            reset();
+            setPanelResponse(true);
+          }));
+    }else{
+      // alert("товаров нет)))")
+    }
   };
   return (
     <div className="inputContainerForm">
@@ -157,7 +168,9 @@ export default function InputContainer() {
         <div className="orderResponse">
           <Image src={checkMark} alt="checkMark" width={70} height={70}></Image>
 
-          <h1 className="titleForm">Вітаю замовлення успішно оформлене</h1>
+          <h1 className="titleForm titleResponse">
+            Вітаю замовлення успішно оформлене
+          </h1>
           <p className="subtitleForm">
             Менеджер зв’яжеться з вами протягом доби{" "}
           </p>
