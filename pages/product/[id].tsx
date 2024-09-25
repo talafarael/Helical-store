@@ -10,6 +10,7 @@ import fetchData from "@/api/getApiProduct";
 import leftArrow from "@/public/left-arrow.png";
 import Image from "next/image";
 import Link from "next/link";
+import Load from "@/components/Load";
 export default function Main() {
   const [newData, setNewData] = useState<INewData | null>(null);
   const router = useRouter();
@@ -35,7 +36,7 @@ export default function Main() {
           {newData ? (
             <CardImg img={newData.img ? newData.img : ["stud.jpg"]} />
           ) : (
-            <h1>load</h1>
+            <Load />
           )}
         </div>
         <div className="informationContainer">
