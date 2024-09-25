@@ -28,19 +28,20 @@ const Order = () => {
     >
       <div className="orderContainer">
         <Link href={"/"} className="buttonBackOrder ">
-
           <Image src={leftArrow} alt={`load`} width={40} height={40}></Image>
         </Link>
         <div className="inputContainerOrder">
           <InputContainer />
         </div>
         <div className="cardContainerOrder">
-          {order ? (
-            order.map((elemnt: IDefaultData) => (
+          {order && order?.length >= 1 ? (
+            order?.map((elemnt: IDefaultData) => (
               <CardBin key={elemnt.id} data={elemnt} />
             ))
           ) : (
-            <h1>тут пусто</h1>
+            <div className="emptyOrder">
+              <h1>тут пусто</h1>
+            </div>
           )}
         </div>
       </div>

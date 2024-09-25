@@ -37,7 +37,12 @@
 .error {
   height: 30px;
 }
-
+.emptyOrder{
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .descriptionPanelResponse {
   margin-top: 3px;
   font-size: 12px;
