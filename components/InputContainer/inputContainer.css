@@ -37,38 +37,46 @@
 .error {
   height: 30px;
 }
+
+.descriptionPanelResponse {
+  margin-top: 3px;
+  font-size: 12px;
+}
 .radioInput {
   margin-bottom: 30px;
 }
+
 .addressContainer {
-  height: 80px;
+  height: 70px;
   width: 300px;
   overflow: hidden;
   display: block;
   flex-direction: column;
 }
-
+.orderResponse{
+  width: 70%;
+  text-align: center;
+}
+.subtitleForm{
+  font-size: 20px;
+}
 .titleForm {
   white-space: nowrap;
   font-family: var(--font-semi-bold);
   margin-bottom: 30px;
 }
-.liAdress {
-
+.itemAddress {
   white-space: nowrap;
-  height: 20px;
+  height: 18px;
   width: 100%;
   background: white;
   display: inline-block;
   height: 20px;
   height: auto;
-  font-size: 15px;
+  font-size: 13px;
   cursor: pointer;
 }
-@media (max-width: 1500px) {
-}
-@media (max-width: 1300px) {
-}
+
 @media (max-width: 1000px) {
   .form {
     height: 70%;

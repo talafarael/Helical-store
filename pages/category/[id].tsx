@@ -4,9 +4,7 @@ import "./category.scss";
 import { useRouter } from "next/router";
 import fetchCategoryData from "@/api/getApiProductCategory";
 import Card from "@/components/Card/card";
-import leftArrow from "@/public/left-arrow.png";
-import Image from "next/image";
-import Link from "next/link";
+
 export default function Category() {
   interface INewData {
     id: string;
@@ -33,17 +31,11 @@ export default function Category() {
 
   return (
     <div className="categoryContainerCardMain">
-      <div  className="titlePageCategory">
-        <Link href={"/"} className="LinkCategoryTitle">
-       <Image
-          src={leftArrow}
-          className="backArrow"
-          alt={`load`}
-          width={25}
-          height={25}
-        ></Image>
+      <div className="titlePageCategory">
+    
+       
         <h1 className="textBack">{id}</h1>
-        </Link>
+       
       </div>
       <div className="categoryContainerCard">
         {newData?.map((elem) => (
