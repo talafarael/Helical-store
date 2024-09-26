@@ -33,7 +33,7 @@ export default function CardImg({ img }: { img: string[] }) {
     adaptiveHeight: true,
   };
 
-  console.log(img);
+ 
 
   return (
     <div className="containerImgSlider">
@@ -43,7 +43,7 @@ export default function CardImg({ img }: { img: string[] }) {
             <div key={idx}>
               {/* Use Next.js Image component for better image optimization */}
             <Image
-              onLoad={()=>{ console.log("Image loaded!");
+              onLoad={()=>{ 
                 setImgLoad(true)
               }}
                 src={item ? `/${item}` : stub}
