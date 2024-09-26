@@ -62,16 +62,19 @@ export default function InputContainer() {
     const localOrder = localStorage.getItem("order");
     const order = localOrder ? JSON.parse(localOrder) : [];
     if (order.length >= 1) {
-      constAddress ||
-        (address?.length == 1 &&
+      let addressDeliver =   constAddress;
+      if(address?.length == 1){
+        addressDeliver = address[0]
+      }
+     addressDeliver ?
           sendMessageToTelegram({
             data: data,
-            constAddress: constAddress ? constAddress : address[0],
+            constAddress: addressDeliver,
           }).then(() => {
             setDeliver("");
             reset();
             setPanelResponse(true);
-          }));
+          }):null
     }else{
       // alert("товаров нет)))")
     }

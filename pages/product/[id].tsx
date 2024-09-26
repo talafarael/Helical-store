@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import { useState, useEffect } from "react";
+import {  useState, useEffect, Suspense } from "react";
 
 import "./product.scss";
 import TextCard from "@/components/TextCard/textCard";
@@ -10,6 +10,8 @@ import fetchData from "@/api/getApiProduct";
 import leftArrow from "@/public/left-arrow.png";
 import Image from "next/image";
 import Link from "next/link";
+import Load from "@/components/Load";
+import Loading from "../loading";
 export default function Main() {
   const [newData, setNewData] = useState<INewData | null>(null);
   const router = useRouter();
@@ -24,20 +26,23 @@ export default function Main() {
       setIsMounted(false);
     };
   }, [id]);
-  console.log(newData);
+  
   return (
     <div className="containerProduct">
       <Link href={"/"} className="buttonBack">
         <Image src={leftArrow} alt={`load`} width={40} height={40}></Image>
       </Link>
       <div className="conainerForProduct">
+      
         <div className="imgContainer">
-          {newData ? (
-            <CardImg img={newData.img ? newData.img : ["stud.jpg"]} />
+        <Suspense fallback={<Loading />}>
+           {newData ? (
+            <CardImg img={newData.img ? newData.img : ["noImage.png"]} />
           ) : (
-            <h1>load</h1>
+            <Load />
           )}
-        </div>
+    </Suspense>
+        </div>  
         <div className="informationContainer">
           <TextCard newData={newData} />
         </div>

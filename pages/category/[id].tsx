@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import "./category.scss";
 // import { INewData } from "@/type/newData";
 import { useRouter } from "next/router";
 import fetchCategoryData from "@/api/getApiProductCategory";
 import Card from "@/components/Card/card";
+import Load from "@/components/Load";
 
 export default function Category() {
   interface INewData {
@@ -37,11 +38,13 @@ export default function Category() {
         <h1 className="textBack">{id}</h1>
        
       </div>
+      <Suspense fallback={<Load /> }>
       <div className="categoryContainerCard">
         {newData?.map((elem) => (
           <Card key={elem.id} data={elem} />
         ))}
       </div>
+      </Suspense>
     </div>
   );
 }

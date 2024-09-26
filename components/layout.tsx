@@ -4,7 +4,9 @@ import "./layout.scss";
 import Header from "./Header/header";
 
 import Menu from "./Menu/menu";
-import { useState } from "react";
+import {  Suspense, useState } from "react";
+import Load from "./Load";
+
 
 // const metadata: Metadata = {
 //   title: "Create Next App",
@@ -39,7 +41,6 @@ export default function Layout({
 }) {
   const [activeMenu, setActiveMenu] = useState<boolean>(false);
 
-  
   return (
     <div
       className={` conatiner ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable}`}
@@ -47,7 +48,10 @@ export default function Layout({
       <Header  boolMenu={boolMenu} activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       <div className="body">
         {boolMenu ? <Menu activeMenu={activeMenu} /> : null}
-        {children}
+        <Suspense fallback={<Load />}>
+         
+          {children}
+        </Suspense>
       </div>
     </div>
   );

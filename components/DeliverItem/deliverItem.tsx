@@ -12,6 +12,7 @@ export default function DeliverItem({ deliver, deliverImg }: IDeliver) {
         width={20}
         height={20}
       />
+      
       <div className="liTextDeliver">{deliver}</div>
     </div>
   );
