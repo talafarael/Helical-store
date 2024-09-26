@@ -6,12 +6,13 @@ import "./cardImg.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import stub from "@/public/stud.jpg";
+import SpinnerLoader from "../spinnerLoader";
 
 
 export default function CardImg({ img }: { img: string[] }) {
   const [nav1, setNav1] = useState<Slider | undefined>(undefined);
   const [currentSlide, setCurrentSlide] = useState(0);
- 
+  const [imgLoad,setImgLoad]=useState(false)
   const sliderRef = useRef<Slider>(null);
   useEffect(() => {
     setNav1(sliderRef.current ?? undefined);
@@ -36,21 +37,26 @@ export default function CardImg({ img }: { img: string[] }) {
 
   return (
     <div className="containerImgSlider">
-      <div className="containerSlider">
+      <div className="containerSlider" >
         <Slider {...settings} ref={sliderRef}>
           {img.map((item, idx) => (
             <div key={idx}>
               {/* Use Next.js Image component for better image optimization */}
-              <Image
+            <Image
+              onLoad={()=>{ console.log("Image loaded!");
+                setImgLoad(true)
+              }}
                 src={item ? `/${item}` : stub}
                 className="imgCard"
                 alt={`Slide ${idx}`}
                 width={500}
                 height={500}
               />
+            
             </div>
           ))}
-        </Slider>
+        </Slider> 
+         {!imgLoad&&<SpinnerLoader/>}
       </div>
       <div className="thumb-wrapper">
         {img.map((item, idx) => (

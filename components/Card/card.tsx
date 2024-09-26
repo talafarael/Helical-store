@@ -9,6 +9,7 @@ import { Rating } from "react-simple-star-rating";
 import Load from "../Load";
 
 export default function Card({ data }: { data: INewData }) {
+
   return (
  
     <Link className="cardContainer" href={`/product/${data.id}`}>
@@ -20,7 +21,7 @@ export default function Card({ data }: { data: INewData }) {
           alt=""
           width="262"
           height="280"
-          // fill
+          priority={true}
         /></Suspense>
       </div>
       <div className="containerText">

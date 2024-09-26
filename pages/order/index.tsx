@@ -10,7 +10,7 @@ import { useOrderHandlers } from "@/utils/contextOrder";
 import Image from "next/image";
 import leftArrow from "@/public/left-arrow.png";
 import Link from "next/link";
-import Load from "@/components/Load";
+import emptyOrderImg from "@/public/basket_12271779.png"
 import Loading from "../loading";
 const Order = () => {
   console.log(process.env.REACT_APP_FIREBASE_STORAGE_BUCKET);
@@ -28,8 +28,7 @@ const Order = () => {
     <OderContext.Provider
       value={{ handlerDelete, order, setOrder, handlerAdd, handlerMinus }}
     >
-      {order ? 
-      <div className="orderContainer">
+      {order ? <div className="orderContainer">{ order.length>=1 ? <>
         <Link href={"/"} className="buttonBackOrder ">
           <Image src={leftArrow} alt={`load`} width={40} height={40}></Image>
         </Link>
@@ -37,17 +36,21 @@ const Order = () => {
           <InputContainer />
         </div>
         <div className="cardContainerOrder">
-          {order && order?.length >= 1 ? (
-            order?.map((elemnt: IDefaultData) => (
-              <CardBin key={elemnt.id} data={elemnt} />
-            ))
-          ) : (
-            <div className="emptyOrder">
-              <h1>тут пусто</h1>
-            </div>
-          )}
-        </div>
-      </div>:<Loading/>}
+          {order?.map((element: IDefaultData) => (
+              <CardBin key={element.id} data={element} />
+            ))}
+         
+        </div></> 
+             :
+        <div className="emptyOrder">
+          <Image src={emptyOrderImg} alt={`empty order`} width={70} height={70}></Image>
+          <h1>Корзина порожня </h1>
+         <Link href={`/`} style={{color:"black"}}>  <h3>Перейти до товарів</h3></Link>
+          </div>
+          }
+          </div>
+          :
+          <Loading/>}
     </OderContext.Provider>
   );
 };
