@@ -7,15 +7,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import stub from "@/public/stud.jpg";
 
+
 export default function CardImg({ img }: { img: string[] }) {
   const [nav1, setNav1] = useState<Slider | undefined>(undefined);
   const [currentSlide, setCurrentSlide] = useState(0);
-  // const [slider1, setSlider1] = useState<any>(undefined);
+ 
   const sliderRef = useRef<Slider>(null);
   useEffect(() => {
     setNav1(sliderRef.current ?? undefined);
   }, [sliderRef]);
-  console.log("aaaaaa");
+  
   const settings: Settings = {
     beforeChange: (oldIndex: number, newIndex: number) => {
       setCurrentSlide(newIndex);

@@ -5,6 +5,7 @@ import { db } from "../utils/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import React from "react";
 
+
 interface INewData {
   id: string;
   imgMain: string;
@@ -18,7 +19,7 @@ const Main = ({ data }: { data: INewData[] }) => {
     <div className="containerMain">
       <h1 className="titlePage">Усі товари</h1>
       <div className="containerCard">
-        {data.map((element) => (
+      {data.map((element) => (
           <Card key={element.id} data={element} />
         ))}
       </div>

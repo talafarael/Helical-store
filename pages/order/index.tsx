@@ -10,6 +10,8 @@ import { useOrderHandlers } from "@/utils/contextOrder";
 import Image from "next/image";
 import leftArrow from "@/public/left-arrow.png";
 import Link from "next/link";
+import Load from "@/components/Load";
+import Loading from "../loading";
 const Order = () => {
   console.log(process.env.REACT_APP_FIREBASE_STORAGE_BUCKET);
   const [order, setOrder] = useState<IDefaultData[] | undefined>();
@@ -26,6 +28,7 @@ const Order = () => {
     <OderContext.Provider
       value={{ handlerDelete, order, setOrder, handlerAdd, handlerMinus }}
     >
+      {order ? 
       <div className="orderContainer">
         <Link href={"/"} className="buttonBackOrder ">
           <Image src={leftArrow} alt={`load`} width={40} height={40}></Image>
@@ -44,7 +47,7 @@ const Order = () => {
             </div>
           )}
         </div>
-      </div>
+      </div>:<Loading/>}
     </OderContext.Provider>
   );
 };
