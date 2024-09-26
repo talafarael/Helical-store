@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import "./inputContainer.css";
 import Image from "next/image";
@@ -7,6 +7,7 @@ import checkMark from "@/public/check-mark.png";
 import Button from "../Button/button";
 import { NovaPoshtaSearch } from "@/utils/hooks/novaPoshtaSearch";
 import { sendMessageToTelegram } from "@/utils/telegram";
+import { OderContext } from "@/utils/hooks/context";
 // import component from "@/public/Component1.svg";
 type Inputs = {
   Name: string;
@@ -26,6 +27,7 @@ export default function InputContainer() {
     reset,
     formState: { errors },
   } = useForm<Inputs>();
+  const  orderContext=useContext(OderContext)
   const [deliver, setDeliver] = useState<string | undefined>();
   const [address, setAddress] = useState<IAddress[] | undefined>();
   const [stateAddress, setStateAddress] = useState<boolean>(true);
@@ -72,6 +74,7 @@ export default function InputContainer() {
             constAddress: addressDeliver,
           }).then(() => {
             setDeliver("");
+            orderContext?.clearOrder();
             reset();
             setPanelResponse(true);
           }):null
@@ -165,7 +168,7 @@ export default function InputContainer() {
               {constAddress?.Description}
             </div>
           </div>
-          <Button func={() => {}} text="купить"></Button>
+          <Button func={() => {}} text="купити"></Button>
         </form>
       ) : (
         <div className="orderResponse">

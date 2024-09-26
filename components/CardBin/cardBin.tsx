@@ -7,6 +7,7 @@ import CountProduct from "../CountProduct/countProduct";
 import { OderContext } from "@/utils/hooks/context";
 import closeImg from "../../public/close-window.png";
 import Link from "next/link";
+import stub from "@/public/noImage.png"
 import SpinnerLoader from "../spinnerLoader";
 export default function CardBin({ data }: { data: IDefaultData }) {
   const order = useContext(OderContext);
@@ -20,7 +21,7 @@ export default function CardBin({ data }: { data: IDefaultData }) {
               onLoad={() => {
                 setImgLoad(true);
               }}
-              src={`/${data.imgMain}`}
+              src={data.imgMain?`/${data.imgMain}`:stub}
               className="imgCardBin"
               alt={`load`}
               width={100}

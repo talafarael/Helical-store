@@ -11,4 +11,5 @@ export interface IOrdertState {
   handlerAdd: (data?: string) => void;
   handlerMinus: (id?: string | undefined) => void;
   handlerDelete: (id?: string | undefined) => void;
+  clearOrder:()=>void;
 }

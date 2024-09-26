@@ -3,6 +3,7 @@ import React from "react";
 
 export const useOrderHandlers = (
   order: IDefaultData[] | undefined,
+  
   setOrder: React.Dispatch<React.SetStateAction<IDefaultData[] | undefined>>
 ) => {
   const handlerAdd = (data: string | undefined) => {
@@ -43,7 +44,7 @@ export const useOrderHandlers = (
 
   const handlerDelete = (id: string | undefined) => {
     if (id && order) {
-      console.log(id);
+     
 
       const updatedOrder = order.filter((element) => id !== element.id);
 
@@ -52,6 +53,9 @@ export const useOrderHandlers = (
       localStorage.setItem("order", JSON.stringify(updatedOrder));
     }
   };
-
-  return { handlerAdd, handlerMinus, handlerDelete };
+  const clearOrder= ()=>{
+    // setOrder([])
+    localStorage.removeItem("order")
+  }
+  return { handlerAdd, handlerMinus, handlerDelete ,clearOrder };
 };

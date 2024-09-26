@@ -48,17 +48,18 @@ export default function Header({
         <h1 className="HelicalTitle">Helical-store</h1></Link>
       </div>
       <div className="logoContainer">
-        <Link href="/order">
-          <Image
-            src={imgSignal}
-            className="imgTg"
-            width={45}
-            height={45}
-            alt=""
-          />
-        </Link>
-        <Link href="/order">
-          <Image src={imgTg} className="imgTg" width={45} height={45} alt="" />
+      <Link href="https://signal.org/ru/" style={{zIndex:1}} target="_blank "rel="noopener noreferrer">
+      <Image
+      
+        src={imgSignal}
+        className="imgTg"
+        width={40}
+        height={40}
+        alt="Telegram"
+      />
+    </Link>
+        <Link href="https://t.me/univwork">
+          <Image src={imgTg} className="imgTg" width={40} height={40} alt="" />
         </Link>
         <Link href="/order" className="linkToOrder">
           <Image className="shopBin" src={shop} alt="" />

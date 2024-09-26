@@ -20,15 +20,15 @@ const Order = () => {
       setOrder(result);
     });
   }, []);
-  const { handlerAdd, handlerMinus, handlerDelete } = useOrderHandlers(
+  const { handlerAdd, handlerMinus, handlerDelete ,clearOrder } = useOrderHandlers(
     order,
     setOrder
   );
   return (
     <OderContext.Provider
-      value={{ handlerDelete, order, setOrder, handlerAdd, handlerMinus }}
+      value={{ handlerDelete, order, setOrder, handlerAdd, handlerMinus, clearOrder }}
     >
-      {order ? <div className="orderContainer">{ order.length>=1 ? <>
+      {order ? <div className="orderContainer">{ order.length>=0 ? <>
         <Link href={"/"} className="buttonBackOrder ">
           <Image src={leftArrow} alt={`load`} width={40} height={40}></Image>
         </Link>

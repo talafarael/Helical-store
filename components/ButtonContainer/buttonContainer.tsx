@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CountProduct from "../CountProduct/countProduct";
 import Button from "../Button/button";
 import { useRouter } from "next/router";
@@ -7,6 +7,16 @@ export default function ButtonContainer() {
 
   const router = useRouter();
   const { id } = router.query;
+  useEffect(() => {
+    const localOrder: string | null = localStorage.getItem("order");
+    const order = localOrder ? JSON.parse(localOrder) : [];
+    
+    const existingIndex = order.findIndex(
+      (elem: { id: string }) => elem.id === id
+    );
+    
+    setCount(existingIndex !== -1 ? order[existingIndex].count : 1);
+  }, [id]);
   const handlerOrder = () => {
     const localOrder: string | null = localStorage.getItem("order");
     const order = localOrder ? JSON.parse(localOrder) : [];
@@ -15,13 +25,15 @@ export default function ButtonContainer() {
     );
 
     if (existingIndex !== -1) {
-      order[existingIndex].count += count;
+      order[existingIndex].count = count;
     } else {
       order.push({ count: count, id: id });
     }
 
     localStorage.setItem("order", JSON.stringify(order));
     setCount(1)
+   
+  router.push('/order'); 
   };
   const handlerAdd = () => {
     setCount(count + 1);
@@ -37,7 +49,7 @@ export default function ButtonContainer() {
         handlerMinus={handlerMinus}
         count={count}
       />
-      <Button text="купить" func={handlerOrder} />
+      <Button text="купити" func={handlerOrder} />
     </>
   );
 }
