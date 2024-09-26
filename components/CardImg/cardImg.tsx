@@ -5,7 +5,7 @@ import Image from "next/image";
 import "./cardImg.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import stub from "@/public/stud.jpg";
+import stub from "@/public/noImage.png"
 import SpinnerLoader from "../spinnerLoader";
 
 export default function CardImg({ img }: { img: string[] }) {
@@ -47,10 +47,7 @@ export default function CardImg({ img }: { img: string[] }) {
                 src={item ? `/${item}` : stub}
                 className="imgCard"
                 alt={`Slide ${idx}`}
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src ="@/public/stud.jpg "
-                }}
+         
                 width={500}
                 height={500}
               />

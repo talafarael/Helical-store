@@ -37,7 +37,7 @@ export default function Main() {
         <div className="imgContainer">
         <Suspense fallback={<Loading />}>
            {newData ? (
-            <CardImg img={newData.img ? newData.img : ["stud.jpg"]} />
+            <CardImg img={newData.img ? newData.img : ["noImage.png"]} />
           ) : (
             <Load />
           )}
