@@ -21,9 +21,10 @@
 .buttonBack {
   height: 40px;
   width: 40px;
+  z-index: 1;
   // background: black;
   position: absolute;
-  top: 35px;
+  top: 4%;
   left: 0px;
 }
 @media (max-width: 1200px) {
@@ -58,7 +59,7 @@
 }
 @media (max-width: 650px) {
   .buttonBack {
-    top: 15px;
+    top: 10px;
     left: 20px;
     height: 25px;
     width: 25px;

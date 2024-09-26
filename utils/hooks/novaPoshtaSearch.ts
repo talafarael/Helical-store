@@ -38,7 +38,7 @@ export function NovaPoshtaSearch({
             "Content-Type": "application/json;charset=utf-8",
           },
           body: JSON.stringify({
-            apiKey: "0aab254867b1b4b8aea5abf2ebce14d9",
+            apiKey: process.env.NOVAPOSHTA_API_KEY,
             modelName: "AddressGeneral",
             calledMethod: "getWarehouses",
             methodProperties: {
