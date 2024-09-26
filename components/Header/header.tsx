@@ -9,7 +9,7 @@ import { useResize } from "@/utils/screenSize";
 import menuLog from "@/public/menu.png";
 import imgTg from "@/public/telegram.png";
 import imgSignal from "@/public/signal.png";
-import SignalTower from "@/public/signal-tower.png";
+import SignalTower from "@/public/tv.png";
 export default function Header({
   setActiveMenu,
   activeMenu,
