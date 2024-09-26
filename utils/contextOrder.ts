@@ -2,16 +2,18 @@ import { IDefaultData } from "@/type/newData";
 import React from "react";
 
 export const useOrderHandlers = (
-  order: IDefaultData[] | undefined,
-  
-  setOrder: React.Dispatch<React.SetStateAction<IDefaultData[] | undefined>>
+  order: IDefaultData[] | undefined | string[],
+
+  setOrder: React.Dispatch<
+    React.SetStateAction<IDefaultData[] | undefined | string[]>
+  >
 ) => {
   const handlerAdd = (data: string | undefined) => {
     if (data && order) {
       console.log(data);
 
       const updatedOrder = order.map((element) => {
-        if (data == element.id) {
+        if (typeof element != "string" && data == element.id) {
           return {
             ...element,
             count: ++element.count,
@@ -20,7 +22,7 @@ export const useOrderHandlers = (
         return element;
       });
 
-      setOrder(updatedOrder);
+      setOrder(updatedOrder as IDefaultData[]);
 
       localStorage.setItem("order", JSON.stringify(updatedOrder));
     }
@@ -28,7 +30,11 @@ export const useOrderHandlers = (
   const handlerMinus = (id: string | undefined) => {
     if (id && order) {
       const updatedOrder = order.map((element) => {
-        if (id == element.id && element.count > 1) {
+        if (
+          typeof element != "string" &&
+          id == element.id &&
+          element.count > 1
+        ) {
           return {
             ...element,
             count: --element.count,
@@ -37,25 +43,25 @@ export const useOrderHandlers = (
         return element;
       });
 
-      setOrder(updatedOrder);
+      setOrder(updatedOrder as IDefaultData[]);
       localStorage.setItem("order", JSON.stringify(updatedOrder));
     }
   };
 
   const handlerDelete = (id: string | undefined) => {
     if (id && order) {
-     
+      const updatedOrder = order.filter(
+        (element) => typeof element != "string" && id !== element.id
+      );
 
-      const updatedOrder = order.filter((element) => id !== element.id);
-
-      setOrder(updatedOrder);
+      setOrder(updatedOrder as IDefaultData[]);
 
       localStorage.setItem("order", JSON.stringify(updatedOrder));
     }
   };
-  const clearOrder= ()=>{
-    // setOrder([])
-    localStorage.removeItem("order")
-  }
-  return { handlerAdd, handlerMinus, handlerDelete ,clearOrder };
+  const clearOrder = () => {
+    setOrder(["", ""]);
+    localStorage.removeItem("order");
+  };
+  return { handlerAdd, handlerMinus, handlerDelete, clearOrder };
 };

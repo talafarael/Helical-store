@@ -26,14 +26,14 @@ export default function Header({
   return (
     <div className="containerHead">
       <div className="logo">
-        {width && width < 1000 && boolMenu && (
+        {width && width < 1000 && boolMenu && 
           <Image
             onClick={handlerStateMenu}
             className="menuPicture"
             src={menuLog}
             alt=""
           />
-        )}
+        }
 
         {/* <Image src={logo} */}
         {/* alt="" className="gifHeader"></Image> */}

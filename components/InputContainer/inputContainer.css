@@ -18,6 +18,7 @@
   align-items: center;
 }
 .input {
+  padding-left: 5px;
   width: 300px;
   border-radius: 5px;
   border: none;
