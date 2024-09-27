@@ -68,7 +68,7 @@ const Order = () => {
               <Image
                 src={emptyOrderImg}
                 alt={`empty order`}
-                className="emptyOrderImg"
+               
                 width={70}
                 height={70}
               ></Image>
