@@ -41,7 +41,7 @@ export default function Menu({
 
   return (
     <>
-      {(width && width > 1000) || activeMenu ? (
+      {(width && width > 1100) || activeMenu ? (
         <div className="menuContainer">
           <div className="categoryContainer">
             <Link

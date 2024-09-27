@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
 // import logo from "../../public/giphy.webp"
-import shop from "@/public/cart.png";
+import shop from "@/public/shop-svgrepo-com.svg";
 import "./header.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { useResize } from "@/utils/screenSize";
-import menuLog from "@/public/menu.png";
-import imgTg from "@/public/telegram.png";
-import imgSignal from "@/public/signal.png";
+import menuLog from "@/public/menu-svgrepo-com.svg";
+import imgTg from "@/public/telegram-svgrepo-com.svg";
+import imgSignal from "@/public/signal-chat-message-svgrepo-com.svg";
 import SignalTower from "@/public/tv.png";
 export default function Header({
   setActiveMenu,
@@ -53,8 +53,8 @@ export default function Header({
       
         src={imgSignal}
         className="imgTg"
-        width={40}
-        height={40}
+        width={50}
+        height={50}
         alt="Telegram"
       />
     </Link>

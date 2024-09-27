@@ -14,7 +14,7 @@ import emptyOrderImg from "@/public/basket_12271779.png";
 import Loading from "../loading";
 const Order = () => {
   console.log(process.env.REACT_APP_FIREBASE_STORAGE_BUCKET);
-  const [order, setOrder] = useState<IDefaultData[] | undefined>();
+  const [order, setOrder] = useState<IDefaultData[] | undefined | string[]>();
   useEffect(() => {
     getOrder().then((result) => {
       setOrder(result);
@@ -50,9 +50,16 @@ const Order = () => {
               </div>
               {typeof order[0] != "string" && (
                 <div className="cardContainerOrder">
-                  {order?.map((element: IDefaultData) => (
-                    <CardBin key={element.id} data={element} />
-                  ))}
+                  {Array.isArray(order) &&
+                    typeof order[0] != "string" &&
+                    order
+                      .filter(
+                        (element): element is IDefaultData =>
+                          typeof element !== "string"
+                      )
+                      .map((element: IDefaultData) => (
+                        <CardBin key={element.id} data={element} />
+                      ))}
                 </div>
               )}
             </>
@@ -61,6 +68,7 @@ const Order = () => {
               <Image
                 src={emptyOrderImg}
                 alt={`empty order`}
+                className="emptyOrderImg"
                 width={70}
                 height={70}
               ></Image>
