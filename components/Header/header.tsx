@@ -45,7 +45,7 @@ export default function Header({
           alt=""
         /></Link>
           <Link href="/" style={{textDecoration:"none",width:"auto"}}>
-        <h1 className="HelicalTitle">Helical-store</h1></Link>
+        <h1 className="HelicalTitle">Helical.Store</h1></Link>
       </div>
       <div className="logoContainer">
       <Link href="https://signal.org/ru/" style={{zIndex:1}} target="_blank "rel="noopener noreferrer">
