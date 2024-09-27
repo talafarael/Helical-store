@@ -9,7 +9,7 @@ import { useResize } from "@/utils/screenSize";
 import menuLog from "@/public/menu-svgrepo-com.svg";
 import imgTg from "@/public/telegram-svgrepo-com.svg";
 import imgSignal from "@/public/signal-chat-message-svgrepo-com.svg";
-import SignalTower from "@/public/tv.png";
+import SignalTower from "@/public/signal-svgrepo-com.svg";
 export default function Header({
   setActiveMenu,
   activeMenu,
@@ -39,8 +39,8 @@ export default function Header({
         {/* alt="" className="gifHeader"></Image> */}
         <Link href="/" style={{width:"auto"}}>   <Image
           className="signalTower"
-          width={55}
-          height={55}
+          width={65}
+          height={65}
           src={SignalTower}
           alt=""
         /></Link>
