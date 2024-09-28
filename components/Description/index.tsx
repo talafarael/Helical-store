@@ -1,5 +1,5 @@
 import { INewData } from "@/type/newData";
-import "./description.css"
+import "./description.css";
 import React, { useState } from "react";
 import Image from "next/image";
 import arrowDown from "@/public/down-arrow-svgrepo-com.svg";
@@ -16,19 +16,25 @@ export default function Description({ newData }: { newData: INewData | null }) {
   };
   return (
     <div className="bodyDescritpion">
-      <h3
-        className="textDesc"
-        onClick={() => {
-          handlerClear();
-          setAccordionNameItem(!accordionNameItem);
-        }}
-      >
-        {newData?.nameItemcCharacteristics}
+      {newData?.itemcCharacteristics && (
+        <h3
+          className="textDesc"
+          onClick={() => {
+            handlerClear();
+            setAccordionNameItem(!accordionNameItem);
+          }}
+        >
+          {newData?.nameItemcCharacteristics}
 
-        {!accordionNameItem && (
-          <Image src={arrowDown} className="arrowDown" alt="down arrow"></Image>
-        )}
-      </h3>
+          {!accordionNameItem && (
+            <Image
+              src={arrowDown}
+              className="arrowDown"
+              alt="down arrow"
+            ></Image>
+          )}
+        </h3>
+      )}
 
       {accordionNameItem && (
         <div className="desc">
@@ -46,19 +52,24 @@ export default function Description({ newData }: { newData: INewData | null }) {
           ))}
         </div>
       )}
-
-      <h3
-        className="textDesc"
-        onClick={() => {
-          handlerClear();
-          setAddCharacteristics(!addCharacteristics);
-        }}
-      >
-        Додаткові можливості
-        {!addCharacteristics && (
-          <Image src={arrowDown} className="arrowDown" alt="down arrow"></Image>
-        )}
-      </h3>
+      {newData?.description && (
+        <h3
+          className="textDesc"
+          onClick={() => {
+            handlerClear();
+            setAddCharacteristics(!addCharacteristics);
+          }}
+        >
+          Додаткові можливості
+          {!addCharacteristics && (
+            <Image
+              src={arrowDown}
+              className="arrowDown"
+              alt="down arrow"
+            ></Image>
+          )}
+        </h3>
+      )}
 
       {addCharacteristics && (
         <p
@@ -71,20 +82,24 @@ export default function Description({ newData }: { newData: INewData | null }) {
           {newData?.description}
         </p>
       )}
-
-      <h3
-        className="textDesc"
-        onClick={() => {
-          handlerClear();
-          setDescription(!description);
-        }}
-      >
-        Характеристики
-        {!description && (
-          <Image src={arrowDown} className="arrowDown" alt="down arrow"></Image>
-        )}
-      </h3>
-
+      {newData?.description && (
+        <h3
+          className="textDesc"
+          onClick={() => {
+            handlerClear();
+            setDescription(!description);
+          }}
+        >
+          Характеристики
+          {!description && (
+            <Image
+              src={arrowDown}
+              className="arrowDown"
+              alt="down arrow"
+            ></Image>
+          )}
+        </h3>
+      )}
       {description && (
         <p
           className="desc"
@@ -96,19 +111,26 @@ export default function Description({ newData }: { newData: INewData | null }) {
           {newData?.description}
         </p>
       )}
-
-      <h3
-        className="textDesc"
-        onClick={() => {
-          handlerClear();
-          setCharacteristics(!characteristics);
-        }}
-      >
-        Різновиди техніки
-        {!characteristics && (
-          <Image src={arrowDown} className="arrowDown" alt="down arrow"></Image>
-        )}
-      </h3>
+      {newData?.characteristics ||
+        newData?.characterOptions ||
+        (newData?.feedback && (
+          <h3
+            className="textDesc"
+            onClick={() => {
+              handlerClear();
+              setCharacteristics(!characteristics);
+            }}
+          >
+            Різновиди техніки
+            {!characteristics && (
+              <Image
+                src={arrowDown}
+                className="arrowDown"
+                alt="down arrow"
+              ></Image>
+            )}
+          </h3>
+        ))}
 
       {characteristics && (
         <div
