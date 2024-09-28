@@ -46,7 +46,7 @@
     width: 50vw;
   }
   .containerProduct {
-    height: 100%;
+    min-height: 80vh;
   }
 }
 @media (max-width: 900px) {

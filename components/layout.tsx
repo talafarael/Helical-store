@@ -17,6 +17,11 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+const vesperLibre = localFont({
+  src: "../app/fonts/VesperLibre-Bold.ttf",
+  variable: "--font-vesper-libre",
+  weight: "100 900",
+});
 const geistMono = localFont({
   src: "../app/fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -43,7 +48,7 @@ export default function Layout({
 
   return (
     <div
-      className={` conatiner ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable}`}
+      className={` conatiner ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable} ${vesperLibre.variable}`}
     >
       <Header  boolMenu={boolMenu} activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       <div className="body">

@@ -1,0 +1,40 @@
+.bodyDescritpion {
+  display: flex;
+  flex-direction: column;
+  height: min-content;
+  overflow: hidden;
+  min-height: 200px;
+  max-height: auto;
+  box-sizing: border-box;
+}
+.textDesc {
+  object-fit: cover;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-weight: 900;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 18px;
+  font-family: var(--font-vesper-libre);
+}
+.desc {
+  padding-left: 5px;
+  display: inline-block;
+  font-family: var(--font-vesper-libre);
+  border-bottom: 2px solid black;
+  width: auto;
+  font-size: 15px;
+}
+.arrowDown {
+  margin-top: 5px;
+  position: absolute;
+  width: 20px; /* можно настроить по вашему вкусу */
+  height: 20px;
+}
+.itemcCharacteristics {
+  line-height: 1.2;
+}
