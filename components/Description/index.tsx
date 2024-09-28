@@ -52,7 +52,7 @@ export default function Description({ newData }: { newData: INewData | null }) {
           ))}
         </div>
       )}
-      {newData?.description && (
+      {newData?.addCharacteristics && (
         <h3
           className="textDesc"
           onClick={() => {
@@ -111,26 +111,27 @@ export default function Description({ newData }: { newData: INewData | null }) {
           {newData?.description}
         </p>
       )}
-      {newData?.characteristics ||
+
+      {(newData?.characteristics ||
         newData?.characterOptions ||
-        (newData?.feedback && (
-          <h3
-            className="textDesc"
-            onClick={() => {
-              handlerClear();
-              setCharacteristics(!characteristics);
-            }}
-          >
-            Різновиди техніки
-            {!characteristics && (
-              <Image
-                src={arrowDown}
-                className="arrowDown"
-                alt="down arrow"
-              ></Image>
-            )}
-          </h3>
-        ))}
+        newData?.feedback) && (
+        <h3
+          className="textDesc"
+          onClick={() => {
+            handlerClear();
+            setCharacteristics(!characteristics);
+          }}
+        >
+          Різновиди техніки
+          {!characteristics && (
+            <Image
+              src={arrowDown}
+              className="arrowDown"
+              alt="down arrow"
+            ></Image>
+          )}
+        </h3>
+      )}
 
       {characteristics && (
         <div
