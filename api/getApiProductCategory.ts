@@ -26,6 +26,13 @@ const fetchCategoryData = async (
             price: data.price,
             img: data.img,
             rating: data.rating,
+            characterOptions:data?.characterOptions,
+            nameItemcCharacteristics: data?.nameItemcCharacteristics,
+            addCharacteristics: data?.addCharacteristics,
+            characteristics: data?.characteristics,
+            feedback: data?.feedback,
+            index: data?.index,
+            itemcCharacteristics: data?.itemcCharacteristics,
           };
         });
         const dataResults = await Promise.all(dataPromises);

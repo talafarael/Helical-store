@@ -7,6 +7,13 @@ export interface INewData {
   img: string[];
   deliver?: IDeliver[];
   rating?: number;
+  nameItemcCharacteristics?: string;
+  addCharacteristics?: string;
+  characteristics?: string;
+  feedback?: string;
+  index?: string;
+  itemcCharacteristics?: string[];
+  characterOptions?: string;
 }
 export interface IDeliver {
   deliver?: string;
@@ -17,9 +24,16 @@ export interface IDefaultData {
   imgMain: string;
   name: string;
   description: string;
+  nameItemcCharacteristics?: string;
+  addCharacteristics?: string;
+  characteristics?: string;
+  feedback?: string;
+  index?: string;
+  itemcCharacteristics?: string[];
   price: string;
   img: string[];
   deliver?: string;
   rating?: number;
-  count:number
+  count: number;
+  characterOptions?: string;
 }

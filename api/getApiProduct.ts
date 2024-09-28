@@ -1,7 +1,7 @@
 import { db } from "@/utils/firebase";
 import React from "react";
 import { doc, getDoc } from "firebase/firestore";
-import {  INewData } from "@/type/newData";
+import { INewData } from "@/type/newData";
 const fetchData = async (
   id: string | undefined | string[],
   isMounted: boolean,
@@ -43,6 +43,13 @@ const fetchData = async (
             img: data.img,
             rating: data.rating,
             deliver: deliver,
+            nameItemcCharacteristics: data?.nameItemcCharacteristics,
+            addCharacteristics: data?.addCharacteristics,
+            characteristics: data?.characteristics,
+            feedback: data?.feedback,
+            index: data?.index,
+            itemcCharacteristics: data?.itemcCharacteristics,
+            characterOptions:data?.characterOptions,
           });
         }
       } else {

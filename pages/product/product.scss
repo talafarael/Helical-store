@@ -4,12 +4,15 @@
   align-items: center;
   height:max-content;
   width: 85vw;
-  height:100%;
+  height:auto;
   justify-content: center;
 }
 .imgContainer {
   width: 45vw;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .informationContainer {
   height: auto;
@@ -43,7 +46,7 @@
     width: 50vw;
   }
   .containerProduct {
-    height: 90vh;
+    height: 100%;
   }
 }
 @media (max-width: 900px) {
