@@ -5,7 +5,7 @@
   justify-content: start;
 }
 .nameCard {
-  margin-top: 50px;
+  margin-top: 15px;
   // font-weight: bold;s
   font-size: 28px;
   height: auto;
@@ -20,17 +20,57 @@
   justify-content: space-between;
   margin-top: 5px;
   display: inline-block;
-  font-size: 22px;
-  font-family: var(--font-vesper-libre);
+  font-size: 24px;
+  font-weight: 600;
+  font-family: var(--font-rubik);
+}
+.accardionMenu {
+  font-family: var(--font-semi-bold);
+
+  // width: max-content;
+  // margin-top: 70px;
+  display: flex;
+  height: 35px;
+  width: 750px;
+  align-items: start;
+  justify-content: start;
+  //  padding-left: -20px;
+  border-bottom: solid black 1px;
+  // width:min-content;
+}
+.accardionText1 {
+  height: max-content;
+  color: rgb(36, 35, 37);
+  margin-left: 20px;
+  font-size: 20px;
+}
+.accardionText {
+  height: max-content;
+  color: rgb(36, 35, 37);
+  font-size: 20px;
+}
+.accardionText:hover {
+  // border-bottom: solid black 1px;
+  color: rgb(36, 35, 37, 0.5);
+}
+.accardionText1:hover {
+  // border-bottom: solid black 1px;
+  color: rgb(36, 35, 37, 0.5);
+}
+
+.active {
+  // border-bottom: solid black 1px;
+  color: rgb(36, 35, 37, 0.5);
 }
 .descDescription {
+  width: 700px;
   line-height: 1.2;
   padding-left: 5px;
   display: inline-block;
-  font-family: var(--font-montserrat);
+  font-family: var(--font-rubik);
   /* border-bottom: 2px solid black; */
-  width: auto;
-  font-size: 15px;
+  // width: auto;
+  font-size: 16px;
 }
 .index {
   margin-top: 5px;
@@ -41,7 +81,7 @@
 .textCard {
   margin-top: 11px;
   font-weight: 500;
-  font-family: var(--font-vesper-libre);
+  font-family: var(--font-rubik);
   font-size: 14px;
 }
 
@@ -73,6 +113,12 @@
   }
 }
 @media (max-width: 1300px) {
+  .accardionMenu {
+    width: auto;
+  }
+  .descDescription {
+    width: auto;
+  }
   .buttonContainer {
     width: 80%;
   }
@@ -103,6 +149,9 @@
 }
 
 @media (max-width: 1000px) {
+  .accardionMenu {
+    width: 90%;
+  }
   .nameCard {
     font-size: 20px;
   }
@@ -126,6 +175,10 @@
   }
   .line {
     width: 250px;
+  }
+  .descDescription {
+    width: 90%;
+    font-size: 15px;
   }
 }
 @media (max-width: 800px) {

@@ -6,6 +6,7 @@ export default function Description({ newData }: { newData: INewData | null }) {
 
   return (
     <div className="bodyDescritpion">
+       {/* <div className="linedesc"></div> */}
       <h3 className="textDesc">{newData?.nameItemcCharacteristics}</h3>
 
       <div className="desc">
@@ -19,17 +20,18 @@ export default function Description({ newData }: { newData: INewData | null }) {
           </p>
         ))}
       </div>
-
+      <div className="linedesc"></div>{" "}
       <h3 className="textDesc">Додаткові можливості</h3>
 
       <p className="desc">{newData?.addCharacteristics}</p>
-
+      <div className="linedesc"></div>{" "}
       
       <h3 className="textDesc">Різновиди техніки</h3>
 <div className="desc">
       <p className="">{newData?.characteristics}</p>
       <p className="">{newData?.characterOptions} </p>
       <p className="">{newData?.feedback} </p></div>
+      <div className="linedesc"></div>{" "}
     </div>
   );
 }

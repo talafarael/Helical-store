@@ -27,6 +27,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const Rubik = localFont({
+  src: "../app/fonts/Rubik-VariableFont_wght.ttf",
+  variable: "--font-rubik",
+  weight: "100 900",
+});
 const geistSemiBold = localFont({
   src: "../app/fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf",
   variable: "--font-semi-bold",
@@ -48,7 +53,7 @@ export default function Layout({
 
   return (
     <div
-      className={` conatiner ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable} ${vesperLibre.variable}`}
+      className={` conatiner ${Rubik.variable} ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable} ${vesperLibre.variable}`}
     >
       <Header  boolMenu={boolMenu} activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       <div className="body">
