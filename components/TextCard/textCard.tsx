@@ -18,12 +18,14 @@ export default function TextCard({ newData }: { newData: INewData | null }) {
           <h4 className="index">{newData?.index}</h4>
           <StarRating rating={newData.rating} />
           <h1 className="priceCard">{newData.price}-грн/шт</h1>
-          <Description newData={newData} />
+          <h3 className="description">опис</h3>
+         <p className="descDescription"> {newData?.description}</p>
           <Deliver deliver={newData.deliver} />
           <div className="line"></div>{" "}
           <div className="buttonContainer">
             <ButtonContainer />
           </div>
+          <Description newData={newData} />
         </div>
       )}
     </div>
