@@ -49,7 +49,20 @@ const fetchData = async (
             feedback: data?.feedback,
             index: data?.index,
             itemcCharacteristics: data?.itemcCharacteristics,
-            characterOptions:data?.characterOptions,
+            characterOptions: data?.characterOptions,
+            frequencyRangeMax: data?.frequencyRangeMax,
+            frequencyRangeMin: data?.frequencyRangeMin,
+            openingAngle: data?.openingAngle,
+            gain: data?.gain,
+            numberOfWinds: data?.numberOfWinds,
+            connector: data?.connector,
+            impedance: data?.impedance,
+            polarization: data?.polarization,
+            vswr: data?.vswr,
+            losses: data?.losses,
+            cableLength: data?.cableLength,
+            mounting: data?.mounting,
+            colorNote: data?.colorNote,
           });
         }
       } else {

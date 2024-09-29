@@ -27,11 +27,30 @@
   /* border-bottom: 2px solid black; */
   width: auto;
   font-size: 16px;
-  width: 700px;
+  width: 90%;
 }
 .linedesc {
   margin-top: 5px;
-  width: 700px;
+  width: 90%;
   height: 1.5px;
   background: #a7a7a7;
+}
+
+@media (max-width: 950px) {
+  .desc {
+    font-size: 14px;
+  }
+  .linedesc {
+    width: 90%;
+  }
+}
+@media (max-width: 850px) {
+  .desc {
+    font-size: 12px;
+  }
+}
+@media (max-width: 750px) {
+  .desc {
+    font-size: 16px;
+  }
 }

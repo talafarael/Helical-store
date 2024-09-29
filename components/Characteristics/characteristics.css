@@ -1,0 +1,10 @@
+.characteristicsContainer {
+  display: flex;
+  align-items: end;
+  height: min-content;
+  font-family: var(--font-rubik);
+}
+.characteristicsText {
+  font-weight: 600;
+  margin-right: 5px;
+}
