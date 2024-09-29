@@ -45,7 +45,7 @@ export default function Characteristics({
 
       {newData?.connector && (
         <div className="characteristicsContainer">
-          <p className="characteristicsText">Роз'єм</p>
+          <p className="characteristicsText">Роз&#39;єм</p>
           <p>{newData?.connector}</p>
         </div>
       )}
