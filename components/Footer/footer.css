@@ -1,0 +1,14 @@
+.footerContainer {
+  height: 20vh;
+  background: linear-gradient(to bottom, #bdbec0 0%, #858486 72%, #787481 100%);
+  width: 100%;
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imgTg {
+    margin: 50px;
+    width: 75px;
+    height: 75px;
+}

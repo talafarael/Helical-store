@@ -9,7 +9,6 @@
   object-fit: cover;
   overflow: hidden;
   box-sizing: border-box;
-  font-weight: 900;
 
   display: flex;
   align-items: center;
@@ -18,6 +17,7 @@
   display: inline-block;
   font-size: 26px;
   font-family: var(--font-semi-bold);
+  font-weight: 400;
 }
 .desc {
   line-height: 1.4;

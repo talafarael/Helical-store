@@ -4,16 +4,10 @@ import Card from "@/components/Card/card";
 import { db } from "../utils/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import React from "react";
+import { INewData } from "@/type/newData";
 
 
-interface INewData {
-  id: string;
-  imgMain: string;
-  name: string;
-  description: string;
-  price: string;
-  img: string[];
-}
+
 const Main = ({ data }: { data: INewData[] }) => {
   return (
     <div className="containerMain">

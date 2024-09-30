@@ -26,7 +26,7 @@ export default function Characteristics({
       )}
       {newData?.gain && (
         <div className="characteristicsContainer">
-          <p className="characteristicsText">Кількість вітків</p>
+          <p className="characteristicsText">Підсилення</p>
           <p>{newData?.gain}</p>
         </div>
       )}

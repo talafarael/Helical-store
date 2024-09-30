@@ -1,5 +1,5 @@
 import React from "react";
-import DeliverImg from "../../public/delivery-truck.png";
+import DeliverImg from "@/public/logistics-truck-svgrepo-com.svg";
 import DeliverItem from "../DeliverItem/deliverItem";
 import Image from "next/image";
 import "./deliver.scss";

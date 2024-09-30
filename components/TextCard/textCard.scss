@@ -1,11 +1,12 @@
 .textContainer {
   display: flex;
+  min-height: 80vh;
   height: auto;
   flex-direction: column;
   justify-content: start;
 }
 .nameCard {
-  margin-top: 15px;
+  margin-top: 55px;
   // font-weight: bold;s
   font-size: 28px;
   height: auto;
@@ -25,6 +26,7 @@
   font-family: var(--font-rubik);
 }
 .accardionMenu {
+  color: rgb(36, 35, 37, 0.5);
   font-family: var(--font-semi-bold);
 
   // width: max-content;
@@ -39,28 +41,31 @@
   // width:min-content;
 }
 .accardionText1 {
+  cursor: pointer;
+  color: rgb(36, 35, 37, 0.5);
   height: max-content;
-  color: rgb(36, 35, 37);
+
   margin-left: 20px;
   font-size: 20px;
 }
 .accardionText {
+  cursor: pointer;
   height: max-content;
-  color: rgb(36, 35, 37);
+
   font-size: 20px;
 }
 .accardionText:hover {
+  color: rgb(36, 35, 37);
   // border-bottom: solid black 1px;
-  color: rgb(36, 35, 37, 0.5);
 }
 .accardionText1:hover {
+  color: rgb(36, 35, 37);
   // border-bottom: solid black 1px;
-  color: rgb(36, 35, 37, 0.5);
 }
 
 .active {
   // border-bottom: solid black 1px;
-  color: rgb(36, 35, 37, 0.5);
+  color: rgb(36, 35, 37);
 }
 .descDescription {
   width: 90%;
@@ -86,11 +91,13 @@
 }
 
 .priceCard {
-  font-size: 26px;
+  font-size: 30px;
   display: flex;
-  align-content: start;
+  height: auto;
   flex-wrap: wrap;
-  margin-top: 5px;
+
+  font-family: var(--font-semi-bold);
+  text-align: center;
 }
 .line {
   margin-top: 7px;
@@ -101,13 +108,12 @@
 .buttonContainer {
   margin-top: 20px;
   display: flex;
-  width: 60%;
+  width: 100%;
+  align-items: center;
+  text-align: center;
   justify-content: space-between;
 }
 @media (max-width: 1700px) {
-  .buttonContainer {
-    width: 70%;
-  }
   .nameCard {
     font-size: 33px;
   }
@@ -119,9 +125,7 @@
   .descDescription {
     width: auto;
   }
-  .buttonContainer {
-    width: 80%;
-  }
+
   .nameCard {
     margin-bottom: 10px;
     font-size: 27px;
@@ -136,7 +140,7 @@
     font-size: 15px;
   }
   .priceCard {
-    margin-top: 10px;
+    
     font-size: 23px;
   }
   .buttonContainer {
@@ -156,9 +160,6 @@
     font-size: 20px;
   }
 
-  .buttonContainer {
-    width: 90%;
-  }
   .informationContainer {
     height: auto;
   }
@@ -167,11 +168,11 @@
     font-size: 12px;
   }
   .priceCard {
-    margin-top: 7px;
+   
     font-size: 21px;
   }
   .buttonContainer {
-    margin-top: 11px;
+    margin-top: 10px;
   }
   .line {
     width: 250px;
@@ -182,14 +183,8 @@
   }
 }
 @media (max-width: 800px) {
-  .buttonContainer {
-    width: 95%;
-  }
 }
 @media (max-width: 700px) {
-  .buttonContainer {
-    width: 100%;
-  }
 }
 @media (max-width: 650px) {
   .textContainer {

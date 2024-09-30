@@ -33,7 +33,7 @@
   display: flex;
   display: inline-flex;
   align-items: flex-end;
-  height: 260px;
+  height: 240px;
   width: 262px;
   // border-top: 25px;
   overflow: hidden;
@@ -44,45 +44,62 @@
   width: 95%;
   display: flex;
   flex-direction: column;
-  align-content: flex-start;
+  align-content: space-around;
   justify-items: start;
 
   text-align: start;
-  height: 90px;
+  height: 110px;
   padding-left: 10px;
+}
+.h1Font {
+  font-family: var(--robo-bold);
 }
 .title {
   display: flex;
-  font-family: var(--font-semi-bold);
+
   overflow: hidden;
-  font-size: 14px;
+  font-size: 15px;
   margin-top: 5px;
-  height: 45px;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  height: min-content;
+}
+.pDescription {
+  font-family: var(--font-rubik);
+  font-size: 14px;
 }
 .price {
   font-family: var(--font-semi-bold);
   display: flex;
-  margin-top: -2px;
-  margin-bottom: 7px;
+
   font-size: 18px;
 }
 @media (max-width: 1150px) {
+  .pDescription {
+    font-family: var(--font-rubik);
+    font-size: 12px;
+  }
   .cardContainer {
     width: 252px;
     height: 310px;
   }
+  
   .containerImg {
     display: flex;
     display: inline-flex;
     align-items: flex-end;
-    height: 240px;
+    height: 230px;
     width: 252px;
   }
   .containerText {
-    height: 70px;
+    height: 90px;
   }
   .title {
-    white-space: nowrap; 
+    white-space: nowrap;
     height: 20px;
     font-size: 14px;
   }
@@ -91,8 +108,13 @@
   }
 }
 @media (max-width: 650px) {
+  .pDescription {
+    font-family: var(--font-rubik);
+    font-size: 11px;
+    margin-top:2px ;
+  }
   .cardContainer {
-    width: 162px;
+    width: 172px;
     height: 240px;
   }
   .containerImg {
@@ -104,15 +126,16 @@
   }
   .containerText {
     padding-left: 8px;
-    height: 64px;
+    height: 74px;
   }
   .title {
     width: 95%;
-     overflow: hidden;
-  height: 20px;
+    overflow: hidden;
+    height:auto;
     font-size: 10px;
   }
   .price {
+   
     font-size: 13px;
   }
 }

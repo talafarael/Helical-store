@@ -4,9 +4,9 @@ import "./layout.scss";
 import Header from "./Header/header";
 
 import Menu from "./Menu/menu";
-import {  Suspense, useState } from "react";
+import { Suspense, useState } from "react";
 import Load from "./Load";
-
+import Footer from "./Footer";
 
 // const metadata: Metadata = {
 //   title: "Create Next App",
@@ -22,6 +22,7 @@ const vesperLibre = localFont({
   variable: "--font-vesper-libre",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "../app/fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -35,6 +36,11 @@ const Rubik = localFont({
 const geistSemiBold = localFont({
   src: "../app/fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf",
   variable: "--font-semi-bold",
+  weight: "100 900",
+});
+const RoboBold = localFont({
+  src: "../app/fonts/Roboto-Black.ttf",
+  variable: "--robo-bold",
   weight: "100 900",
 });
 const geistMontserrat = localFont({
@@ -53,16 +59,18 @@ export default function Layout({
 
   return (
     <div
-      className={` conatiner ${Rubik.variable} ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable} ${vesperLibre.variable}`}
+      className={` conatiner ${RoboBold.variable} ${Rubik.variable} ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable} ${vesperLibre.variable}`}
     >
-      <Header  boolMenu={boolMenu} activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
+      <Header
+        boolMenu={boolMenu}
+        activeMenu={activeMenu}
+        setActiveMenu={setActiveMenu}
+      />
       <div className="body">
         {boolMenu ? <Menu activeMenu={activeMenu} /> : null}
-        <Suspense fallback={<Load />}>
-         
-          {children}
-        </Suspense>
+        <Suspense fallback={<Load />}>{children}</Suspense>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,20 +1,27 @@
 .imgDeliver {
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
 }
 .deliverTitle {
-  
-  font-size: 17px;
+  height: auto;
+  font-size: 20px;
   margin-top: 12px;
+  // text-align: center;
   display: flex;
+  align-items: start;
   font-family: var(--font-semi-bold);
 }
-.deliverText{
+.deliverText {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+font-size: 25px;
   margin-left: 5px;
 }
 .lineDeliver {
   width: 400px;
-  height: 1.5px;
+  height: 2px;
   background: #a7a7a7;
 }
 .ulTextDeliver {
@@ -22,8 +29,8 @@
 }
 @media (max-width: 1000px) {
   .imgDeliver {
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
   }
   .deliverTitle {
     font-size: 13px;

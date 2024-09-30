@@ -9,8 +9,8 @@ export default function DeliverItem({ deliver, deliverImg }: IDeliver) {
         src={`/${deliverImg}`}
         className="deliverImg"
         alt="ic"
-        width={20}
-        height={20}
+        width={25}
+        height={25}
       />
       
       <div className="liTextDeliver">{deliver}</div>

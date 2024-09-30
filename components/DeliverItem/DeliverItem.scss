@@ -1,19 +1,10 @@
 .liTextDeliver {
-  font-size: 18px;
+  font-size: 20px;
   margin-left: 10px;
-  margin-top: -3px;
-  font-family: var(--font-montserrat);
+  text-align: center;
+  font-family: var(--font-rubik);
 }
 .deliverLiContainer {
   margin-top: 5px;
   display: flex;
-}
-@media (max-width: 1000px) {
-  .liTextDeliver {
-    margin-top: 0px;
-    font-size: 14px;
-  }
-  .deliverLiContainer {
-    margin-top: 3px;
-  }
 }

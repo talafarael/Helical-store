@@ -7,8 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useResize } from "@/utils/screenSize";
 import menuLog from "@/public/menu-svgrepo-com.svg";
-import imgTg from "@/public/telegram-svgrepo-com.svg";
-import imgSignal from "@/public/signal-chat-message-svgrepo-com.svg";
+
 import SignalTower from "@/public/signal-svgrepo-com.svg";
 export default function Header({
   setActiveMenu,
@@ -26,7 +25,7 @@ export default function Header({
   return (
     <div className="containerHead">
       <div className="logo">
-        {width && width < 1000 && boolMenu && 
+        {width && width < 100 && boolMenu && 
           <Image
             onClick={handlerStateMenu}
             className="menuPicture"
@@ -47,24 +46,11 @@ export default function Header({
           <Link href="/" style={{textDecoration:"none",width:"auto"}}>
         <h1 className="HelicalTitle">Helical.Store</h1></Link>
       </div>
-      <div className="logoContainer">
-      <Link href="https://signal.org/ru/" style={{zIndex:1}} target="_blank "rel="noopener noreferrer">
-      <Image
-      
-        src={imgSignal}
-        className="imgTg"
-        width={50}
-        height={50}
-        alt="Telegram"
-      />
-    </Link>
-        <Link href="https://t.me/univwork">
-          <Image src={imgTg} className="imgTg" width={40} height={40} alt="" />
-        </Link>
+     
         <Link href="/order" className="linkToOrder">
           <Image className="shopBin" src={shop} alt="" />
         </Link>
-      </div>
+      
     </div>
   );
 }

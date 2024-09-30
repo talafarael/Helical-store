@@ -2,14 +2,14 @@
   position: relative;
   display: flex;
   align-items: center;
-  height:max-content;
+  height: max-content;
   width: 85vw;
-  height:auto;
+  height: auto;
   justify-content: center;
 }
 .imgContainer {
   width: 45vw;
-  height: auto;
+  height: 88vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,7 +60,11 @@
     width: 45vw;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 850px) {
+  .imgContainer {
+    width: 45vw;
+    height: auto;
+  }
   .buttonBack {
     top: 15px;
     left: 20px;
