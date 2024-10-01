@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
 // import logo from "../../public/giphy.webp"
-import shop from "@/public/shop-svgrepo-com.svg";
+import shop from "@/public/shop-svgrepo-comWhite2.svg";
 import "./header.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { useResize } from "@/utils/screenSize";
 import menuLog from "@/public/menu-svgrepo-com.svg";
-
-import SignalTower from "@/public/signal-svgrepo-com.svg";
+import phone from "@/public/phone-svgrepo-comWhite.svg"
+import SignalTower from "@/public/signal-svgrepo-comWhite.svg";
 export default function Header({
   setActiveMenu,
   activeMenu,
@@ -25,7 +25,7 @@ export default function Header({
   return (
     <div className="containerHead">
       <div className="logo">
-        {width && width < 100 && boolMenu && 
+        {width && width < 1100 && boolMenu && 
           <Image
             onClick={handlerStateMenu}
             className="menuPicture"
@@ -46,11 +46,16 @@ export default function Header({
           <Link href="/" style={{textDecoration:"none",width:"auto"}}>
         <h1 className="HelicalTitle">Helical.Store</h1></Link>
       </div>
-     
+      <div className="contantHeader">
+        <div className="phoneNumber">
+        <Image src={phone} alt='phone' 
+        width={20}
+        height={20}/>
+     <h3>+380984884824</h3></div>
         <Link href="/order" className="linkToOrder">
           <Image className="shopBin" src={shop} alt="" />
         </Link>
-      
+      </div>
     </div>
   );
 }

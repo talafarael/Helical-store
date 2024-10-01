@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import stub from "@/public/noImage.png";
 import { INewData } from "@/type/newData";
-
+import hryvnia from "@/public/ukraine-hryvnia-icon.svg"
 import Load from "../Load";
 
 export default function Card({ data }: { data: INewData }) {
@@ -29,9 +29,16 @@ export default function Card({ data }: { data: INewData }) {
       </div>
       <div className="containerText">
         <h1 className="title h1Font">{data.name}</h1>
-        <p className="pDescription">кут{data?.openingAngle}</p>
-        <p className="pDescription">посилення-{data?.gain} </p>
-        <p className="price ">{data.price}-грн/шт</p>
+ <div   className="pDescriptionConatiner">
+  <div className="pDescriptionWeight">кут  </div>
+    <div className="pDescription"> {data?.openingAngle}</div></div> 
+<div className="pDescriptionConatiner">
+    <p className="pDescriptionWeight">посилення  </p>
+     <p className="pDescription" > {data?.gain} </p></div>
+        <p className="price ">{data.price}
+          <Image src={hryvnia}alt="грн" height={10}
+          width={10}></Image>
+          </p>
       </div>
     </Link>
   );

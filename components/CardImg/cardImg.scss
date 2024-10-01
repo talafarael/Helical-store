@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 550px;
+  height: 600px;
   width: 722px;
   overflow: hidden;
   // width: 90%;
@@ -25,13 +25,13 @@
 
 .imgCard {
   width: 100%;
-  height: 55vh;
+  height: 50vh;
 }
 .thumb-wrapper {
   display: flex;
   justify-content: space-around;
   width: 500px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .thumb-wrapper > div {
@@ -86,6 +86,7 @@
   }
 }
 @media (max-width: 1200px) {
+ 
   .containerSlider {
     height: auto;
   }
@@ -140,13 +141,13 @@
   }
   .containerSlider {
     height: auto;
-    width: 70%;
+    width: 60%;
   }
   .thumb-wrapper {
     display: flex;
     justify-content: space-around;
     width: 370px;
-    height: 65px;
+    // height:500px;
   }
   .imgCard {
     width: 100%;

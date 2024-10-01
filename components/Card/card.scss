@@ -60,40 +60,66 @@
   overflow: hidden;
   font-size: 15px;
   margin-top: 5px;
-
+height:37px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
-  height: min-content;
+ 
 }
-.pDescription {
-  font-family: var(--font-rubik);
-  font-size: 14px;
+.pDescriptionConatiner {
+
+  // justify-content: space-between;
+  font-family: var(--font-montserrat);
+  font-size: 12px;
+display: flex;
+align-items: center;
+}
+.pDescription{
+  display: flex;
+  
+  align-content: center;
+ height: auto;
+  height: min-content;
+  font-size: 13px;
+  margin-left: 5px;
+}
+.pDescriptionWeight{
+  display: flex;
+  
+
+height: auto;
+
+font-weight: 600;
 }
 .price {
   font-family: var(--font-semi-bold);
   display: flex;
-
+  font-weight: 500;
+align-items: center;
   font-size: 18px;
 }
 @media (max-width: 1150px) {
   .pDescription {
     font-family: var(--font-rubik);
-    font-size: 12px;
+    font-size: 11px;
   }
   .cardContainer {
     width: 252px;
-    height: 310px;
+    height: 312px;
+    background:  rgba(#a7a7a7, 0.1);
   }
-  
+  .pDescription{
+    height: 100%;
+    display: flex;align-items: end;
+  }
   .containerImg {
     display: flex;
     display: inline-flex;
     align-items: flex-end;
     height: 230px;
-    width: 252px;
+    width: 254px;
   }
   .containerText {
     height: 90px;
@@ -101,21 +127,26 @@
   .title {
     white-space: nowrap;
     height: 20px;
-    font-size: 14px;
+    font-size: 15px;
+    height: auto;
   }
   .price {
     font-size: 15px;
   }
 }
 @media (max-width: 650px) {
-  .pDescription {
+  .pDescriptionConatiner {
+    height: min-content;
+    display: flex;
+    align-items: flex-end;
+  
     font-family: var(--font-rubik);
-    font-size: 11px;
+    font-size: 10px;
     margin-top:2px ;
   }
   .cardContainer {
     width: 172px;
-    height: 240px;
+    height: 250px;
   }
   .containerImg {
     display: flex;
@@ -126,13 +157,13 @@
   }
   .containerText {
     padding-left: 8px;
-    height: 74px;
+    height: 84px;
   }
   .title {
     width: 95%;
     overflow: hidden;
     height:auto;
-    font-size: 10px;
+    font-size: 14px;
   }
   .price {
    

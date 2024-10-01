@@ -10,9 +10,10 @@ import { useRouter } from "next/router";
 
 export default function Menu({
   activeMenu,
+  setActiveMenu
 }: // setActiveMenu,
 {
-  // setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
   activeMenu: boolean;
 }) {
   const [categories, setCategories] = useState<ICategory[]>([]);
@@ -38,6 +39,9 @@ export default function Menu({
     };
     fetchCategories();
   }, []);
+  const handlerCloseMenu=()=>{
+    setActiveMenu(false)
+  }
 
   return (
     <>
@@ -45,6 +49,7 @@ export default function Menu({
         <div className="menuContainer">
           <div className="categoryContainer">
             <Link
+            onClick={()=> handlerCloseMenu()}
               href={`/`}
               className={
                 router.pathname == "/"
@@ -56,6 +61,7 @@ export default function Menu({
             </Link>
             {categories?.map((elem: ICategory) => (
               <Link
+              onClick={()=> handlerCloseMenu()}
                 href={`/category/${elem.category}`}
                 className={
                   id == elem.category

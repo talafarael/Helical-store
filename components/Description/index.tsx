@@ -7,7 +7,7 @@ export default function Description({ newData }: { newData: INewData | null }) {
   return (
     <div className="bodyDescritpion">
       {/* <div className="linedesc"></div> */}
-      <h3 className="textDesc">{newData?.nameItemcCharacteristics}</h3>
+      <h3 className="textDesc">Характеристики</h3>
       <div className="desc">
         <Characteristics newData={newData} />
       </div>

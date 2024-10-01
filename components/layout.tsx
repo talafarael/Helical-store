@@ -38,6 +38,11 @@ const geistSemiBold = localFont({
   variable: "--font-semi-bold",
   weight: "100 900",
 });
+const geistOverpass = localFont({
+  src: "../app/fonts/Overpass-VariableFont_wght.ttf",
+  variable: "--font-overpass",
+  weight: "100 900",
+});
 const RoboBold = localFont({
   src: "../app/fonts/Roboto-Black.ttf",
   variable: "--robo-bold",
@@ -59,7 +64,7 @@ export default function Layout({
 
   return (
     <div
-      className={` conatiner ${RoboBold.variable} ${Rubik.variable} ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable} ${vesperLibre.variable}`}
+      className={` conatiner ${geistOverpass.variable} ${RoboBold.variable} ${Rubik.variable} ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable} ${vesperLibre.variable}`}
     >
       <Header
         boolMenu={boolMenu}
@@ -67,7 +72,7 @@ export default function Layout({
         setActiveMenu={setActiveMenu}
       />
       <div className="body">
-        {boolMenu ? <Menu activeMenu={activeMenu} /> : null}
+        {boolMenu ? <Menu setActiveMenu={setActiveMenu} activeMenu={activeMenu} /> : null}
         <Suspense fallback={<Load />}>{children}</Suspense>
       </div>
       <Footer />

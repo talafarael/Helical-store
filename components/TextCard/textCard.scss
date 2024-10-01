@@ -40,6 +40,7 @@
   border-bottom: solid black 1px;
   // width:min-content;
 }
+
 .accardionText1 {
   cursor: pointer;
   color: rgb(36, 35, 37, 0.5);
@@ -77,6 +78,7 @@
   // width: auto;
   font-size: 16px;
 }
+
 .index {
   margin-top: 5px;
   font-family: var(--font-semi-bold);
@@ -91,13 +93,17 @@
 }
 
 .priceCard {
-  font-size: 30px;
+  font-size: 36px;
   display: flex;
   height: auto;
   flex-wrap: wrap;
 
+    // font-size: 20px;
+    display: flex;
+    align-items:center;
+  
   font-family: var(--font-semi-bold);
-  text-align: center;
+
 }
 .line {
   margin-top: 7px;
@@ -136,12 +142,13 @@
   }
 }
 @media (max-width: 1000px) {
+  
   .textCard {
     font-size: 15px;
   }
   .priceCard {
     
-    font-size: 23px;
+    font-size: 26px;
   }
   .buttonContainer {
     margin-top: 11px;
@@ -149,6 +156,9 @@
   .line {
     margin-top: 10px;
     width: 300px;
+  }
+  .descDescription {
+    font-size: 12px;
   }
 }
 
@@ -169,7 +179,7 @@
   }
   .priceCard {
    
-    font-size: 21px;
+    font-size: 25px;
   }
   .buttonContainer {
     margin-top: 10px;
@@ -182,7 +192,13 @@
     font-size: 15px;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 850px) {
+  .buttonContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 @media (max-width: 700px) {
 }
@@ -191,12 +207,7 @@
     display: flex;
     height: auto;
   }
-  .buttonContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+
   .line {
     width: 100%;
   }

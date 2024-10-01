@@ -1,5 +1,5 @@
 .footerContainer {
-  height: 20vh;
+  height: 15vh;
   background: linear-gradient(to bottom, #bdbec0 0%, #858486 72%, #787481 100%);
   width: 100%;
   margin-top: 70px;
@@ -8,7 +8,17 @@
   justify-content: center;
 }
 .imgTg {
-    margin: 50px;
-    width: 75px;
-    height: 75px;
+    /* margin-right: 50px; */
+    /* margin-left: 50px; */
+
+    width: 50px;
+    height: 50px;
+}
+
+@media (max-width:1000px) {
+  .imgTg {
+  
+    width: 40px;
+    height: 40px;
+  }
 }
