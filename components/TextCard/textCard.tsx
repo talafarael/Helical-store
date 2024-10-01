@@ -1,8 +1,8 @@
-"use client";
-import React, { useState } from "react";
+
+import React from "react";
 import "./textCard.scss";
 
-import StarRating from "../StarRating/starRating";
+
 import { INewData } from "@/type/newData";
 
 import Deliver from "../Deliver/deliver";
