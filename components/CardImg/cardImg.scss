@@ -6,6 +6,7 @@
 }
 
 .containerImgSlider {
+  margin-top: 50px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -13,18 +14,20 @@
   justify-content: center;
 }
 .containerSlider {
+
   border-radius: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 600px;
-  width: 722px;
+  width: 650px;
   overflow: hidden;
   // width: 90%;
 }
 
 .imgCard {
   width: 100%;
+  
   height: 50vh;
 }
 .thumb-wrapper {
@@ -107,6 +110,7 @@
   .thumb-wrapper > div {
     width: 75px;
   }
+ 
 }
 @media (max-width: 1200px) {
   .imgCard {
