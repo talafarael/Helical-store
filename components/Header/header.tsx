@@ -46,12 +46,14 @@ export default function Header({
           <Link href="/" style={{textDecoration:"none",width:"auto"}}>
         <h1 className="HelicalTitle">Helical.Store</h1></Link>
       </div>
-      <div className="contantHeader">
+      
         <div className="phoneNumber">
+        {width && width >1100 && <div className="contantHeader">
         <Image src={phone} alt='phone' 
         width={20}
         height={20}/>
      <h3>+380984884824</h3></div>
+    }
         <Link href="/order" className="linkToOrder">
           <Image className="shopBin" src={shop} alt="" />
         </Link>

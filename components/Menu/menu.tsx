@@ -7,7 +7,8 @@ import { db } from "@/utils/firebase";
 import { useResize } from "@/utils/screenSize";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+import Image from "next/image";
+import phone from "@/public/phone-svgrepo-comWhite.svg"
 export default function Menu({
   activeMenu,
   setActiveMenu
@@ -74,6 +75,12 @@ export default function Menu({
               </Link>
             ))}
           </div>
+          {width && width < 1100 &&      <div className="contantHeader">
+        <Image src={phone} alt='phone' 
+        width={20}
+        height={20}/>
+     <h3>+380984884824</h3></div>}
+    
         </div>
       ) : null}
     </>
