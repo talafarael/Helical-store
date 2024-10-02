@@ -15,13 +15,20 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   );
   useEffect(() => {
     const handleRouteChange = (url:string) => {
-  
-      window.gtag('config', process.env.NEXT_PUBLIC_GA_ID as string, {
-        page_path: url,
-      });
+      gtag('config',  process.env.NEXT_PUBLIC_GA_ID, {
+        'page_title': document.title,
+        'page_location': window.location.href,
+        'page_path':  url
+    });
+
+
+
+      // window.gtag('config', process.env.NEXT_PUBLIC_GA_ID as string, {
+      //   page_path: url,
+      // });
     };
 
-    console.log("Tracking page view:", router.asPath); 
+   
     router.events.on('routeChangeComplete', handleRouteChange);
 
    
