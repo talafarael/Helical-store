@@ -1,7 +1,9 @@
+
 import Layout from "@/components/layout";
 
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -11,9 +13,27 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const isNoMenuPage = pathsWithoutMenu.some((path) =>
     typeof path === "string" ? path === router.asPath : path.test(router.asPath)
   );
+  useEffect(() => {
+    const handleRouteChange = (url:string) => {
+  
+      window.gtag('config', process.env.NEXT_PUBLIC_GA_ID as string, {
+        page_path: url,
+      });
+    };
+
+    console.log("Tracking page view:", router.asPath); 
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+   
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router]);
+
   return (
     <Layout boolMenu={!isNoMenuPage}>
-      <Component {...pageProps} />
+{/* <GoogleRouter /> */}
+     <Component {...pageProps} />
     </Layout>
   );
 }

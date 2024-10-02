@@ -1,0 +1,13 @@
+.phoneMenuContainer{
+    position: absolute;
+    /* background: black; */
+display: flex;align-items: center;
+    height: 60px;
+    font-size: 20px;
+    color: rgb(235, 237, 243);
+    font-family: var(--font-montserrat);
+    background: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+} 

@@ -7,6 +7,8 @@ import Menu from "./Menu/menu";
 import { Suspense, useState } from "react";
 import Load from "./Load";
 import Footer from "./Footer";
+import MenuPhone from "./MenuPhone";
+import GoogleAnalytics from "./GoogleAnalytics";
 
 // const metadata: Metadata = {
 //   title: "Create Next App",
@@ -60,22 +62,30 @@ export default function Layout({
   children: React.ReactNode;
   boolMenu: boolean;
 }) {
-  const [activeMenu, setActiveMenu] = useState<boolean>(false);
 
+
+  const [activeMenu, setActiveMenu] = useState<boolean>(false);
+  const [activeMenuPhone, setActiveMenuPhone] = useState<boolean>(false);
   return (
     <div
       className={` conatiner ${geistOverpass.variable} ${RoboBold.variable} ${Rubik.variable} ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable} ${vesperLibre.variable}`}
     >
+      
       <Header
         boolMenu={boolMenu}
         activeMenu={activeMenu}
         setActiveMenu={setActiveMenu}
+        setActiveMenuPhone={setActiveMenuPhone}
+        activeMenuPhone={activeMenuPhone}
       />
       <div className="body">
-        {boolMenu ? <Menu setActiveMenu={setActiveMenu} activeMenu={activeMenu} /> : null}
+        <GoogleAnalytics />
+      { activeMenuPhone && <MenuPhone/>}
+        {boolMenu && <Menu setActiveMenu={setActiveMenu} activeMenu={activeMenu} />}
         <Suspense fallback={<Load />}>{children}</Suspense>
       </div>
       <Footer />
     </div>
+    
   );
 }

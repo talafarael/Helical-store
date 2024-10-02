@@ -37,15 +37,20 @@
   .categoryContainer {
     border-right: none;
   }
-  .contantHeader{
-    font-size: 18px;
-align-items: end;
-justify-content: flex-end;
-  margin-right:20px;
-  margin-bottom: 10px;
+  .categoryContainer {
+ 
+    border-right: solid rgb(235, 237, 243) 2px;}
+  .activeCategoryDiv {
+    border-bottom: solid rgb(235, 237, 243) 2px;
+    color: rgb(235, 237, 243);
+  }
+  .categoryDiv:hover {
+    border-bottom: solid rgb(235, 237, 243) 2px;
+    color: rgb(235, 237, 243);
   }
 }
 @media( max-width:850px){
+
   .categoryContainer {
   
   

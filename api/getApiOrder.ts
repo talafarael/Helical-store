@@ -8,7 +8,7 @@ export const getOrder = async () => {
     const order = localOrder ? JSON.parse(localOrder) : [];
     if (!order.length) return [];
 
-    console.log(order);
+    
 
     const results = await Promise.all(
       order.map(async (element: { id: string; count: number }) => {
@@ -21,7 +21,7 @@ export const getOrder = async () => {
             count: element.count,
             id: element.id,
           } as IDefaultData;
-          console.log(arr);
+         
           return arr;
         } else {
           console.error(`Document with ID ${element.id} not found.`);
