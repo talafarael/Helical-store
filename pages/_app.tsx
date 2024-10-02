@@ -15,7 +15,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   );
   useEffect(() => {
     const handleRouteChange = (url:string) => {
-      gtag('config',  process.env.NEXT_PUBLIC_GA_ID, {
+      (window as any).gtag('config',  process.env.NEXT_PUBLIC_GA_ID  as string, {
         'page_title': document.title,
         'page_location': window.location.href,
         'page_path':  url

@@ -14,7 +14,7 @@ import emptyOrderImg from "@/public/basket_12271779.png";
 import Loading from "../loading";
 import React from "react";
 const Order = () => {
-  console.log(process.env.REACT_APP_FIREBASE_STORAGE_BUCKET);
+ 
   const [order, setOrder] = useState<IDefaultData[] | undefined | string[]>();
   useEffect(() => {
     getOrder().then((result) => {

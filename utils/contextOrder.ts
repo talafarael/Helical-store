@@ -10,7 +10,7 @@ export const useOrderHandlers = (
 ) => {
   const handlerAdd = (data: string | undefined) => {
     if (data && order) {
-      console.log(data);
+      
 
       const updatedOrder = order.map((element) => {
         if (typeof element != "string" && data == element.id) {

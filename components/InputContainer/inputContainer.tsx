@@ -8,6 +8,7 @@ import Button from "../Button/button";
 import { NovaPoshtaSearch } from "@/utils/hooks/novaPoshtaSearch";
 import { sendMessageToTelegram } from "@/utils/telegram";
 import { OderContext } from "@/utils/hooks/context";
+
 // import component from "@/public/Component1.svg";
 type Inputs = {
   Name: string;
@@ -53,7 +54,7 @@ export default function InputContainer() {
   };
   const handlerClear = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setTypeDeliver(event.target.value);
-
+   
     setDeliver("");
     setStateAddress(true);
     setAddress(undefined);
@@ -68,6 +69,8 @@ export default function InputContainer() {
       if(address?.length == 1){
         addressDeliver = address[0]
       }
+    
+      
      addressDeliver ?
           sendMessageToTelegram({
             data: data,
@@ -77,7 +80,10 @@ export default function InputContainer() {
             orderContext?.clearOrder();
             reset();
             setPanelResponse(true);
-          }):null
+           
+          })
+          
+      :null
     }else{
       // alert("товаров нет)))")
     }
