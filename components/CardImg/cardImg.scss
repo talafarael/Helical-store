@@ -7,24 +7,30 @@
 
 .containerImgSlider {
   margin-top: 50px;
-  height: 100%;
+  height: auto;
   display: flex;
+ 
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .containerSlider {
-
+  
   border-radius: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 600px;
-  width: 650px;
+  height: auto;
+  width: 400px;
   overflow: hidden;
   // width: 90%;
 }
-
+.slick-slide img{
+  min-height: 200px;
+  height: 300px;
+  width: 500px;
+  max-height:550px;
+}
 .imgCard {
   width: 100%;
   
@@ -89,7 +95,14 @@
   }
 }
 @media (max-width: 1200px) {
- 
+  .containerImgSlider {
+    
+    width: auto;
+  }
+  .slick-slide img{
+    min-height: 300px;
+  max-height: 50vh;}
+
   .containerSlider {
     height: auto;
   }
@@ -120,6 +133,7 @@
 }
 @media (max-width: 900px) {
   .containerSlider {
+    min-height: 200px;
   }
   .thumb-wrapper {
     margin-top: 10px;
@@ -144,7 +158,7 @@
     width: auto;
   }
   .containerSlider {
-    height: auto;
+    // height: auto;
     width: 60%;
   }
   .thumb-wrapper {
