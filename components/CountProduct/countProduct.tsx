@@ -7,26 +7,28 @@ interface ICountProduct {
   handlerMinus: (data?: string) => void;
   handlerAdd: (data?: string) => void;
   id?: string;
+  stylePhone?: string
 }
 export default function CountProduct({
   count,
   id,
   handlerMinus,
+  stylePhone,
   handlerAdd,
 }: ICountProduct) {
   
   return (
-    <div className="countContainer">
+    <div className={`${ stylePhone&&"countContainerOrder"} countContainer `}>
       <>
         <button
-          className="buttonLeft"
+          className={` ${stylePhone&&"buttonLeftOrder"} buttonLeft`}
           onClick={() => (handlerMinus(id))}
         >
           -
         </button>
-        <h1 className="countText">{count}</h1>
+        <h1 className={`countText ${ stylePhone&&"countTextOrder"}`}>{count}</h1>
         <button
-          className="buttonRight"
+          className={`buttonRight ${ stylePhone&&"buttonRightOrder"}`}
           onClick={() =>  handlerAdd(id)}
         >
           +

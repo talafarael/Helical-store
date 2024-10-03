@@ -8,7 +8,7 @@ interface IButton {
 }
 export default function Button(data: IButton) {
   return (
-    <button className="button h1Font" type={data.type} onClick={data.func}>
+    <button className="button h1Font " type={data.type} onClick={data.func}>
       {data.text}
     </button>
   );

@@ -6,6 +6,7 @@ import Image from "next/image";
 import CountProduct from "../CountProduct/countProduct";
 import { OderContext } from "@/utils/hooks/context";
 import closeImg from "../../public/close-window.png";
+import hryvnia from "@/public/ukraine-hryvnia-icon.svg"
 import Link from "next/link";
 import stub from "@/public/noImage.png"
 import SpinnerLoader from "../spinnerLoader";
@@ -32,6 +33,7 @@ export default function CardBin({ data }: { data: IDefaultData }) {
         </div>
         <Link href={`/product/${data.id}`} className="cardBinTextContainer">
           <h1 className="cardBinTitle">{data.name}</h1>
+          <div className="lineCardBin"></div>
           <p className="cardBinDescription">{data.description}</p>
         </Link>
         <div className="cutCardBinContainer">
@@ -44,8 +46,11 @@ export default function CardBin({ data }: { data: IDefaultData }) {
         </div>
       </div>
       <div className="containerButtonBin">
-        <h1 className="cardBinPrice">{+data.price * data.count}-грн</h1>
+        <h1 className="cardBinPrice">{+data.price * data.count} 
+          <Image src={hryvnia}alt="грн" height={15}
+          width={10}></Image></h1>
         <CountProduct
+          stylePhone={"true"}
           handlerAdd={order?.handlerAdd || (() => {})}
           id={data.id}
           handlerMinus={order?.handlerMinus || (() => {})}

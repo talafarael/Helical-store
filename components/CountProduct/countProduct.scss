@@ -1,9 +1,11 @@
 .countContainer {
+  
   display: flex;
   width: auto;
   height: 40px;
 }
 .buttonRight {
+  cursor: pointer;
   width: 40px;
   background: #202020;
   border: 0px;
@@ -23,6 +25,7 @@
   color: #202020;
 }
 .buttonLeft {
+  cursor: pointer;
   transition-duration: 2s;
   transition-property: margin-right, color;
   width: 40px;
@@ -45,18 +48,21 @@
 }
 @media (max-width: 650px) {
   .countContainer {
+    margin-top: 5px;}
+  .countContainerOrder {
     height: 30px;
+    margin-top: 0px;
   }
-  .countText {
+  .countTextOrder{
     
     width: 30px;
     font-size: 16px;
   }
-  .buttonRight {
+  .buttonRightOrder {
     width: 35px;
     font-size: 18px;
   }
-  .buttonLeft {
+  .buttonLeftOrder{
     width: 35px;
     font-size: 18px;
   }
