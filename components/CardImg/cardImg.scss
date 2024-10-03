@@ -24,7 +24,10 @@
   overflow: hidden;
   // width: 90%;
 }
-
+.slick-slider{
+  border-radius: 30px;
+  overflow: hidden;
+}
 .imgCard {
   width: 100%;
   
@@ -140,6 +143,9 @@
   }
 }
 @media (max-width: 850px) {
+  .containerImgSlider {
+    margin-top: 0px;
+  }
   .thumb-wrapper {
     width: auto;
   }

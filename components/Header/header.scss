@@ -136,6 +136,8 @@
 }
 }
 @media (max-width: 650px) {
+  .linkToOrder {
+    margin-right: 25px;}
   .contantHeader{
   
    font-size: 12px;
@@ -152,10 +154,10 @@
     width: 140px;
   }
   .logoContainer {
-    margin-right: 20px;
+    margin-right:10px;
   }
   .menuPicture {
-    margin-left: 20px;
+    margin-left: 10px;
   }
   .HelicalTitle {
     font-size: 18px;
@@ -173,7 +175,9 @@
   }
 }
 @media (max-width: 450px) {
+  .linkToOrder {
+    margin-right: 10px;}
   .logoContainer {
-    margin-right: 20px;
+    margin-right: 0px;
   }
 }
