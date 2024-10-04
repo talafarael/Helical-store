@@ -46,10 +46,10 @@ export default function Header({
 
         {/* <Image src={logo} */}
         {/* alt="" className="gifHeader"></Image> */}
-        <Link href="/" style={{ width: "auto" }}>
+        <Link href="/"  className="linkTower" style={{ width: "auto" }}>
           {" "}
           <Image
-            className="signalTower"
+           className="signalTower"
             width={65}
             height={65}
             src={SignalTower}
