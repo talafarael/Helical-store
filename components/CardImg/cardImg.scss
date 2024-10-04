@@ -200,7 +200,7 @@
 @media (max-width: 450px) {
   .imgCard {
     width: 100%;
-    height: auto;
+    // height: auto;
   }
 }
 @media (max-width: 450px) {
@@ -215,21 +215,21 @@
     width: 50px;
     height: 50px;
   }
-  .containerImgSlider {
-    height: auto;
-  }
+  // .containerImgSlider {
+  //   height: auto;
+  // }
   .containerSlider {
-    height: auto;
+    // height: auto;
     width: 90%;
   }
   .imgCard {
     width: 100%;
-    height: auto;
+    // height: auto;
   }
   .slick-slide {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: auto !important; /* Важно для корректного пересчета высоты */
+    // height: auto !important; /* Важно для корректного пересчета высоты */
   }
 }
