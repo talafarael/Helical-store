@@ -1,4 +1,4 @@
-.categoryDiv {
+.categoryLink {
   margin-top: 15px;
   box-sizing: border-box;
   border-bottom: solid transparent 2px;
@@ -12,7 +12,7 @@
   font-weight: 600;
   overflow: hidden;
 }
-.categoryDiv:hover {
+.categoryLink:hover {
   border-bottom: solid #a7a7a7 2px;
   color: #a7a7a7;
 }
@@ -29,7 +29,7 @@
   box-sizing: border-box;
   font-family: var(--robo-bold);
 }
-.activeCategoryDiv {
+.activeCategoryLink {
   border-bottom: solid #a7a7a7 2px;
   color: #a7a7a7;
 }
@@ -40,11 +40,11 @@
   .categoryContainer {
  
     border-right: solid rgb(235, 237, 243) 2px;}
-  .activeCategoryDiv {
+  .activeCategoryLink {
     border-bottom: solid rgb(235, 237, 243) 2px;
     color: rgb(235, 237, 243);
   }
-  .categoryDiv:hover {
+  .categoryLink:hover {
     border-bottom: solid rgb(235, 237, 243) 2px;
     color: rgb(235, 237, 243);
   }

@@ -4,7 +4,7 @@ import { IDeliver } from "@/type/newData";
 import Image from "next/image";
 export default function DeliverItem({ deliver, deliverImg }: IDeliver) {
   return (
-    <div className="deliverLiContainer">
+    <article className="deliverItemContainer">
       <Image
         src={`/${deliverImg}`}
         className="deliverImg"
@@ -12,8 +12,8 @@ export default function DeliverItem({ deliver, deliverImg }: IDeliver) {
         width={25}
         height={25}
       />
-      
-      <div className="liTextDeliver">{deliver}</div>
-    </div>
+
+      <p className="deliverItemText">{deliver}</p>
+    </article>
   );
 }

@@ -34,7 +34,7 @@ export default function CardImg({ img }: { img: string[] }) {
   };
 
   return (
-    <div className="containerImgSlider">
+    <section className="containerImgSlider">
       <div className="containerSlider">
         <Slider {...settings} ref={sliderRef}>
           {img.map((item, idx) => (
@@ -56,7 +56,7 @@ export default function CardImg({ img }: { img: string[] }) {
         </Slider>
         {!imgLoad && <SpinnerLoader />}
       </div>
-      <div className="thumb-wrapper">
+      <article className="thumb-wrapper">
         {img.map((item, idx) => (
           <div
             key={item}
@@ -66,7 +66,7 @@ export default function CardImg({ img }: { img: string[] }) {
             <Image src={`/${item}`} alt="" width={80} height={80} />
           </div>
         ))}
-      </div>
-    </div>
+      </article>
+    </section>
   );
 }
