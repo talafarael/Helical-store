@@ -33,23 +33,19 @@ export default function Header({
   };
 
   return (
-    <div className="containerHead">
-      <div className="logo">
-        {width && width < 1100 && boolMenu && (
+    <header className="containerHead">
+      <section className="logo">
+        {width && width < 1100 && boolMenu ? (
           <Image
             onClick={handlerStateMenu}
             className="menuPicture"
             src={menuLog}
             alt=""
           />
-        )}
-
-        {/* <Image src={logo} */}
-        {/* alt="" className="gifHeader"></Image> */}
-        <Link href="/"  className="linkTower" style={{ width: "auto" }}>
-          {" "}
-          <Image
-           className="signalTower"
+        ) : null}
+    <Link href="/" className="linkTower" style={{ width: "auto" }}>
+         <Image
+            className="signalTower"
             width={65}
             height={65}
             src={SignalTower}
@@ -59,7 +55,7 @@ export default function Header({
         <Link href="/" style={{ textDecoration: "none", width: "auto" }}>
           <h1 className="HelicalTitle">Helical.Store</h1>
         </Link>
-      </div>
+      </section>
 
       <div className="contantHeader">
         <div className="phoneNumber">
@@ -80,6 +76,6 @@ export default function Header({
           <Image className="shopBin" src={shop} alt="" />
         </Link>
       </div>
-    </div>
+    </header>
   );
 }
