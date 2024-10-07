@@ -1,4 +1,14 @@
+/**
+ * @type {import('next').NextConfig}
+ */
+
 module.exports = {
+
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
+  reactStrictMode: true,
     env: {
         "TOKEN_TELEGRAM":"7218356256:AAE-8mBqDMnzso1WEQLTROnSv49a9WbXc4w",
         "USER_ID":"1056119921",
@@ -13,4 +23,5 @@ module.exports = {
         NEXT_PUBLIC_GA_ID:"G-9R69QJ6LGF"
     ,
     },
+    
   }

@@ -42,20 +42,11 @@ export default function ButtonContainer() {
   router.push('/order'); 
 
   };
-  const handlerAdd = () => {
-    setCount(count + 1);
-  };
-  const handlerMinus = () => {
-    if ( count > 1) setCount((prevCount) => prevCount - 1);
-  };
+ 
 
   return (
     <>
-      <CountProduct
-        handlerAdd={handlerAdd}
-        handlerMinus={handlerMinus}
-        count={count}
-      />
+     
       <Button text="купити" func={handlerOrder} />
     </>
   );

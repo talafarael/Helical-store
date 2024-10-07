@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import fetchCategoryData from "@/api/getApiProductCategory";
 import Card from "@/components/Card/card";
 import Load from "@/components/Load";
+import Head from "next/head";
 
 export default function Category() {
   interface INewData {
@@ -32,18 +33,26 @@ export default function Category() {
 
   return (
     <div className="categoryContainerCardMain">
+      <Head>
+        <title>{id}</title>
+        <meta
+          name="description"
+          content={
+            newData
+              ? `${id} Discover our collection of ${newData[0].name}. ${newData[0].description}`
+              : "Explore our products."
+          }
+        />
+      </Head>
       <div className="titlePageCategory">
-    
-       
         <h1 className="textBack">{id}</h1>
-       
       </div>
-      <Suspense fallback={<Load /> }>
-      <div className="categoryContainerCard">
-        {newData?.map((elem) => (
-          <Card key={elem.id} data={elem} />
-        ))}
-      </div>
+      <Suspense fallback={<Load />}>
+        <div className="categoryContainerCard">
+          {newData?.map((elem) => (
+            <Card key={elem.id} data={elem} />
+          ))}
+        </div>
       </Suspense>
     </div>
   );

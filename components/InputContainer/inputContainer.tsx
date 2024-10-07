@@ -143,7 +143,7 @@ export default function InputContainer() {
             <input
               className="input"
               type="text"
-              placeholder="місто номер "
+              placeholder="Місто та номер пошти"
               value={deliver}
               onKeyPress={(event) => {
                 if (event.key === "Enter" && address?.length == 1) {

@@ -1,4 +1,4 @@
-"use client";
+
 import "./index.scss";
 import Card from "@/components/Card/card";
 import { db } from "../utils/firebase";
@@ -6,21 +6,20 @@ import { collection, getDocs } from "firebase/firestore";
 import React from "react";
 import { INewData } from "@/type/newData";
 
-
-
-const Main = ({ data }: { data: INewData[] }) => {
+export default function Page({ data }: { data: INewData[] }) {
   return (
     <div className="containerMain">
+     
       <h1 className="titlePage">Усі товари</h1>
       <div className="containerCard">
-      {data.map((element) => (
+        {data.map((element) => (
           <Card key={element.id} data={element} />
         ))}
       </div>
     </div>
   );
-};
-export default Main;
+}
+
 export const getStaticProps = async () => {
   const querySnapshot = await getDocs(collection(db, "id"));
   const data = querySnapshot.docs.map((doc) => ({
@@ -30,7 +29,6 @@ export const getStaticProps = async () => {
 
   return {
     props: { data },
-
-    revalidate: 30,
+    
   };
 };

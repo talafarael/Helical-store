@@ -34,13 +34,20 @@
   height: 550px;
 }
 .thumb-wrapper {
+
+  // scrollbar-width: none;
+ 
+  overflow-y: hidden;
   display: flex;
   justify-content: space-around;
   width: 450px;
-  margin-top: 10px;
+
+  margin-top: 10px; 
+   overflow-x:auto; white-space: nowrap;
 }
 
-.thumb-wrapper > div {
+.thumb-wrapper > div {  
+  margin-right: 5px;
   cursor: pointer;
   border-radius: 5px;
   position: relative;
@@ -157,6 +164,7 @@
   .thumb-wrapper {
     margin-top: 10px;
     width: auto;
+    margin-right: 5px;
   }
   .imgCard {
     height: 375px;
@@ -166,13 +174,13 @@
   // }
   .thumb-wrapper > div img {
     width: 55px;
-    height: 55px;
+    height: 65px;
   }
   .thumb-wrapper {
     display: flex;
     justify-content: space-around;
     width: 300px;
-    height: 55px;
+    height: 65px;
   }
 }
 @media (max-width: 850px) {
@@ -230,6 +238,7 @@
 }
 @media (max-width: 450px) {
   .thumb-wrapper {
+    
     width: 300px;
   }
   .thumb-wrapper > div {

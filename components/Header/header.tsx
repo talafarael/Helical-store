@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useResize } from "@/utils/screenSize";
 import menuLog from "@/public/menu-svgrepo-comWhite.svg";
 import phone from "@/public/phone-svgrepo-comWhite.svg";
-import SignalTower from "@/public/signal-svgrepo-comWhite.svg";
+import SignalTower from "@/public/signal-wifi-svgrepo-comWhiteTwo.svg";
 export default function Header({
   setActiveMenu,
   activeMenu,
@@ -35,7 +35,7 @@ export default function Header({
   return (
     <header className="containerHead">
       <section className="logo">
-        {width && width < 1100 && boolMenu ? (
+        {width && width < 1100 && !boolMenu ? (
           <Image
             onClick={handlerStateMenu}
             className="menuPicture"

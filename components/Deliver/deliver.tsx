@@ -13,7 +13,7 @@ export default function Deliver({
     <div className="deliverContainer">
       <div className="deliverTitle">
         <Image alt="" src={DeliverImg} className="imgDeliver"></Image>
-        <h2 className="deliverText">способи доставки</h2>
+        <h2 className="deliverText">Способи доставки</h2>
       </div>
       <div className="lineDeliver"></div>
       {deliver && (

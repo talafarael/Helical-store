@@ -4,11 +4,12 @@ import "./layout.scss";
 import Header from "./Header/header";
 
 import Menu from "./Menu/menu";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Load from "./Load";
 import Footer from "./Footer";
 import MenuPhone from "./MenuPhone";
 import GoogleAnalytics from "./GoogleAnalytics";
+import { useRouter } from "next/router";
 
 // const metadata: Metadata = {
 //   title: "Create Next App",
@@ -55,22 +56,39 @@ const geistMontserrat = localFont({
   variable: "--font-montserrat",
   weight: "100 900",
 });
-export default function Layout({
-  children,
-  boolMenu,
-}: {
-  children: React.ReactNode;
-  boolMenu: boolean;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
 
+  const pathsWithoutMenu = [/^\/product\/[a-zA-Z0-9_-]+$/, "/order"];
 
+  const boolMenu = pathsWithoutMenu.some((path) =>
+    typeof path === "string" ? path === router.asPath : path.test(router.asPath)
+  );
   const [activeMenu, setActiveMenu] = useState<boolean>(false);
   const [activeMenuPhone, setActiveMenuPhone] = useState<boolean>(false);
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      (window as any).gtag("config", process.env.NEXT_PUBLIC_GA_ID as string, {
+        page_title: document.title,
+        page_location: window.location.href,
+        page_path: url,
+      });
+
+      window.gtag("config", process.env.NEXT_PUBLIC_GA_ID as string, {
+        page_path: url,
+      });
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router]);
   return (
     <div
       className={` conatiner ${geistOverpass.variable} ${RoboBold.variable} ${Rubik.variable} ${geistMontserrat.variable} ${geistSemiBold.variable} ${geistMono.variable} ${geistSans.variable} ${vesperLibre.variable}`}
     >
-      
       <Header
         boolMenu={boolMenu}
         activeMenu={activeMenu}
@@ -78,14 +96,16 @@ export default function Layout({
         setActiveMenuPhone={setActiveMenuPhone}
         activeMenuPhone={activeMenuPhone}
       />
+      {/* <GoogleRouter /> */}
       <div className="body">
         <GoogleAnalytics />
-      { activeMenuPhone && <MenuPhone/>}
-        {boolMenu && <Menu setActiveMenu={setActiveMenu} activeMenu={activeMenu} />}
+        {activeMenuPhone && <MenuPhone />}
+        {!boolMenu && (
+          <Menu setActiveMenu={setActiveMenu} activeMenu={activeMenu} />
+        )}
         <Suspense fallback={<Load />}>{children}</Suspense>
       </div>
       <Footer />
     </div>
-    
   );
 }

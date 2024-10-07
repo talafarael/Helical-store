@@ -13,8 +13,9 @@ import Link from "next/link";
 import emptyOrderImg from "@/public/basket_12271779.png";
 import Loading from "../loading";
 import React from "react";
-const Order = () => {
- 
+import Head from "next/head";
+
+export default function Main() {
   const [order, setOrder] = useState<IDefaultData[] | undefined | string[]>();
   useEffect(() => {
     getOrder().then((result) => {
@@ -38,6 +39,10 @@ const Order = () => {
         <div className="orderContainer">
           {order.length >= 1 ? (
             <>
+              <Head>
+                <title>Корзина</title>
+                <meta name="description" content="Корзина" />
+              </Head>
               <Link href={"/"} className="buttonBackOrder ">
                 <Image
                   src={leftArrow}
@@ -69,7 +74,6 @@ const Order = () => {
               <Image
                 src={emptyOrderImg}
                 alt={`empty order`}
-               
                 width={70}
                 height={70}
               ></Image>
@@ -86,5 +90,4 @@ const Order = () => {
       )}
     </OderContext.Provider>
   );
-};
-export default Order;
+}

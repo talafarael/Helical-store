@@ -5,15 +5,16 @@ import Image from "next/image";
 import "./cardImg.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import stub from "@/public/noImage.png"
+import stub from "@/public/noImage.png";
 import SpinnerLoader from "../spinnerLoader";
+
 
 export default function CardImg({ img }: { img: string[] }) {
   const [nav1, setNav1] = useState<Slider | undefined>(undefined);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imgLoad, setImgLoad] = useState(false);
   const sliderRef = useRef<Slider>(null);
-  
+
   useEffect(() => {
     setNav1(sliderRef.current ?? undefined);
   }, [sliderRef]);
@@ -47,7 +48,6 @@ export default function CardImg({ img }: { img: string[] }) {
                 src={item ? `/${item}` : stub}
                 className="imgCard"
                 alt={`Slide ${idx}`}
-         
                 width={500}
                 height={500}
               />
@@ -67,6 +67,7 @@ export default function CardImg({ img }: { img: string[] }) {
           </div>
         ))}
       </article>
+     
     </section>
   );
 }

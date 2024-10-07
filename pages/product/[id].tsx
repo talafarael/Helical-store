@@ -12,6 +12,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Load from "@/components/Load";
 import Loading from "../loading";
+import Head from "next/head";
+
 export default function Main() {
   const [newData, setNewData] = useState<INewData | null>(null);
   const router = useRouter();
@@ -29,6 +31,10 @@ export default function Main() {
 
   return (
     <div className="containerProduct">
+      <Head>
+        <title>{newData?.name}</title>
+        <meta name="description" content={newData?.description} />
+      </Head>
       <Link href={"/"} className="buttonBack">
         <Image src={leftArrow} alt={`load`} width={40} height={40}></Image>
       </Link>

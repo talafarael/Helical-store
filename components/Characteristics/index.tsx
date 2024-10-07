@@ -87,10 +87,13 @@ export default function Characteristics({
       )}
       {newData?.colorNote && (
         <div className="characteristicsContainer">
-         
           <p className="characteristicsText">{newData?.colorNote}</p>
         </div>
       )}
+      <div className="characteristicsContainer">
+        <p className="characteristicsText">Артикль:</p>
+        <p>{newData?.index}</p>
+      </div>
     </div>
   );
 }
