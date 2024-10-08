@@ -63,6 +63,7 @@ const fetchData = async (
             cableLength: data?.cableLength,
             mounting: data?.mounting,
             colorNote: data?.colorNote,
+            producer:data?.producer,
           });
         }
       } else {

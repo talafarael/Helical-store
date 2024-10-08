@@ -2,7 +2,12 @@
   cursor: pointer;
   width: 159px;
   height: 40px;
-  background: #202020;
+  background: linear-gradient(
+    177.9deg,
+    rgb(74, 74, 74) 3.6%,
+    
+    rgb(198, 207, 229) 105.8%
+  );
   border: none;
   border-radius: 5px;
   color: rgb(235, 237, 243);
@@ -12,7 +17,13 @@
   font-family: var(--font-rubik);
 }
 .button:hover {
-  background: #929191;
+  background: linear-gradient(
+    177.9deg,
+    rgb(198, 207, 229) 3.6%,
+    rgb(74, 74, 74) 105.8%,
+    
+    
+  );
   color: #202020;
 }
 @media (max-width: 850px) {

@@ -27,6 +27,7 @@ export interface INewData {
   cableLength?:string;
   mounting?:string;
   colorNote?:string;
+  producer?:string;
 }
 export interface IDeliver {
   deliver?: string;

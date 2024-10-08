@@ -99,14 +99,13 @@
 .priceCard {
   font-size: 36px;
   display: flex;
-  height: auto;
+  height: 100%;
   flex-wrap: wrap;
 color: rgb(216, 42, 42);
     // font-size: 20px;
     display: flex;
     align-items:center;
-  margin-top: -11px;
-  font-family: var(--font-semi-bold);
+  font-family: var(--font-rubik);
 
 }
 .line {

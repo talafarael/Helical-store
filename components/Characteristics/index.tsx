@@ -81,7 +81,7 @@ export default function Characteristics({
       )}
       {newData?.mounting && (
         <div className="characteristicsContainer">
-          <p className="characteristicsText">Кріплення М3 \ стяжка.</p>
+          <p className="characteristicsText">Кріплення </p>
           <p>{newData?.mounting}</p>
         </div>
       )}
@@ -93,6 +93,10 @@ export default function Characteristics({
       <div className="characteristicsContainer">
         <p className="characteristicsText">Артикль:</p>
         <p>{newData?.index}</p>
+      </div>
+      <div className="characteristicsContainer">
+        <p className="characteristicsText">Виробник:</p>
+        <p>{newData?.producer}</p>
       </div>
     </div>
   );

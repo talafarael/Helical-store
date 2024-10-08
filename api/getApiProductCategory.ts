@@ -33,6 +33,7 @@ const fetchCategoryData = async (
             feedback: data?.feedback,
             index: data?.index,
             itemcCharacteristics: data?.itemcCharacteristics,
+            
           };
         });
         const dataResults = await Promise.all(dataPromises);
