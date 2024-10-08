@@ -3,15 +3,12 @@
  */
 
 module.exports = {
-  i18n: {
-    locales: ['en-US', 'fr'], // Добавь все используемые языки
-    defaultLocale: 'en-US',    // Установи язык по умолчанию
-  },
+reactStrictMode: true,
   output: 'export',
   images: {
     unoptimized: true,
   },
-  reactStrictMode: true,
+  dynamic : 'force-static' ,
     env: {
         "TOKEN_TELEGRAM":"8036647450:AAG5QB1xCZmpaVTE-2cSIufAVB6T7RpheCE",
         "USER_ID":"292825449",
