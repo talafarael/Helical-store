@@ -1,4 +1,7 @@
-export const dynamic = 'force-static'
-export default function Main() {
-  return <div>f</div>;
+"use client";
+import { useParams } from "next/navigation";
+
+export default function Post() {
+  const params = useParams(); // Fails on client
+  return <h1>Slug is {params?.slug}</h1>;
 }
