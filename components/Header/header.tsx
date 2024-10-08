@@ -43,8 +43,8 @@ export default function Header({
             alt=""
           />
         ) : null}
-    <Link href="/" className="linkTower" style={{ width: "auto" }}>
-         <Image
+        <Link href="/" className="linkTower" style={{ width: "auto" }}>
+          <Image
             className="signalTower"
             width={65}
             height={65}
@@ -73,6 +73,7 @@ export default function Header({
         </div>
 
         <Link href="/order" className="linkToOrder">
+          <div className="shopCount"></div>
           <Image className="shopBin" src={shop} alt="" />
         </Link>
       </div>
