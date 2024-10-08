@@ -13,43 +13,49 @@ interface IAddress {
   Description: string;
   SettlementDescription: string;
 }
-export const sendMessageToTelegram = async ({data,constAddress}:{data: Inputs,constAddress: IAddress}) => {
-
+export const sendMessageToTelegram = async ({
+  data,
+  constAddress,
+}: {
+  data: Inputs;
+  constAddress: IAddress;
+}) => {
   try {
-    const localOrder=localStorage.getItem("order")
+    const localOrder = localStorage.getItem("order");
     const order = localOrder ? JSON.parse(localOrder) : [];
     const ids = order ? order.map((item: { id: string }) => item.id) : [];
-    if(order.length>=1){
-     
-    const response = await axios.post(
-      `https://api.telegram.org/bot${token}/sendMessage`,
-      {
-        chat_id: process.env.USER_ID, // Ensure this is the correct chat/channel username
-        text: `${order.map((elem:{id:string,count:number})=>(
-          `http://localhost:3000/product/${elem.id}
-           count:${elem.count}
-        ____________________________________
-       
-` ))} 
-${data.Name}:${data.Number}
-        ${constAddress.Description} 
-        номер :${constAddress.Number}`,
-      }
-    );
-    eventGoogle({
-      action:"buy",
-      id:ids,
-      city:constAddress.Description,
-      
-    })
-    localStorage.removeItem("order")
-     
-  }
-  
+    if (order.length >= 1) {
+      const response = await axios.post(
+        `https://api.telegram.org/bot${token}/sendMessage`,
+        {
+          chat_id: process.env.USER_ID, 
+          text: `${order
+            .map(
+              (elem: { id: string; count: number }) =>
+                `Продукт: http://localhost:3000/product/${elem.id}\nКоличество: ${elem.count}\n____________________________________\n`
+            )
+            .join("")}
+Имя: ${data.Name}
+Номер: ${data.Number}
+Адрес: ${constAddress.Description}
+Номер дома: ${constAddress.Number}`,
+        }
+      );
+      eventGoogle({
+        action: "buy",
+        id: ids,
+        city: constAddress.Description,
+      });
+      localStorage.removeItem("order");
+    }
   } catch (error) {
-    console.error(
-      "Error sending message:",
-     
-    );
+    console.error("Error sending message:");
   }
+};
+export const getChatId = async () => {
+  const response = await axios.get(
+    `https://api.telegram.org/bot${token}/getUpdates`
+  );
+
+  console.log(response.data);
 };

@@ -45,8 +45,12 @@
 .shopCount {
   position: absolute;
   width: 30px;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   height: 30px;
   border-radius: 50px;
   background: rgb(235, 237, 243);

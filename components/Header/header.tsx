@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 // import logo from "../../public/giphy.webp"
 import shop from "@/public/shop-svgrepo-comWhite2.svg";
 import "./header.scss";
@@ -31,6 +31,10 @@ export default function Header({
     width && width < 800 && setActiveMenuPhone(!activeMenuPhone);
     setActiveMenu(false);
   };
+  useEffect(() => {
+    const localOrder: string | null = localStorage.getItem("order");
+    const order = localOrder ? JSON.parse(localOrder) : [];
+  }, []);
 
   return (
     <header className="containerHead">
@@ -73,7 +77,7 @@ export default function Header({
         </div>
 
         <Link href="/order" className="linkToOrder">
-          <div className="shopCount"></div>
+          {/* {order.length ? <div className="shopCount">1</div> : null} */}
           <Image className="shopBin" src={shop} alt="" />
         </Link>
       </div>
