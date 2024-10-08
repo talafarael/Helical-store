@@ -8,7 +8,10 @@ module.exports = {
   images: {
     unoptimized: true,
   },
-  
+  i18n: {
+		locales: ["en"],
+		defaultLocale: "en",
+	},
   reactStrictMode: true,
     env: {
         "TOKEN_TELEGRAM":"8036647450:AAG5QB1xCZmpaVTE-2cSIufAVB6T7RpheCE",
