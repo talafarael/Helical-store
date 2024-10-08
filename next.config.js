@@ -3,7 +3,10 @@
  */
 
 module.exports = {
-
+  i18n: {
+    locales: ['en-US', 'fr'], // Добавь все используемые языки
+    defaultLocale: 'en-US',    // Установи язык по умолчанию
+  },
   output: 'export',
   images: {
     unoptimized: true,
