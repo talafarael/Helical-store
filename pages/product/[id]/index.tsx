@@ -11,7 +11,7 @@ import leftArrow from "@/public/left-arrow.png";
 import Image from "next/image";
 import Link from "next/link";
 import Load from "@/components/Load";
-import Loading from "../loading";
+import Loading from "../../loading";
 import Head from "next/head";
 
 export default function Main() {
