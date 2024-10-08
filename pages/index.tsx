@@ -5,10 +5,10 @@ import { db } from "../utils/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import React from "react";
 import { INewData } from "@/type/newData";
-import { getChatId } from "@/utils/telegram";
+// import { getChatId } from "@/utils/telegram";
 
 export default function Page({ data }: { data: INewData[] }) {
-  getChatId()
+  // getChatId()
   return (
     <div className="containerMain">
      
