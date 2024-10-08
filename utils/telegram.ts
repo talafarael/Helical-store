@@ -32,7 +32,7 @@ export const sendMessageToTelegram = async ({
           text: `${order
             .map(
               (elem: { id: string; count: number }) =>
-                `Продукт: http://localhost:3000/product/${elem.id}\nКоличество: ${elem.count}\n____________________________________\n`
+                `Продукт id: /${elem.id}\nКількість: ${elem.count}\n____________________________________\n`
             )
             .join("")}
 Имя: ${data.Name}
