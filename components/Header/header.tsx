@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 // import logo from "../../public/giphy.webp"
 import shop from "@/public/shop-svgrepo-comWhite2.svg";
 import "./header.scss";
@@ -31,10 +31,10 @@ export default function Header({
     width && width < 800 && setActiveMenuPhone(!activeMenuPhone);
     setActiveMenu(false);
   };
-  useEffect(() => {
-    const localOrder: string | null = localStorage.getItem("order");
-    const order = localOrder ? JSON.parse(localOrder) : [];
-  }, []);
+  // useEffect(() => {
+  //   const localOrder: string | null = localStorage.getItem("order");
+  //   const order = localOrder ? JSON.parse(localOrder) : [];
+  // }, []);
 
   return (
     <header className="containerHead">
