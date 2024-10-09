@@ -9,7 +9,7 @@ export interface INewData {
   price: string;
   prod: string;
   add: string;
-  ategory: string;
+  category: string;
 }
 export interface IDeliver {
   deliver?: string;
