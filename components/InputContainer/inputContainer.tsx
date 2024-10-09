@@ -137,7 +137,7 @@ export default function InputContainer() {
             })}
           >
             <option value="нова почта">нова почта</option>
-            <option value="укр почка">укр почка</option>
+            {/* <option value="укр почка">укр почка</option> */}
           </select>
           <div className="inputDiv">
             <input

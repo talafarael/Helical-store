@@ -3,12 +3,12 @@
  */
 
 module.exports = {
-reactStrictMode: true,
+
   output: 'export',
   images: {
     unoptimized: true,
   },
-  dynamic : 'force-static' ,
+ reactStrictMode: true,
     env: {
         "TOKEN_TELEGRAM":"8036647450:AAG5QB1xCZmpaVTE-2cSIufAVB6T7RpheCE",
         "USER_ID":"292825449",
