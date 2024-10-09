@@ -5,7 +5,7 @@ import "./inputContainer.css";
 import Image from "next/image";
 import checkMark from "@/public/check-mark.png";
 import Button from "../Button/button";
-import { NovaPoshtaSearch } from "@/utils/hooks/novaPoshtaSearch";
+
 import { sendMessageToTelegram } from "@/utils/telegram";
 import { OderContext } from "@/utils/hooks/context";
 
@@ -17,11 +17,7 @@ type Inputs = {
   Feedback?: string;
   PayMetod: string;
 };
-interface IAddress {
-  Number: string;
-  Description: string;
-  SettlementDescription: string;
-}
+
 export default function InputContainer() {
   const {
     register,
@@ -35,9 +31,7 @@ export default function InputContainer() {
 
   const [panelResponse, setPanelResponse] = useState(false);
 
-  const handlerClear = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setDeliver("");
-  };
+ 
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     sendMessageToTelegram({
