@@ -28,7 +28,7 @@ export default function InputContainer() {
     reset,
     formState: { errors },
   } = useForm<Inputs>();
-  const  orderContext=useContext(OderContext)
+  const orderContext = useContext(OderContext);
   const [deliver, setDeliver] = useState<string | undefined>();
   const [address, setAddress] = useState<IAddress[] | undefined>();
   const [stateAddress, setStateAddress] = useState<boolean>(true);
@@ -54,7 +54,7 @@ export default function InputContainer() {
   };
   const handlerClear = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setTypeDeliver(event.target.value);
-   
+
     setDeliver("");
     setStateAddress(true);
     setAddress(undefined);
@@ -65,14 +65,13 @@ export default function InputContainer() {
     const localOrder = localStorage.getItem("order");
     const order = localOrder ? JSON.parse(localOrder) : [];
     if (order.length >= 1) {
-      let addressDeliver =   constAddress;
-      if(address?.length == 1){
-        addressDeliver = address[0]
+      let addressDeliver = constAddress;
+      if (address?.length == 1) {
+        addressDeliver = address[0];
       }
-    
-      
-     addressDeliver ?
-          sendMessageToTelegram({
+
+      addressDeliver
+        ? sendMessageToTelegram({
             data: data,
             constAddress: addressDeliver,
           }).then(() => {
@@ -80,11 +79,9 @@ export default function InputContainer() {
             orderContext?.clearOrder();
             reset();
             setPanelResponse(true);
-           
           })
-          
-      :null
-    }else{
+        : null;
+    } else {
       // alert("товаров нет)))")
     }
   };
@@ -135,6 +132,7 @@ export default function InputContainer() {
               required: true,
               onChange: (event) => handlerClear(event),
             })}
+            disabled
           >
             <option value="нова почта">нова почта</option>
             {/* <option value="укр почка">укр почка</option> */}

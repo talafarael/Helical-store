@@ -36,12 +36,12 @@ export default function Characteristics({
           <p>{newData?.numberOfWinds}</p>
         </div>
       )}
-      {newData?.polarization && (
+      {/* {newData?.polarization && (
         <div className="characteristicsContainer">
           <p className="characteristicsText">Кількість вітків</p>
           <p>{newData?.polarization}</p>
         </div>
-      )}
+      )} */}
 
       {newData?.connector && (
         <div className="characteristicsContainer">
@@ -61,12 +61,12 @@ export default function Characteristics({
           <p>{newData?.polarization}</p>
         </div>
       )}
-      {newData?.vswr && (
+      {/* {newData?.vswr && (
         <div className="characteristicsContainer">
           <p className="characteristicsText">КСХ в усьому діапазоні меньше</p>
           <p>{newData?.vswr}</p>
         </div>
-      )}
+      )} */}
       {newData?.losses && (
         <div className="characteristicsContainer">
           <p className="characteristicsText">Втрати меньше</p>
