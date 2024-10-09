@@ -8,8 +8,7 @@ import Card from "@/components/Card/card";
 import Load from "@/components/Load";
 import Head from "next/head";
 import { INewData } from "@/type/newData";
-import SignalTowerIco from "@/public/signal_connection_wireless_wifi_icon_133484.ico";
-import Link from "next/link";
+
 export default function Category() {
   const [newData, setNewData] = useState<INewData[] | null>(null);
   const [isMounted, setIsMounted] = useState<boolean>(true);
