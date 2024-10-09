@@ -9,6 +9,7 @@ export interface INewData {
   price: string;
   prod: string;
   add: string;
+  ategory: string;
 }
 export interface IDeliver {
   deliver?: string;
@@ -26,4 +27,5 @@ export interface IDefaultData {
   prod: string;
   add?: string;
   count: number;
+  category: string;
 }

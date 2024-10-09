@@ -18,7 +18,7 @@ const fetchData = async (
         if (isMounted) {
           setNewData({
             id: docSnap.id,
-
+           category:data.category,
             name: data.name,
             desc: data.desc,
             price: data.price,
