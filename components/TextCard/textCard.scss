@@ -6,7 +6,7 @@
   justify-content: start;
 }
 .nameCard {
-  margin-top: 55px;
+  margin-top: 10%;
   // font-weight: bold;s
   font-size: 28px;
   height: auto;
@@ -144,6 +144,11 @@
     width: 70%;
   }
 }
+@media (max-width: 1200px) {
+  .nameCard {
+    margin-top: 15%;
+  }
+}
 @media (max-width: 1000px) {
   .article {
     margin-top: 0px;
@@ -174,7 +179,9 @@
   .nameCard {
     font-size: 20px;
   }
-
+  .nameCard {
+    margin-top: 17%;
+  }
   .informationContainer {
     height: auto;
   }
