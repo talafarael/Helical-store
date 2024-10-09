@@ -14,10 +14,12 @@ export default function TextCard({ newData }: { newData: INewData | null }) {
     <>
       {newData && (
         <div className="textContainer">
+          
           <h1 className="nameCard">{newData.name}</h1>
+          <div className="linedesc"></div>{" "}
           <h6 className="description">Опис</h6>
 
-          <p className="descDescription"> {newData?.description}</p>
+          <p className="descDescription"> {newData?.desc}</p>
 
           <div className="buttonContainer">
             <h1 className="priceCard">
@@ -27,7 +29,7 @@ export default function TextCard({ newData }: { newData: INewData | null }) {
             <ButtonContainer />
           </div>
 
-          <Deliver deliver={newData.deliver} />
+          <Deliver  />
           <div className="line"></div>
           <Description newData={newData} />
         </div>

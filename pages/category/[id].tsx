@@ -7,16 +7,10 @@ import fetchCategoryData from "@/api/getApiProductCategory";
 import Card from "@/components/Card/card";
 import Load from "@/components/Load";
 import Head from "next/head";
-
+import { INewData } from "@/type/newData";
+import SignalTowerIco from "@/public/signal_connection_wireless_wifi_icon_133484.ico";
+import Link from "next/link";
 export default function Category() {
-  interface INewData {
-    id: string;
-    imgMain: string;
-    name: string;
-    description: string;
-    price: string;
-    img: string[];
-  }
   const [newData, setNewData] = useState<INewData[] | null>(null);
   const [isMounted, setIsMounted] = useState<boolean>(true);
 
@@ -40,7 +34,7 @@ export default function Category() {
           name="description"
           content={
             newData
-              ? `${id} Discover our collection of ${newData[0].name}. ${newData[0].description}`
+              ? `${id} Discover our collection of ${newData[0].name}. ${newData[0].desc}`
               : "Explore our products."
           }
         />

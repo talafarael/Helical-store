@@ -23,9 +23,7 @@
   display: inline-block;
   font-size: 24px;
   font-weight: 600;
- 
- 
- 
+
   font-family: var(--font-rubik);
 }
 .accardionMenu {
@@ -82,7 +80,7 @@
   font-size: 16px;
 }
 
-.article{
+.article {
   margin-top: 5px;
   font-family: var(--font-semi-bold);
   font-size: 18px;
@@ -91,7 +89,7 @@
 .textCard {
   margin-top: 11px;
   font-weight: 500;
-  
+
   font-family: var(--font-rubik);
   font-size: 14px;
 }
@@ -101,12 +99,11 @@
   display: flex;
   height: 100%;
   flex-wrap: wrap;
-color: rgb(216, 42, 42);
-    // font-size: 20px;
-    display: flex;
-    align-items:center;
+  color: rgb(216, 42, 42);
+  // font-size: 20px;
+  display: flex;
+  align-items: center;
   font-family: var(--font-rubik);
-
 }
 .line {
   margin-top: 7px;
@@ -143,9 +140,12 @@ color: rgb(216, 42, 42);
     display: flex;
     height: auto;
   }
+  .buttonContainer {
+    width: 70%;
+  }
 }
 @media (max-width: 1000px) {
-  .article{
+  .article {
     margin-top: 0px;
     font-size: 16px;
   }
@@ -153,7 +153,6 @@ color: rgb(216, 42, 42);
     font-size: 15px;
   }
   .priceCard {
-    
     font-size: 26px;
   }
   .buttonContainer {
@@ -184,7 +183,6 @@ color: rgb(216, 42, 42);
     font-size: 12px;
   }
   .priceCard {
-   
     font-size: 25px;
   }
   .buttonContainer {
@@ -205,8 +203,8 @@ color: rgb(216, 42, 42);
     flex-direction: column;
     align-items: center;
   }
-  .nameCard{
-    margin-top: 0px;     
+  .nameCard {
+    margin-top: 0px;
   }
 }
 @media (max-width: 700px) {

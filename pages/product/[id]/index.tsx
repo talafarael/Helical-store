@@ -14,6 +14,7 @@ import Load from "@/components/Load";
 import Loading from "../../loading";
 import Head from "next/head";
 import { GetStaticProps } from "next";
+import { useRouter } from "next/router";
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: { id: params?.id },
@@ -21,19 +22,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export async function getStaticPaths() {
-  const db = getFirestore(); // Initialize Firestore
+  const db = getFirestore();
   const collectionRef = collection(db, "id");
-  const snapshot = await getDocs(collectionRef); // Fetch documents
+  const snapshot = await getDocs(collectionRef);
 
- 
   const documentIds = snapshot.docs.map((doc) => doc.id);
 
- 
   return {
     paths: documentIds.map((elem) => ({
       params: { id: elem },
     })),
-    fallback: false, 
+    fallback: false,
   };
 }
 export default function Main({ id }: { id: string }) {
@@ -49,16 +48,16 @@ export default function Main({ id }: { id: string }) {
       setIsMounted(false);
     };
   }, [id]);
-
+  const router = useRouter();
   return (
     <div className="containerProduct">
       <Head>
         <title>{newData?.name}</title>
-        <meta name="description" content={newData?.description} />
+        <meta name="description" content={newData?.desc} />
       </Head>
-      <Link href={"/"} className="buttonBack">
+      <button onClick={() => router.back()} title="click return to before page" className="buttonBack">
         <Image src={leftArrow} alt={`load`} width={40} height={40}></Image>
-      </Link>
+      </button>
       <div className="conainerForProduct">
         <div className="imgContainer">
           <Suspense fallback={<Loading />}>

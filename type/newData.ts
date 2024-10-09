@@ -1,33 +1,14 @@
 export interface INewData {
   id: string;
-  imgMain: string;
-  name: string;
-  description: string;
-  price: string;
   img: string[];
-  deliver?: IDeliver[];
-  rating?: number;
-  nameItemcCharacteristics?: string;
-  addCharacteristics?: string;
-  characteristics?: string;
-  feedback?: string;
-  index?: string;
-  itemcCharacteristics?: string[];
-  characterOptions?: string;
-  frequencyRangeMax?:string;
-  frequencyRangeMin?:string;
-  openingAngle?:string;
-  gain?:string;
-  numberOfWinds?:string;
-  connector?:string;
-  impedance?:string;
-  polarization?:string;
-  vswr?:string;
-  losses?:string;
-  cableLength?:string;
-  mounting?:string;
-  colorNote?:string;
-  producer?:string;
+  name: string;
+  num: string;
+  gain: string;
+  angl: string;
+  desc: string;
+  price: string;
+  prod: string;
+  add: string;
 }
 export interface IDeliver {
   deliver?: string;
@@ -35,19 +16,14 @@ export interface IDeliver {
 }
 export interface IDefaultData {
   id: string;
-  imgMain: string;
-  name: string;
-  description: string;
-  nameItemcCharacteristics?: string;
-  addCharacteristics?: string;
-  characteristics?: string;
-  feedback?: string;
-  index?: string;
-  itemcCharacteristics?: string[];
-  price: string;
   img: string[];
-  deliver?: string;
-  rating?: number;
+  name: string;
+  num: string;
+  gain: string;
+  angl: string;
+  desc: string;
+  price: string;
+  prod: string;
+  add?: string;
   count: number;
-  characterOptions?: string;
 }

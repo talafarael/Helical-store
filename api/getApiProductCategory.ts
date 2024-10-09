@@ -20,21 +20,16 @@ const fetchCategoryData = async (
           const data = docSnap.data();
           return {
             id: docSnap.id,
-            imgMain: data.imgMain,
             name: data.name,
-            description: data.description,
+            desc: data.desc,
             price: data.price,
             img: data.img,
-            rating: data.rating,
-            characterOptions:data?.characterOptions,
-            nameItemcCharacteristics: data?.nameItemcCharacteristics,
-            addCharacteristics: data?.addCharacteristics,
-            characteristics: data?.characteristics,
-            feedback: data?.feedback,
-            index: data?.index,
-            itemcCharacteristics: data?.itemcCharacteristics,
-            
-          };
+            num: data.num,
+            add: data.add,
+            prod: data.prod,
+            angl: data.angl,
+            gain: data.gain,
+          } as INewData;
         });
         const dataResults = await Promise.all(dataPromises);
 

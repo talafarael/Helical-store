@@ -15,16 +15,11 @@ export default function Description({ newData }: { newData: INewData | null }) {
       </div>
       <div className="linedesc"></div>{" "}
       <h3 className="textDesc">Додаткові можливості</h3>
-      <p className="desc">{newData?.addCharacteristics}</p>
+      <p className="desc">{newData?.add}</p>
       <div className="linedesc"></div>{" "}
-      <h3 className="textDesc">Різновиди техніки</h3>
-      <div className="desc">
-        <p className="">{newData?.characteristics}</p>
-        <p className="">{newData?.characterOptions} </p>
-        <p className="">{newData?.feedback} </p> 
-      </div>
+    
       
-      <div className="linedesc"></div>{" "}
+      
     </div>
   );
 }

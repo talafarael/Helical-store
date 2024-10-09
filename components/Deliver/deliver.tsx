@@ -3,12 +3,12 @@ import DeliverImg from "@/public/logistics-truck-svgrepo-com.svg";
 import DeliverItem from "../DeliverItem/deliverItem";
 import Image from "next/image";
 import "./deliver.scss";
-import { IDeliver } from "@/type/newData";
-export default function Deliver({
-  deliver,
-}: {
-  deliver: IDeliver[] | undefined;
-}) {
+
+export default function Deliver() {
+  const deliver = [{
+    deliver:"Нова пошта",
+    deliverImg:"Nova_Poshta_2019_symbol.svg"
+  }];
   return (
     <div className="deliverContainer">
       <div className="deliverTitle">

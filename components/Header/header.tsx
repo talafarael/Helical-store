@@ -7,30 +7,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { useResize } from "@/utils/screenSize";
 import menuLog from "@/public/menu-svgrepo-comWhite.svg";
-import phone from "@/public/phone-svgrepo-comWhite.svg";
+
 import SignalTower from "@/public/signal-wifi-svgrepo-comWhiteTwo.svg";
 export default function Header({
   setActiveMenu,
   activeMenu,
   boolMenu,
-  setActiveMenuPhone,
-  activeMenuPhone,
 }: {
   setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
   activeMenu: boolean;
   boolMenu: boolean;
-  setActiveMenuPhone: React.Dispatch<React.SetStateAction<boolean>>;
-  activeMenuPhone: boolean;
+
 }) {
   const { width } = useResize();
   const handlerStateMenu = () => {
     setActiveMenu(!activeMenu);
-    setActiveMenuPhone(false);
   };
-  const handlerStateMenuPhone = () => {
-    width && width < 800 && setActiveMenuPhone(!activeMenuPhone);
-    setActiveMenu(false);
-  };
+
   // useEffect(() => {
   //   const localOrder: string | null = localStorage.getItem("order");
   //   const order = localOrder ? JSON.parse(localOrder) : [];
@@ -62,20 +55,6 @@ export default function Header({
       </section>
 
       <div className="contantHeader">
-        <div className="phoneNumber">
-          <Image
-            src={phone}
-            alt="phone"
-            onClick={() => {
-              handlerStateMenuPhone();
-            }}
-            className="phoneImg"
-            width={30}
-            height={30}
-          />
-          {width && width > 800 && <h3>+380984884824</h3>}
-        </div>
-
         <Link href="/order" className="linkToOrder">
           {/* {order.length ? <div className="shopCount">1</div> : null} */}
           <Image className="shopBin" src={shop} alt="" />

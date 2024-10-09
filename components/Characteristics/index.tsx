@@ -8,20 +8,10 @@ export default function Characteristics({
 }) {
   return (
     <div>
-      {(newData?.frequencyRangeMax || newData?.frequencyRangeMin) && (
-        <div className="characteristicsContainer">
-          <p className="characteristicsText">
-            Хелікс відкритого типу на частоти
-          </p>
-          <p>{newData?.frequencyRangeMax}</p>{" "}
-          <p>{newData?.frequencyRangeMin}</p>
-        </div>
-      )}
-
-      {newData?.openingAngle && (
+      {newData?.angl && (
         <div className="characteristicsContainer">
           <p className="characteristicsText">Кут розкриття</p>
-          <p>{newData?.openingAngle}</p>
+          <p>{newData?.angl}</p>
         </div>
       )}
       {newData?.gain && (
@@ -30,74 +20,18 @@ export default function Characteristics({
           <p>{newData?.gain}</p>
         </div>
       )}
-      {newData?.numberOfWinds && (
+      {newData?.num && (
         <div className="characteristicsContainer">
-          <p className="characteristicsText">Кількість вітків</p>
-          <p>{newData?.numberOfWinds}</p>
+          <p className="characteristicsText">Кількість витків</p>
+          <p>{newData?.num}</p>
         </div>
       )}
-      {/* {newData?.polarization && (
+      {newData?.prod && (
         <div className="characteristicsContainer">
-          <p className="characteristicsText">Кількість вітків</p>
-          <p>{newData?.polarization}</p>
-        </div>
-      )} */}
-
-      {newData?.connector && (
-        <div className="characteristicsContainer">
-          <p className="characteristicsText">Роз&#39;єм</p>
-          <p>{newData?.connector}</p>
+          <p className="characteristicsText">Виробник</p>
+          <p>{newData?.prod}</p>
         </div>
       )}
-      {newData?.impedance && (
-        <div className="characteristicsContainer">
-          <p className="characteristicsText">Хвильовий опір</p>
-          <p>{newData?.impedance}</p>
-        </div>
-      )}
-      {newData?.polarization && (
-        <div className="characteristicsContainer">
-          <p className="characteristicsText">КСХ в усьому діапазоні меньше</p>
-          <p>{newData?.polarization}</p>
-        </div>
-      )}
-      {/* {newData?.vswr && (
-        <div className="characteristicsContainer">
-          <p className="characteristicsText">КСХ в усьому діапазоні меньше</p>
-          <p>{newData?.vswr}</p>
-        </div>
-      )} */}
-      {newData?.losses && (
-        <div className="characteristicsContainer">
-          <p className="characteristicsText">Втрати меньше</p>
-          <p>{newData?.losses}</p>
-        </div>
-      )}
-      {newData?.cableLength && (
-        <div className="characteristicsContainer">
-          <p className="characteristicsText">Довжина кабеля</p>
-          <p>{newData?.cableLength}</p>
-        </div>
-      )}
-      {newData?.mounting && (
-        <div className="characteristicsContainer">
-          <p className="characteristicsText">Кріплення </p>
-          <p>{newData?.mounting}</p>
-        </div>
-      )}
-      {newData?.colorNote && (
-        <div className="characteristicsContainer">
-          <p className="characteristicsText">{newData?.colorNote}</p>
-        </div>
-      )}
-      <div className="characteristicsContainer">
-        <p className="characteristicsText">Артикль:</p>
-        <p>{newData?.index}</p>
-      </div>
-      <div className="characteristicsContainer">
-        <p className="characteristicsText">Виробник:</p>
-        <p>{newData?.producer}</p>
-      </div>
     </div>
   );
 }

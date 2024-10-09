@@ -14,6 +14,8 @@ type Inputs = {
   Name: string;
   Number: number;
   Deliver: string;
+  Feedback?: string;
+  PayMetod: string;
 };
 interface IAddress {
   Number: string;
@@ -30,63 +32,25 @@ export default function InputContainer() {
   } = useForm<Inputs>();
   const orderContext = useContext(OderContext);
   const [deliver, setDeliver] = useState<string | undefined>();
-  const [address, setAddress] = useState<IAddress[] | undefined>();
-  const [stateAddress, setStateAddress] = useState<boolean>(true);
-  const [constAddress, setConstAddress] = useState<IAddress | undefined>();
-  const [typeDeliver, setTypeDeliver] = useState<string>("нова почта");
-  const [isEnter, setIsEnter] = useState(false);
-  const [panelResponse, setPanelResponse] = useState(false);
-  NovaPoshtaSearch({
-    deliver,
-    setStateAddress,
-    setConstAddress,
-    typeDeliver,
-    setAddress,
-    setDeliver,
-    isEnter,
-  });
-  const handlerSetAddress = (data: string, newAddress: IAddress) => {
-    setIsEnter(true);
-    setDeliver(data);
-    setConstAddress(newAddress);
-    setStateAddress(false);
-    setTimeout(() => setIsEnter(false), 0);
-  };
-  const handlerClear = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setTypeDeliver(event.target.value);
 
+  const [panelResponse, setPanelResponse] = useState(false);
+
+  const handlerClear = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setDeliver("");
-    setStateAddress(true);
-    setAddress(undefined);
-    setConstAddress(undefined);
   };
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    const localOrder = localStorage.getItem("order");
-    const order = localOrder ? JSON.parse(localOrder) : [];
-    if (order.length >= 1) {
-      let addressDeliver = constAddress;
-      if (address?.length == 1) {
-        addressDeliver = address[0];
-      }
-
-      addressDeliver
-        ? sendMessageToTelegram({
-            data: data,
-            constAddress: addressDeliver,
-          }).then(() => {
-            setDeliver("");
-            orderContext?.clearOrder();
-            reset();
-            setPanelResponse(true);
-          })
-        : null;
-    } else {
-      // alert("товаров нет)))")
-    }
+    sendMessageToTelegram({
+      data: data,
+    }).then(() => {
+      setDeliver("");
+      orderContext?.clearOrder();
+      reset();
+      setPanelResponse(true);
+    });
   };
   return (
-    <div className="inputContainerForm">
+    <div className={!panelResponse ? "inputContainerForm" : ""}>
       {!panelResponse ? (
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
           <h1 className="titleForm"> Форма заказа</h1>
@@ -112,7 +76,7 @@ export default function InputContainer() {
             {...register("Number", {
               required: "заповніть поле",
               pattern: {
-                value: /^([0-9]{10}|[0-9]{12})$/,
+                value: /^([0-9]{10}|[0-9]{12}|\+?[0-9]{13}|\+?[0-9]{11})$/,
                 message: "Будь ласка, введіть правильний номер телефону",
               },
             })}
@@ -126,65 +90,81 @@ export default function InputContainer() {
                 <p className="textError">{errors.Number.message}</p>
               )}
           </div>
-          <select
+          {/* <select
             className="input radioInput"
             {...register("Deliver", {
               required: false,
               onChange: (event) => handlerClear(event),
             })}
             disabled
-            value="нова почта"
+            value="Нова пошта"
           >
-            <option value="нова почта">Нова почта</option>
-            {/* <option value="укр почка">укр почка</option> */}
-          </select>
+            <option value="нова пощта">Нова почта</option>
+            //<option value="укр почка">укр почка</option>
+          </select> */}
+
           <div className="inputDiv">
             <input
               className="input"
               type="text"
-              placeholder="Місто та номер пошти"
+              placeholder="Місто та номер пошти нової пошти"
               value={deliver}
-              onKeyPress={(event) => {
-                if (event.key === "Enter" && address?.length == 1) {
-                  handlerSetAddress(
-                    `${address[0].SettlementDescription} ${address[0].Number}`,
-                    address[0]
-                  );
-                }
-              }}
+              {...register("Deliver", {
+                required: "Це поле обов’язкове",
+                minLength: { value: 5, message: "Мінімум 5 символів" },
+              })}
               onChange={(e) => setDeliver(e.target.value)}
             />
-            <div className="addressContainer">
-              {stateAddress &&
-                address?.map((elem, index) => (
-                  <p
-                    onClick={() =>
-                      handlerSetAddress(
-                        `${elem.SettlementDescription} ${elem.Number}`,
-                        elem
-                      )
-                    }
-                    className="itemAddress"
-                    key={index}
-                  >
-                    {elem.Description}
-                  </p>
-                ))}
-              {constAddress?.Description}
-            </div>
           </div>
+          <div className="error">
+            {errors?.Deliver && typeof errors.Deliver.message === "string" && (
+              <p className="textError">{errors.Deliver.message}</p>
+            )}
+          </div>
+          <select
+            className="input "
+            {...register("PayMetod", {
+              required: "Оберіть метод оплати",
+            })}
+          >
+            <option value="">Оберіть метод оплати</option>
+            <option value="Готівка">Готівка</option>
+            <option value="Карткою">Карткою</option>
+          </select>
+          <div className="error">
+            {errors?.PayMetod &&
+              typeof errors.PayMetod.message === "string" && (
+                <p className="textError">{errors.PayMetod.message}</p>
+              )}
+          </div>
+          <input
+            className="input"
+            type="text"
+            {...register("Feedback", {
+              required: false,
+            })}
+            placeholder={"Зворотній зв'язок"}
+          />
+          <div className="error"></div>
           <Button func={() => {}} text="купити"></Button>
         </form>
       ) : (
-        <div className="orderResponse">
-          <Image src={checkMark} alt="checkMark" width={70} height={70}></Image>
+        <div className="orderResponseContainer">
+          <div className="orderResponse">
+            <Image
+              src={checkMark}
+              alt="checkMark"
+              width={70}
+              height={70}
+            ></Image>
 
-          <h1 className="titleForm titleResponse">
-            Вітаю замовлення успішно оформлене
-          </h1>
-          <p className="subtitleForm">
-            Менеджер зв’яжеться з вами протягом доби{" "}
-          </p>
+            <h1 className="titleForm titleResponse">
+              Вітаю замовлення успішно оформлене
+            </h1>
+            <p className="subtitleForm">
+              Менеджер зв’яжеться з вами протягом доби{" "}
+            </p>
+          </div>
         </div>
       )}
     </div>

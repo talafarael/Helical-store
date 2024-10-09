@@ -14,6 +14,7 @@ import emptyOrderImg from "@/public/basket_12271779.png";
 import Loading from "../loading";
 import React from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 export default function Main() {
   const [order, setOrder] = useState<IDefaultData[] | undefined | string[]>();
@@ -22,6 +23,7 @@ export default function Main() {
       setOrder(result);
     });
   }, []);
+  const router = useRouter();
   const { handlerAdd, handlerMinus, handlerDelete, clearOrder } =
     useOrderHandlers(order, setOrder);
   return (
@@ -43,14 +45,17 @@ export default function Main() {
                 <title>Корзина</title>
                 <meta name="description" content="Корзина" />
               </Head>
-              <Link href={"/"} className="buttonBackOrder ">
+              <button
+                onClick={() => router.back()}
+                className="buttonBackOrder "
+              >
                 <Image
                   src={leftArrow}
                   alt={`load`}
                   width={40}
                   height={40}
                 ></Image>
-              </Link>
+              </button>
               <div className="inputContainerOrder">
                 <InputContainer />
               </div>

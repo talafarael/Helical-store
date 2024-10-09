@@ -14,56 +14,20 @@ const fetchData = async (
 
       if (docSnap.exists() && isMounted) {
         const data = docSnap.data();
-        let deliver = [];
-        if (data.deliver) {
-          const deliverPromises = data.deliver?.map(async (elem: string) => {
-            const deliverDocRef = doc(db, "deliver", elem);
-            const deliverSnap = await getDoc(deliverDocRef);
-            const deliverData = deliverSnap.data();
-            return deliverData
-              ? {
-                  deliver: deliverData.deliver,
-                  deliverImg: deliverData.deliverImg,
-                }
-              : null;
-          });
-
-          const deliverResults = await Promise.all(deliverPromises);
-
-          deliver = deliverResults?.filter((item) => item !== null);
-        }
 
         if (isMounted) {
           setNewData({
             id: docSnap.id,
-            imgMain: data.imgMain,
+
             name: data.name,
-            description: data.description,
+            desc: data.desc,
             price: data.price,
             img: data.img,
-            rating: data.rating,
-            deliver: deliver,
-            nameItemcCharacteristics: data?.nameItemcCharacteristics,
-            addCharacteristics: data?.addCharacteristics,
-            characteristics: data?.characteristics,
-            feedback: data?.feedback,
-            index: data?.index,
-            itemcCharacteristics: data?.itemcCharacteristics,
-            characterOptions: data?.characterOptions,
-            frequencyRangeMax: data?.frequencyRangeMax,
-            frequencyRangeMin: data?.frequencyRangeMin,
-            openingAngle: data?.openingAngle,
-            gain: data?.gain,
-            numberOfWinds: data?.numberOfWinds,
-            connector: data?.connector,
-            impedance: data?.impedance,
-            polarization: data?.polarization,
-            vswr: data?.vswr,
-            losses: data?.losses,
-            cableLength: data?.cableLength,
-            mounting: data?.mounting,
-            colorNote: data?.colorNote,
-            producer:data?.producer,
+            num: data.num,
+            add: data.add,
+            prod: data.prod,
+            angl: data.angl,
+            gain: data.gain,
           });
         }
       } else {

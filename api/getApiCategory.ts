@@ -6,5 +6,6 @@ export async function getCategories() {
   return querySnapshot.docs.map((doc) => ({
     ...doc.data(),
     id: doc.id,
+    
   })) as ICategory[];
 }

@@ -7,7 +7,7 @@ import Menu from "./Menu/menu";
 import { Suspense, useEffect, useState } from "react";
 import Load from "./Load";
 import Footer from "./Footer";
-import MenuPhone from "./MenuPhone";
+
 import GoogleAnalytics from "./GoogleAnalytics";
 import { useRouter } from "next/router";
 
@@ -56,6 +56,7 @@ const geistMontserrat = localFont({
   variable: "--font-montserrat",
   weight: "100 900",
 });
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
 
@@ -65,7 +66,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     typeof path === "string" ? path === router.asPath : path.test(router.asPath)
   );
   const [activeMenu, setActiveMenu] = useState<boolean>(false);
-  const [activeMenuPhone, setActiveMenuPhone] = useState<boolean>(false);
+
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       (window as any).gtag("config", process.env.NEXT_PUBLIC_GA_ID as string, {
@@ -93,13 +94,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         boolMenu={boolMenu}
         activeMenu={activeMenu}
         setActiveMenu={setActiveMenu}
-        setActiveMenuPhone={setActiveMenuPhone}
-        activeMenuPhone={activeMenuPhone}
       />
       {/* <GoogleRouter /> */}
       <div className="body">
         <GoogleAnalytics />
-        {activeMenuPhone && <MenuPhone />}
+
         {!boolMenu && (
           <Menu setActiveMenu={setActiveMenu} activeMenu={activeMenu} />
         )}
