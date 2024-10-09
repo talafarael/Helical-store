@@ -8,19 +8,16 @@ import Deliver from "../Deliver/deliver";
 import ButtonContainer from "../ButtonContainer/buttonContainer";
 import Description from "../Description";
 import Image from "next/image";
+import parse from 'html-react-parser';
 
 export default function TextCard({ newData }: { newData: INewData | null }) {
   return (
     <>
       {newData && (
         <div className="textContainer">
-          
           <h1 className="nameCard">{newData.name}</h1>
-          <div className="linedesc"></div>{" "}
-          <h6 className="description">Опис</h6>
-
-          <p className="descDescription"> {newData?.desc}</p>
-
+          <div className="linedesc"></div> <h6 className="description">Опис</h6>
+          <p className="descDescription"> {newData?.desc && parse(newData?.desc)}</p>
           <div className="buttonContainer">
             <h1 className="priceCard">
               {newData.price}
@@ -28,8 +25,7 @@ export default function TextCard({ newData }: { newData: INewData | null }) {
             </h1>
             <ButtonContainer />
           </div>
-
-          <Deliver  />
+          <Deliver />
           <div className="line"></div>
           <Description newData={newData} />
         </div>

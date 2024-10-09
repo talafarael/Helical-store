@@ -7,11 +7,9 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="footerContainer">
-      
-      <Link  
-     
+      <Link
         href="https://signal.org/ru/"
-        style={{ marginRight:"50px" ,zIndex: 1 }}
+        style={{ marginRight: "50px", zIndex: 1 }}
         target="_blank "
         rel="noopener noreferrer"
       >
@@ -20,11 +18,13 @@ export default function Footer() {
           className="imgTg"
           width={55}
           height={55}
-        
           alt="Telegram"
         />
       </Link>
-      <Link style={{marginLeft:"50px"}} href="https://t.me/univwork">
+      <Link
+        style={{ marginLeft: "50px" }}
+        href="https://t.me/+ArllqTEtkH5kYjdi"
+      >
         <Image src={imgTg} className="imgTg" width={40} height={40} alt="" />
       </Link>
     </footer>

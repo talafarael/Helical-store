@@ -61,7 +61,10 @@
 .radioInput {
   margin-bottom: 30px;
 }
-
+.textError {
+  color: rgb(216, 42, 42);
+  font-family: var(--font-rubik);
+}
 .orderResponse {
   width: 70%;
   text-align: center;
