@@ -129,12 +129,13 @@ export default function InputContainer() {
           <select
             className="input radioInput"
             {...register("Deliver", {
-              required: true,
+              required: false,
               onChange: (event) => handlerClear(event),
             })}
             disabled
+            value="нова почта"
           >
-            <option value="нова почта">нова почта</option>
+            <option value="нова почта">Нова почта</option>
             {/* <option value="укр почка">укр почка</option> */}
           </select>
           <div className="inputDiv">

@@ -1,8 +1,7 @@
 "use client";
-import { useRouter } from "next/router";
 
 import { useState, useEffect, Suspense } from "react";
-
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 import "./product.scss";
 import TextCard from "@/components/TextCard/textCard";
 import { INewData } from "@/type/newData";
@@ -14,11 +13,32 @@ import Link from "next/link";
 import Load from "@/components/Load";
 import Loading from "../../loading";
 import Head from "next/head";
+import { GetStaticProps } from "next";
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  return {
+    props: { id: params?.id },
+  };
+};
 
-export default function Main() {
+export async function getStaticPaths() {
+  const db = getFirestore(); // Initialize Firestore
+  const collectionRef = collection(db, "id");
+  const snapshot = await getDocs(collectionRef); // Fetch documents
+
+ 
+  const documentIds = snapshot.docs.map((doc) => doc.id);
+
+ 
+  return {
+    paths: documentIds.map((elem) => ({
+      params: { id: elem },
+    })),
+    fallback: false, 
+  };
+}
+export default function Main({ id }: { id: string }) {
   const [newData, setNewData] = useState<INewData | null>(null);
-  const router = useRouter();
-  const { id } = router.query;
+
   const [isMounted, setIsMounted] = useState<boolean>(true);
   useEffect(() => {
     setIsMounted(true);
