@@ -11,7 +11,7 @@ export default function Characteristics({
       {newData?.angl && (
         <div className="characteristicsContainer">
           <p className="characteristicsText">Кут розкриття</p>
-          <p>{newData?.angl}</p>
+          <p>{newData?.angl}°</p>
         </div>
       )}
       {newData?.gain && (
