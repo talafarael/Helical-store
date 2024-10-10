@@ -2,19 +2,34 @@
 import React, { Suspense, useEffect, useState } from "react";
 import "./category.scss";
 // import { INewData } from "@/type/newData";
-import { useRouter } from "next/router";
+
 import fetchCategoryData from "@/api/getApiProductCategory";
 import Card from "@/components/Card/card";
 import Load from "@/components/Load";
 import Head from "next/head";
 import { INewData } from "@/type/newData";
+import { GetStaticProps } from "next";
+import { getCategories } from "@/api/getApiCategory";
 
-export default function Category() {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  return {
+    props: { id: params?.id },
+  };
+};
+
+export async function getStaticPaths() {
+  const arr = await getCategories();
+  return {
+    paths: arr.map((elem) => ({
+      params: { id: elem.category },
+    })),
+    fallback: false,
+  };
+}
+export default function Category({ id }: { id: string }) {
   const [newData, setNewData] = useState<INewData[] | null>(null);
   const [isMounted, setIsMounted] = useState<boolean>(true);
 
-  const router = useRouter();
-  const { id } = router.query;
   useEffect(() => {
     setIsMounted(true);
 
