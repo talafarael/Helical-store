@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import localFont from "next/font/local";
 import "../app/globals.scss";
 import "./layout.scss";
@@ -73,7 +73,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [activeMenu, setActiveMenu] = useState<boolean>(false);
   useEffect(() => {
     const fetchCategories = async () => {
-      console.log("Render menu");
+
       setCategories(await getCategories());
     };
     fetchCategories();
