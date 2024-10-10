@@ -28,7 +28,7 @@ export default function Header({
   //   const localOrder: string | null = localStorage.getItem("order");
   //   const order = localOrder ? JSON.parse(localOrder) : [];
   // }, []);
-
+  
   return (
     <header className="containerHead">
       <section className="logo">

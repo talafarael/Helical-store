@@ -1,3 +1,4 @@
+"use client";
 import localFont from "next/font/local";
 import "../app/globals.scss";
 import "./layout.scss";
@@ -10,6 +11,9 @@ import Footer from "./Footer";
 
 import GoogleAnalytics from "./GoogleAnalytics";
 import { useRouter } from "next/router";
+
+import { ICategory } from "@/type/ICategory";
+import { getCategories } from "@/api/getApiCategory";
 
 // const metadata: Metadata = {
 //   title: "Create Next App",
@@ -65,8 +69,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const boolMenu = pathsWithoutMenu.some((path) =>
     typeof path === "string" ? path === router.asPath : path.test(router.asPath)
   );
+  const [categories, setCategories] = useState<ICategory[]>([]);
   const [activeMenu, setActiveMenu] = useState<boolean>(false);
-
+  useEffect(() => {
+    const fetchCategories = async () => {
+      console.log("Render menu");
+      setCategories(await getCategories());
+    };
+    fetchCategories();
+  }, []);
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       (window as any).gtag("config", process.env.NEXT_PUBLIC_GA_ID as string, {
@@ -100,7 +111,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <GoogleAnalytics />
 
         {!boolMenu && (
-          <Menu setActiveMenu={setActiveMenu} activeMenu={activeMenu} />
+          <Menu
+            data={categories}
+            setActiveMenu={setActiveMenu}
+            activeMenu={activeMenu}
+          />
         )}
         <Suspense fallback={<Load />}>{children}</Suspense>
       </div>
