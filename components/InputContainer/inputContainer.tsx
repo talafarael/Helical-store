@@ -31,8 +31,6 @@ export default function InputContainer() {
 
   const [panelResponse, setPanelResponse] = useState(false);
 
- 
-
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     sendMessageToTelegram({
       data: data,
@@ -101,11 +99,11 @@ export default function InputContainer() {
             <input
               className="input"
               type="text"
-              placeholder="Місто та номер пошти нової пошти"
+              placeholder="Місто та номер Нової пошти"
               value={deliver}
               {...register("Deliver", {
                 required: "Це поле обов’язкове",
-                minLength: { value: 5, message: "Мінімум 5 символів" },
+                minLength: { value: 3, message: "Мінімум 5 символів" },
               })}
               onChange={(e) => setDeliver(e.target.value)}
             />
@@ -122,8 +120,8 @@ export default function InputContainer() {
             })}
           >
             <option value="">Оберіть метод оплати</option>
-            <option value="Готівка">Готівка</option>
-            <option value="Карткою">Карткою</option>
+            <option value="Готівка">Оплата під час отримання товару</option>
+            <option value="Карткою">Оплата карткою</option>
           </select>
           <div className="error">
             {errors?.PayMetod &&

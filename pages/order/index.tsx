@@ -47,7 +47,7 @@ export default function Main() {
               </Head>
               <button
                 onClick={() => router.back()}
-                className="buttonBackOrder "
+                className="buttonBackOrder"
               >
                 <Image
                   src={leftArrow}
