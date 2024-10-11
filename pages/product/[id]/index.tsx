@@ -5,7 +5,7 @@ import { collection, getDocs, getFirestore } from "firebase/firestore";
 import "./product.scss";
 import TextCard from "@/components/TextCard/textCard";
 import { INewData } from "@/type/newData";
-import CardImg from "@/components/CardImg/cardImg";
+
 import fetchData from "@/api/getApiProduct";
 import leftArrow from "@/public/left-arrow.png";
 import Image from "next/image";
@@ -15,6 +15,7 @@ import Loading from "../../loading";
 import Head from "next/head";
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
+import CardImg from "@/components/CardImg";
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: { id: params?.id },

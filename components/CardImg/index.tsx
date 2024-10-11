@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick-theme.css";
 import stub from "@/public/noImage.png";
 import SpinnerLoader from "../spinnerLoader";
 
-
 export default function CardImg({ img }: { img: string[] }) {
   const [nav1, setNav1] = useState<Slider | undefined>(undefined);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -63,11 +62,10 @@ export default function CardImg({ img }: { img: string[] }) {
             className={currentSlide === idx ? "active" : ""}
             onClick={() => sliderRef.current?.slickGoTo(idx)}
           >
-            <Image src={`/${item}`} alt="" width={80} height={80} />
+            <Image src={`/img/${item}`} alt="" width={80} height={80} />
           </div>
         ))}
       </article>
-     
     </section>
   );
 }
