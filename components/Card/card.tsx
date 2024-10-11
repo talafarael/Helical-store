@@ -14,7 +14,7 @@ export default function Card({ data }: { data: INewData }) {
       <div className="containerImg">
         <Suspense fallback={<Load />}>
           <Image
-            src={data.img && data.img.length > 0 ? `/${data.img[0]}` : stub}
+            src={data.img && data.img.length > 0 ? `/img/${data.img[0]}` : stub}
             className="cardImg"
             alt=""
             width="262"

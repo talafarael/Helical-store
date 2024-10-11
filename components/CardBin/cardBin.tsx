@@ -22,7 +22,7 @@ export default function CardBin({ data }: { data: IDefaultData }) {
               onLoad={() => {
                 setImgLoad(true);
               }}
-              src={data.img && data.img.length > 0  ? `/${data.img[0]}` : stub}
+              src={data.img && data.img.length > 0  ? `/img/${data.img[0]}` : stub}
               className="imgCardBin"
               alt={`load`}
               width={100}

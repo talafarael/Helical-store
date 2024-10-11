@@ -45,7 +45,7 @@ export default function CardImg({ img }: { img: string[] }) {
                 onLoad={() => {
                   setImgLoad(true);
                 }}
-                src={item ? `/${item}` : stub}
+                src={item ? `/img/${item}` : stub}
                 className="imgCard"
                 alt={`Slide ${idx}`}
                 width={500}
