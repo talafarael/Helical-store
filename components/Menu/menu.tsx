@@ -6,7 +6,6 @@ import { useResize } from "@/utils/screenSize";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-
 export default function Menu({
   activeMenu,
   setActiveMenu,
@@ -44,9 +43,9 @@ export default function Menu({
             {data?.map((elem: ICategory) => (
               <Link
                 onClick={() => handlerCloseMenu()}
-                href={`/category/${elem.category}`}
+                href={`/category/${elem.id}`}
                 className={
-                  id == elem.category
+                  id == elem.id
                     ? `activeCategoryLink categoryLink`
                     : `categoryLink`
                 }

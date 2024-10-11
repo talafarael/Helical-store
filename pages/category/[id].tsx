@@ -12,21 +12,31 @@ import { GetStaticProps } from "next";
 import { getCategories } from "@/api/getApiCategory";
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const arr = await getCategories();
+  const category = arr.filter((elem) => elem.id == params?.id);
   return {
-    props: { id: params?.id },
+    props: { id: params?.id, category: category[0].category },
   };
 };
 
 export async function getStaticPaths() {
   const arr = await getCategories();
+
+  
   return {
     paths: arr.map((elem) => ({
-      params: { id: elem.category },
+      params: { id: elem.id },
     })),
     fallback: false,
   };
 }
-export default function Category({ id }: { id: string }) {
+export default function Category({
+  id,
+  category,
+}: {
+  id: string;
+  category: string;
+}) {
   const [newData, setNewData] = useState<INewData[] | null>(null);
   const [isMounted, setIsMounted] = useState<boolean>(true);
 
@@ -54,7 +64,7 @@ export default function Category({ id }: { id: string }) {
         />
       </Head>
       <div className="titlePageCategory">
-        <h1 className="textBack">{id}</h1>
+        <h1 className="textBack">{category}</h1>
       </div>
       <Suspense fallback={<Load />}>
         <div className="categoryContainerCard">
