@@ -135,7 +135,7 @@ export default function InputContainer() {
             {...register("Feedback", {
               required: false,
             })}
-            placeholder={"Коментар від користувача"}
+            placeholder={"коментар до заказу"}
           />
           <div className="error"></div>
           <Button func={() => {}} text="купити"></Button>

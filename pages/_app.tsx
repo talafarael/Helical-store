@@ -14,7 +14,7 @@ export default function MyApp({ Component, pageProps}: AppProps) {
           rel="icon"
           type="image/x-icon"
           sizes="32x32"
-          href="/signal-wifi-svgrepo-comWhiteTwo.svg"
+          href="/wireless-connection-svgrepo-com.svg"
         />{" "}
       </Head>
       

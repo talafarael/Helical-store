@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useResize } from "@/utils/screenSize";
 import menuLog from "@/public/menu-svgrepo-comWhite.svg";
 
-import SignalTower from "@/public/signal-wifi-svgrepo-comWhiteTwo.svg";
+import SignalTower from "@/public/wireless-connection-svgrepo-com.svg";
 export default function Header({
   setActiveMenu,
   activeMenu,
