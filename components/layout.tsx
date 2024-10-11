@@ -73,7 +73,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [activeMenu, setActiveMenu] = useState<boolean>(false);
   useEffect(() => {
     const fetchCategories = async () => {
-
       setCategories(await getCategories());
     };
     fetchCategories();
@@ -109,15 +108,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* <GoogleRouter /> */}
       <div className="body">
         <GoogleAnalytics />
-
         {!boolMenu && (
           <Menu
             data={categories}
             setActiveMenu={setActiveMenu}
             activeMenu={activeMenu}
           />
-        )}
-        <Suspense fallback={<Load />}>{children}</Suspense>
+        )}{" "}
+     
+          <Suspense fallback={<Load />}>{children}</Suspense>{" "}
+    
       </div>
       <Footer />
     </div>
