@@ -3,7 +3,7 @@ import React, { Suspense } from "react";
 import "./card.scss";
 import Image from "next/image";
 import Link from "next/link";
-import stub from "@/public/noImage.png";
+import stub from "@/public/img/noImage.png";
 import { INewData } from "@/type/newData";
 import hryvnia from "@/public/hrivnaRed.svg";
 import Load from "../Load";
@@ -22,7 +22,7 @@ export default function Card({ data }: { data: INewData }) {
             priority={true}
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = "@/public/noImage.png";
+              target.src = "@/public/img/noImage.png";
             }}
           />
         </Suspense>

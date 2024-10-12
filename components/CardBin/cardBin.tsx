@@ -8,7 +8,7 @@ import { OderContext } from "@/utils/hooks/context";
 import closeImg from "../../public/close-window.png";
 import hryvnia from "@/public/hrivnaRed.svg";
 import Link from "next/link";
-import stub from "@/public/noImage.png";
+import stub from "@/public/img/noImage.png";
 import SpinnerLoader from "../spinnerLoader";
 
 export default function CardBin({ data }: { data: IDefaultData }) {
