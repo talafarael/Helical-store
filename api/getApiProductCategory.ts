@@ -6,7 +6,8 @@ import { INewData } from "@/type/newData";
 const fetchCategoryData = async (
   category: string | undefined | string[],
   isMounted: boolean,
-  setNewData: React.Dispatch<React.SetStateAction<INewData[] | null>>
+  setNewData: React.Dispatch<React.SetStateAction<INewData[] | null>>,
+  setError?: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   try {
     if (typeof category === "string") {
@@ -28,7 +29,7 @@ const fetchCategoryData = async (
             add: data.add,
             prod: data.prod,
             angl: data.angl,
-            category:data.category,
+            category: data.category,
             gain: data.gain,
           } as INewData;
         });
@@ -46,6 +47,7 @@ const fetchCategoryData = async (
       }
     }
   } catch (error) {
+    if (setError) setError(true);
     console.error("Error fetching data:", error);
   }
 };

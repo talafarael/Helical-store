@@ -64,7 +64,7 @@ const geistMontserrat = localFont({
 export default function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
 
-  const pathsWithoutMenu = [/^\/product\/[a-zA-Z0-9_-]+$/, "/order"];
+  const pathsWithoutMenu = [/^\/product\/[a-zA-Z0-9_-]+\/?$/, "/order/"];
 
   const boolMenu = pathsWithoutMenu.some((path) =>
     typeof path === "string" ? path === router.asPath : path.test(router.asPath)

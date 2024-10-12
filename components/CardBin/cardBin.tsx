@@ -10,6 +10,7 @@ import hryvnia from "@/public/hrivnaRed.svg";
 import Link from "next/link";
 import stub from "@/public/noImage.png";
 import SpinnerLoader from "../spinnerLoader";
+
 export default function CardBin({ data }: { data: IDefaultData }) {
   const order = useContext(OderContext);
   const [imgLoad, setImgLoad] = useState(false);
@@ -22,7 +23,9 @@ export default function CardBin({ data }: { data: IDefaultData }) {
               onLoad={() => {
                 setImgLoad(true);
               }}
-              src={data.img && data.img.length > 0  ? `/img/${data.img[0]}` : stub}
+              src={
+                data.img && data.img.length > 0 ? `/img/${data.img[0]}` : stub
+              }
               className="imgCardBin"
               alt={`load`}
               width={100}
@@ -46,10 +49,14 @@ export default function CardBin({ data }: { data: IDefaultData }) {
         </div>
       </div>
       <div className="containerButtonBin">
-        <h1 className="cardBinPrice">
-          {+data.price * data.count}
-          <Image src={hryvnia} alt="грн" height={15} width={10}></Image>
-        </h1>
+        {data.price ? (
+          <h1 className="cardBinPrice">
+            {+data.price * data.count}
+            <Image src={hryvnia} alt="грн" height={15} width={10}></Image>
+          </h1>
+        ) : (
+          <p className="cardBinPrice">Невідома ціна </p>
+        )}
         <CountProduct
           stylePhone={"true"}
           handlerAdd={order?.handlerAdd || (() => {})}

@@ -37,10 +37,12 @@ export default function Card({ data }: { data: INewData }) {
           <p className="pDescriptionWeight">посилення </p>
           <p className="pDescription"> {data?.gain} </p>
         </div>
-        <p className="price ">
-          {data.price}
-          <Image src={hryvnia} alt="грн" height={10} width={10}></Image>
-        </p>
+        {data.price ? (
+          <p className="price ">
+            {data.price}
+            <Image src={hryvnia} alt="грн" height={10} width={10}></Image>
+          </p>
+        ) : null}
       </div>
     </Link>
   );

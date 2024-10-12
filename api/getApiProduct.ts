@@ -5,7 +5,8 @@ import { INewData } from "@/type/newData";
 const fetchData = async (
   id: string | undefined | string[],
   isMounted: boolean,
-  setNewData: React.Dispatch<React.SetStateAction<INewData | null>>
+  setNewData: React.Dispatch<React.SetStateAction<INewData | null>>,
+  setError:React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   try {
     if (typeof id === "string") {
@@ -35,7 +36,7 @@ const fetchData = async (
       }
     }
   } catch (error) {
-    console.error("Ошибка при получении данных:", error);
+    setError(true)
   }
 };
 export default fetchData;
