@@ -60,46 +60,43 @@
   overflow: hidden;
   font-size: 15px;
   margin-top: 5px;
-height:37px;
+  height: 37px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
- 
 }
 .pDescriptionConatiner {
-
   // justify-content: space-between;
   font-family: var(--font-montserrat);
   font-size: 12px;
-display: flex;
-align-items: center;
-}
-.pDescription{
   display: flex;
-  
+  align-items: center;
+}
+.pDescription {
+  display: flex;
+
   align-content: center;
- height: auto;
+  height: auto;
   height: min-content;
   font-size: 13px;
   margin-left: 5px;
 }
-.pDescriptionWeight{
+.pDescriptionWeight {
   display: flex;
-  
 
-height: auto;
+  height: auto;
 
-font-weight: 600;
+  font-weight: 600;
 }
 .price {
   font-family: var(--font-semi-bold);
   display: flex;
   color: rgb(216, 42, 42);
-  margin-top:2px;
+  margin-top: 2px;
   font-weight: 500;
-align-items: center;
+  align-items: center;
   font-size: 18px;
 }
 @media (max-width: 1150px) {
@@ -110,11 +107,12 @@ align-items: center;
   .cardContainer {
     width: 252px;
     height: 312px;
-    background:  rgba(#a7a7a7, 0.1);
+    background: rgba(#a7a7a7, 0.1);
   }
-  .pDescription{
+  .pDescription {
     height: 100%;
-    display: flex;align-items: end;
+    display: flex;
+    align-items: end;
   }
   .containerImg {
     display: flex;
@@ -141,22 +139,28 @@ align-items: center;
     height: min-content;
     display: flex;
     align-items: flex-end;
-  
+
     font-family: var(--font-rubik);
     font-size: 10px;
-    margin-top:2px ;
+    margin-top: 2px;
   }
   .cardContainer {
     width: 172px;
     height: 250px;
   }
   .containerImg {
-    display: flex;
-    display: inline-flex;
-    align-items: flex-end;
+    object-fit: cover;
     height: 179px;
-    width: 182x;
+    width: 182px;
+    object-fit: cover;
+    justify-content: center; 
+    align-items: center;
   }
+  .containerImg img {
+    height: 100%; 
+    width: auto;
+    object-fit: cover; 
+}
   .containerText {
     padding-left: 8px;
     height: 84px;
@@ -164,12 +168,10 @@ align-items: center;
   .title {
     width: 95%;
     overflow: hidden;
-    height:auto;
+    height: auto;
     font-size: 14px;
   }
   .price {
-   
     font-size: 13px;
   }
-  
 }

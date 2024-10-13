@@ -22,7 +22,7 @@ export default function Card({ data }: { data: INewData }) {
             priority={true}
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = "@/public/img/noImage.png";
+              target.src = "/img/noImage.png";
             }}
           />
         </Suspense>

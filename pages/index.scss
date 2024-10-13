@@ -45,7 +45,8 @@
     margin-top: 20px;
   }
   .containerCard {
-    width: max-content;
+    width: 90%;
+    // width: max-content;
   }
 }
 @media (max-width: 1150px) {
@@ -53,19 +54,19 @@
 
 @media (max-width: 900px) {
   .containerCard {
-    width: auto;
+    // width: auto;
     grid-template-columns: 50% 50%;
   }
 }
 @media (max-width: 650px) {
   .containerCard {
     grid-template-columns: 30% 30% 30%;
-    width: auto;
+    width: 91vw;
   }
 }
 @media (max-width: 550px) {
   .containerCard {
     grid-template-columns: 50% 50%;
-    width: auto;
+  
   }
 }

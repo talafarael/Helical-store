@@ -49,10 +49,10 @@ export default function CardImg({ img }: { img: string[] }) {
                 alt={`Slide ${idx}`}
                 width={500}
                 height={500}
-                // onError={(e) => {
-                //   const target = e.target as HTMLImageElement;
-                //   target.src = "@/public/img/noImage.png";
-                // }}
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "/img/noImage.png";
+                }}
               />
             </div>
           ))}
