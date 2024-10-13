@@ -19,6 +19,11 @@
   flex-wrap: wrap;
   transition: background-color 1s ease;
 }
+.containerImg img {
+  height: 100%; 
+  width: 100%;
+  object-fit: cover; 
+}
 .cardContainer:hover {
   // border: solid #a7a7a7 3px;
   opacity: 0.8;
@@ -33,6 +38,7 @@
   display: flex;
   display: inline-flex;
   align-items: flex-end;
+  justify-content: center;
   height: 240px;
   width: 262px;
   // border-top: 25px;
