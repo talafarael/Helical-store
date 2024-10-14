@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const arr = await getCategories();
   const category = arr.filter((elem) => elem.id == params?.id);
   return {
-    props: { id: params?.id, category: category[0].category },
+    props: { id: params?.id, category: category[0].cat },
   };
 };
 
@@ -65,9 +65,9 @@ export default function Category({
               }
             />
           </Head>
-          <div className="titlePageCategory">
-            <h1 className="textBack">{category}</h1>
-          </div>
+        
+            <h1 className="titlePage">{category}</h1>
+         
           <Suspense fallback={<Load />}>
             <div className="categoryContainerCard">
               {newData?.map((elem) => (

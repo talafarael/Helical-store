@@ -51,7 +51,7 @@ export default function Menu({
                 }
                 key={elem.id}
               >
-                {elem.category}
+                {elem.cat}
               </Link>
             ))}
           </nav>

@@ -8,16 +8,16 @@ export default function Characteristics({
 }) {
   return (
     <div>
-      {newData?.angl && (
-        <div className="characteristicsContainer">
-          <p className="characteristicsText">Кут розкриття</p>
-          <p>{newData?.angl}°</p>
-        </div>
-      )}
       {newData?.gain && (
         <div className="characteristicsContainer">
           <p className="characteristicsText">Підсилення</p>
           <p>{newData?.gain}</p>
+        </div>
+      )}
+      {newData?.angl && (
+        <div className="characteristicsContainer">
+          <p className="characteristicsText">Кут розкриття</p>
+          <p>{newData?.angl}°</p>
         </div>
       )}
       {newData?.num && (

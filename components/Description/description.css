@@ -1,5 +1,5 @@
 .bodyDescritpion {
-  margin-top: 15px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
 
@@ -28,6 +28,7 @@
   width: auto;
   font-size: 16px;
   width: 90%;
+  margin-top: 4px;
 }
 .linedesc {
   margin-top: 5px;
@@ -35,7 +36,9 @@
   height: 1.5px;
   background: #a7a7a7;
 }
-
+.addAdtioional{
+  margin-top: 10px;
+}
 @media (max-width: 950px) {
   .desc {
     font-size: 14px;

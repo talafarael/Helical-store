@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="footerContainer">
       <Link
-        href="https://signal.org/ru/"
+        href="https://signal.group/#CjQKIPKqOLcX-HyfSVq1VmNRbKWkD5sufi83GQj8YOBDwlLqEhBgBooK9fXpZ2LK3F9Qon8_"
         style={{ marginRight: "50px", zIndex: 1 }}
         target="_blank "
         rel="noopener noreferrer"
@@ -24,6 +24,8 @@ export default function Footer() {
       <Link
         style={{ marginLeft: "50px" }}
         href="https://t.me/+ArllqTEtkH5kYjdi"
+        target="_blank "
+         rel="noopener noreferrer"
       >
         <Image src={imgTg} className="imgTg" width={40} height={40} alt="" />
       </Link>

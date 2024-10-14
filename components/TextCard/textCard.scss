@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 5px;
+  margin-top: 20px;
   display: inline-block;
   font-size: 24px;
   font-weight: 600;
@@ -213,6 +213,10 @@
   .nameCard {
     margin-top: 0px;
   }
+  .line{
+    
+    width: 90%;
+  }
 }
 @media (max-width: 700px) {
 }
@@ -222,7 +226,5 @@
     height: auto;
   }
 
-  .line {
-    width: 100%;
-  }
+  
 }

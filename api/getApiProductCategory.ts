@@ -12,7 +12,7 @@ const fetchCategoryData = async (
   try {
     if (typeof category === "string") {
       // Create query to get documents by category
-      const q = query(collection(db, "id"), where("category", "==", category));
+      const q = query(collection(db, "id"), where("cat", "==", category));
       const querySnapshot = await getDocs(q);
 
       if (!querySnapshot.empty) {
@@ -29,7 +29,7 @@ const fetchCategoryData = async (
             add: data.add,
             prod: data.prod,
             angl: data.angl,
-            category: data.category,
+            cat: data.cat,
             gain: data.gain,
           } as INewData;
         });

@@ -14,7 +14,7 @@ export default function Description({ newData }: { newData: INewData | null }) {
       <div className="linedesc"></div>{" "}
       {newData?.add && (
         <>
-          <h3 className="textDesc">Додаткові можливості</h3>
+          <h3 className="textDesc addAdtioional">Додаткові можливості</h3>
           <p className="desc">{parse(newData.add)}</p>
           <div className="linedesc"></div>
         </>

@@ -7,7 +7,7 @@
     rgb(119, 127, 148) 105.8%
   );
   display: flex;
-
+  min-height: 100px;
   background: linear-gradient(to top, #bdbec0 0%, #858486 72%, #787481 100%);
   // backdrop-filter: blur(20px) saturate(120%) contrast(200%);
   // background: linear-gradient(

@@ -1,4 +1,4 @@
 export interface ICategory{
-  category:string;
+  cat:string;
   id:string;
 }

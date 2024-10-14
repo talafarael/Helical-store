@@ -8,7 +8,15 @@
   gap: 16px;
   margin-top: 20px;
 }
+.titlePage {
+  margin-top: 30px;
+  width: 90%;
+  text-align: start;
 
+  
+  font-family: var(--robo-bold);
+ 
+}
 .LinkCategoryTitle {
   text-decoration: none;
   display: flex;
@@ -58,6 +66,9 @@
   }
 }
 @media (max-width: 1300px) {
+  .titlePage {
+    margin-top: 20px;
+  }
   .titlePageCategory {
     margin-top: 20px;
   }

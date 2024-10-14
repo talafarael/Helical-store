@@ -30,13 +30,14 @@ export default function Card({ data }: { data: INewData }) {
       <div className="containerText">
         <h1 className="title h1Font">{data.name}</h1>
         <div className="pDescriptionConatiner">
-          <div className="pDescriptionWeight">кут </div>
-          <div className="pDescription"> {data?.angl}</div>
-        </div>
-        <div className="pDescriptionConatiner">
-          <p className="pDescriptionWeight">посилення </p>
+          <p className="pDescriptionWeight">підсилення: </p>
           <p className="pDescription"> {data?.gain} </p>
         </div>
+        <div className="pDescriptionConatiner">
+          <div className="pDescriptionWeight">кут: </div>
+          <div className="pDescription"> {data?.angl}°</div>
+        </div>
+        
         {data.price ? (
           <p className="price ">
             {data.price}
