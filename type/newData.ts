@@ -10,6 +10,8 @@ export interface INewData {
   prod: string;
   add: string;
   cat: string;
+  hide?:number;
+  rate:number;
 }
 export interface IDeliver {
   deliver?: string;
@@ -28,4 +30,6 @@ export interface IDefaultData {
   add?: string;
   count: number;
   cat: string;
+  hide?:number;
+  rate:number;
 }

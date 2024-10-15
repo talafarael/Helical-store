@@ -31,11 +31,18 @@ const fetchCategoryData = async (
             angl: data.angl,
             cat: data.cat,
             gain: data.gain,
+            rate:data?.rate ?data.rate : 0,
+            hide:data?.hide ? data.hide : 0
           } as INewData;
         });
-        const dataResults = await Promise.all(dataPromises);
-
-        // Update state with the fetched data
+        let dataResults = await Promise.all(dataPromises);
+        dataResults.map((elem) => {
+          if (!elem.rate) {
+            elem.rate = 0;
+          }
+        });
+        dataResults=dataResults.sort((a, b) => Number(b.rate) - Number(a.rate));
+        dataResults=dataResults.filter(elem=>Number(elem.hide)==1)
         if (isMounted) {
           setNewData(dataResults);
         }

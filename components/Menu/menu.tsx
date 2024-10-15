@@ -38,7 +38,7 @@ export default function Menu({
                   : `categoryLink`
               }
             >
-              Усі товари
+             Рекомендовані
             </Link>
             {data?.map((elem: ICategory) => (
               <Link

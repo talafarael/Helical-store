@@ -1,4 +1,3 @@
-
 import "./index.scss";
 import Card from "@/components/Card/card";
 import { db } from "../utils/firebase";
@@ -11,9 +10,8 @@ export default function Page({ data }: { data: INewData[] }) {
   // getChatId()
   return (
     <div className="containerMain">
-      
-      <h1 className="titlePage">Усі товари</h1>
-      
+      <h1 className="titlePage">Рекомендовані</h1>
+
       <div className="containerCard">
         {data.map((element) => (
           <Card key={element.id} data={element} />
@@ -25,13 +23,18 @@ export default function Page({ data }: { data: INewData[] }) {
 
 export const getStaticProps = async () => {
   const querySnapshot = await getDocs(collection(db, "id"));
-  const data = querySnapshot.docs.map((doc) => ({
+  let data = querySnapshot.docs.map((doc) => ({
     ...doc.data(),
     id: doc.id,
   })) as INewData[];
-
+  data.map((elem) => {
+    if (!elem.rate) {
+      elem.rate = 0;
+    }
+  });
+  data = data.sort((a, b) => Number(b.rate) - Number(a.rate));
+  data=data.filter(elem=>Number(elem.hide)==1)
   return {
     props: { data },
-    
   };
 };

@@ -44,7 +44,8 @@ export default function Category({
     setIsMounted(true);
 
     fetchCategoryData(id, isMounted, setNewData, setError);
-
+   
+    
     return () => {
       setIsMounted(false);
     };
@@ -59,15 +60,15 @@ export default function Category({
             <meta
               name="description"
               content={
-                newData
+               newData && newData.length>0
                   ? `${id} Discover our collection of ${newData[0].name}. ${newData[0].desc}`
                   : "Explore our products."
               }
             />
           </Head>
-        
-            <h1 className="titlePage">{category}</h1>
-         
+
+          <h1 className="titlePage">{category}</h1>
+
           <Suspense fallback={<Load />}>
             <div className="categoryContainerCard">
               {newData?.map((elem) => (

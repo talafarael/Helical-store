@@ -29,6 +29,8 @@ const fetchData = async (
             prod: data.prod,
             angl: data.angl,
             gain: data.gain,
+            rate:data?.rate ?data.rate : 0,
+            hide:data?.hide ? data.hide : 0
           });
         }
       } else {

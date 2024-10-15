@@ -41,6 +41,7 @@ export default function Main({ id }: { id: string }) {
   const [newData, setNewData] = useState<INewData | null>(null);
   const [error, setError] = useState<boolean>(false);
   const [isMounted, setIsMounted] = useState<boolean>(true);
+  
   useEffect(() => {
     setIsMounted(true);
 
