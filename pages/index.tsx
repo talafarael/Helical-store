@@ -33,7 +33,7 @@ export const getStaticProps = async () => {
     }
   });
   data = data.sort((a, b) => Number(b.rate) - Number(a.rate));
-  data=data.filter(elem=>Number(elem.hide)==1)
+  data=data.filter(elem=>Number(elem.hide)!=1)
   return {
     props: { data },
   };

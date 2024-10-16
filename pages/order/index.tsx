@@ -45,10 +45,7 @@ export default function Main() {
                 <title>Корзина</title>
                 <meta name="description" content="Корзина" />
               </Head>
-              <button
-                onClick={() => router.back()}
-                className="buttonBackOrder"
-              >
+              <button onClick={() => router.back()} className="buttonBackOrder">
                 <Image
                   src={leftArrow}
                   alt={`load`}
@@ -82,9 +79,8 @@ export default function Main() {
                 width={70}
                 height={70}
               ></Image>
-              <h1>Корзина порожня </h1>
+              <h1>Кошик порожній</h1>
               <Link href={`/`} style={{ color: "black" }}>
-                {" "}
                 <h3>Перейти до товарів</h3>
               </Link>
             </div>

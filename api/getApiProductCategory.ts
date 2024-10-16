@@ -42,7 +42,7 @@ const fetchCategoryData = async (
           }
         });
         dataResults=dataResults.sort((a, b) => Number(b.rate) - Number(a.rate));
-        dataResults=dataResults.filter(elem=>Number(elem.hide)==1)
+        dataResults=dataResults.filter(elem=>Number(elem.hide)!=1)
         if (isMounted) {
           setNewData(dataResults);
         }

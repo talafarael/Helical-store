@@ -44,8 +44,7 @@ export default function Category({
     setIsMounted(true);
 
     fetchCategoryData(id, isMounted, setNewData, setError);
-   
-    
+
     return () => {
       setIsMounted(false);
     };
@@ -60,7 +59,7 @@ export default function Category({
             <meta
               name="description"
               content={
-               newData && newData.length>0
+                newData && newData.length > 0
                   ? `${id} Discover our collection of ${newData[0].name}. ${newData[0].desc}`
                   : "Explore our products."
               }
@@ -70,11 +69,16 @@ export default function Category({
           <h1 className="titlePage">{category}</h1>
 
           <Suspense fallback={<Load />}>
-            <div className="categoryContainerCard">
-              {newData?.map((elem) => (
-                <Card key={elem.id} data={elem} />
-              ))}
-            </div>
+            {" "}
+            {newData && newData?.length > 0 ? (
+              <div className="categoryContainerCard">
+                {newData?.map((elem) => (
+                  <Card key={elem.id} data={elem} />
+                ))}
+              </div>
+            ) : (
+              <div className="emptyCat">В цій категорії поки немає товарів</div>
+            )}
           </Suspense>
         </>
       ) : (

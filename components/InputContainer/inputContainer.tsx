@@ -45,7 +45,7 @@ export default function InputContainer() {
     <div className={!panelResponse ? "inputContainerForm" : ""}>
       {!panelResponse ? (
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
-          <h1 className="titleForm"> Форма заказа</h1>
+          <h1 className="titleForm">Форма замовлення</h1>
           <input
             {...register("Name", {
               required: "заповніть поле",

@@ -10,7 +10,7 @@ import hryvnia from "@/public/hrivnaRed.svg";
 import Link from "next/link";
 import stub from "@/public/img/noImage.png";
 import SpinnerLoader from "../spinnerLoader";
-
+import parse from "html-react-parser";
 export default function CardBin({ data }: { data: IDefaultData }) {
   const order = useContext(OderContext);
   const [imgLoad, setImgLoad] = useState(false);
@@ -37,7 +37,9 @@ export default function CardBin({ data }: { data: IDefaultData }) {
         <Link href={`/product/${data.id}`} className="cardBinTextContainer">
           <h1 className="cardBinTitle">{data.name}</h1>
           <div className="lineCardBin"></div>
-          <p className="cardBinDescription">{data.desc}</p>
+          <p className="cardBinDescription">
+            {data?.desc && parse(data.desc)}
+            </p>
         </Link>
         <div className="cutCardBinContainer">
           <button

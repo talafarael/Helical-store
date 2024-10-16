@@ -19,6 +19,16 @@
   flex-wrap: wrap;
   transition: background-color 1s ease;
 }
+.pDescriptionCard{
+  -webkit-line-clamp: 2;
+  font-family: var(--font-montserrat);
+  font-size: 12px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  height: min-content;
+}
 .containerImg img {
   height: 100%; 
   width: 100%;
@@ -137,6 +147,7 @@ margin-bottom: 7px;
     height: 20px;
     font-size: 15px;
     height: auto;
+    margin-bottom: 5px;
   }
   .price {
     font-size: 15px;
@@ -174,6 +185,7 @@ margin-bottom: 7px;
     height: 84px;
   }
   .title {
+    margin-bottom: 2px;
     width: 95%;
     overflow: hidden;
     height: auto;
