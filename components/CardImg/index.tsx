@@ -66,7 +66,16 @@ export default function CardImg({ img }: { img: string[] }) {
             className={currentSlide === idx ? "active" : ""}
             onClick={() => sliderRef.current?.slickGoTo(idx)}
           >
-            <Image src={`/img/${item}`} alt="" width={80} height={80} />
+            <Image
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = "/img/noImage.png";
+              }}
+              src={`/img/${item}`}
+              alt=""
+              width={80}
+              height={80}
+            />
           </div>
         ))}
       </article>

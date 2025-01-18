@@ -27,7 +27,11 @@ export default function CardBin({ data }: { data: IDefaultData }) {
                 data.img && data.img.length > 0 ? `/img/${data.img[0]}` : stub
               }
               className="imgCardBin"
-              alt={`load`}
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = "/img/noImage.png";
+              }}
+              alt={``}
               width={100}
               height={100}
             />
@@ -37,9 +41,7 @@ export default function CardBin({ data }: { data: IDefaultData }) {
         <Link href={`/product/${data.id}`} className="cardBinTextContainer">
           <h1 className="cardBinTitle">{data.name}</h1>
           <div className="lineCardBin"></div>
-          <p className="cardBinDescription">
-            {data?.desc && parse(data.desc)}
-            </p>
+          <p className="cardBinDescription">{data?.desc && parse(data.desc)}</p>
         </Link>
         <div className="cutCardBinContainer">
           <button

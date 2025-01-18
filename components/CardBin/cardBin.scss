@@ -45,6 +45,7 @@
   height: min-content;
 }
 .containerBinImg {
+  position: relative;
   margin-top: 10px;
   display: flex;
   align-items: center;
@@ -135,7 +136,7 @@
   .cardBinDescription {
     font-size: 14px;
   }
-  .imgCardBin{
+  .imgCardBin {
     height: 100px;
   }
 }
