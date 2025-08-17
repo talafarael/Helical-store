@@ -39,4 +39,4 @@ jobs:
           username: h78703
           password: ${{ secrets.ftp_password }}
           local-dir: out/
-          exclude: "_next/, .vscode/"
+          server-dir: www/helical.store/
