@@ -38,3 +38,4 @@ jobs:
           server: h107.hvosting.ua
           username: h78703
           password: ${{ secrets.ftp_password }}
+          local-dir: out
