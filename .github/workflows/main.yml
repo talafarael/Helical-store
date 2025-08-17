@@ -15,7 +15,6 @@ jobs:
         run: |
           npm ci
           npm run build
-          npx next export
       - name: Archive production artifact
         uses: actions/upload-artifact@main
         with:
