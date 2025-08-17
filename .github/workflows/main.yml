@@ -10,32 +10,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@main
       - name: Install dependencies
-        run: npm i
+        run: npm ci
       - name: Build dependencies
         run: npm run build
       - name: Archive production artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
           name: dist
           path: dist
-
   deploy:
     name: Deploy 🚀
     needs: build
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@main
       - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
+        uses: actions/download-artifact@main
+        with: 
           name: dist
           path: dist
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
+        with: 
           server: h107.hvosting.ua
           username: h78703
           password: ${{ secrets.ftp_password }}
