@@ -18,24 +18,21 @@ export const sendMessageToTelegram = async ({ data }: { data: Inputs }) => {
     if (order.length == 0) {
       return;
     }
-    const response = await axios.post(
-      `https://api.telegram.org/bot${token}/sendMessage`,
-      {
-        chat_id: process.env.USER_ID,
-        text: `${order
-          .map(
-            (elem: { id: string; count: number }) =>
-              `Продукт id: /${elem.id}\nКількість: ${elem.count}\n____________________________________\n`
-          )
-          .join("")}
+    await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
+      chat_id: process.env.USER_ID,
+      text: `${order
+        .map(
+          (elem: { id: string; count: number }) =>
+            `Продукт id: /${elem.id}\nКількість: ${elem.count}\n____________________________________\n`,
+        )
+        .join("")}
 Имя: ${data.Name}
 Номер: ${data.Number}
 ${data?.Feedback && `Зворотній зв'язок: ${data.Feedback}`}
 Номер пошти: ${data.Deliver}
 Спосіб оплати:${data.PayMetod}
 `,
-      }
-    );
+    });
     eventGoogle({
       action: "buy",
       id: ids,
@@ -48,7 +45,7 @@ ${data?.Feedback && `Зворотній зв'язок: ${data.Feedback}`}
 };
 export const getChatId = async () => {
   const response = await axios.get(
-    `https://api.telegram.org/bot${token}/getUpdates`
+    `https://api.telegram.org/bot${token}/getUpdates`,
   );
 
   console.log(response.data);
