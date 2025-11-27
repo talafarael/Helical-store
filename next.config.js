@@ -11,7 +11,8 @@ module.exports = {
   reactStrictMode: true,
   env: {
     TOKEN_TELEGRAM: "8036647450:AAEZzzw94YcYj7PfEHUT6OmjHQ9dC19-TIw",
-    USER_ID: "592473412",
+    USER_ID: "1056119921",
+    // "592473412",
     // "",
     // 592473412     id Sky
     REACT_APP_FIREBASE_API_KEY: "AIzaSyCEtgLNJIJNISjUXq85XVMxl0vhSsW3HEg",
