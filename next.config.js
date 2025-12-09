@@ -10,8 +10,10 @@ module.exports = {
   trailingSlash: true,
   reactStrictMode: true,
   env: {
-    TOKEN_TELEGRAM: "8036647450:AAEZzzw94YcYj7PfEHUT6OmjHQ9dC19-TIw",
-    USER_ID: "1056119921",
+    TOKEN_TELEGRAM: "8418485735:AAHStfaXX-4eAbcoDqw_8HSrgbyBkB6JMkM",
+    // "8036647450:AAEZzzw94YcYj7PfEHUT6OmjHQ9dC19-TIw",
+    USER_ID: "592473412",
+    // "1056119921",
     // "592473412",
     // "",
     // 592473412     id Sky
